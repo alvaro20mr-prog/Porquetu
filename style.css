@@ -335,3 +335,100 @@ font-size:48px;
 }
 
 }
+/* HISTORIA */
+
+.historia{
+    background:#f7f2e8;
+}
+
+
+.intro{
+    margin-bottom:70px;
+}
+
+
+.momento{
+
+display:flex;
+
+align-items:center;
+
+gap:60px;
+
+margin:80px auto;
+
+max-width:1100px;
+
+}
+
+
+.momento img{
+
+width:45%;
+
+border-radius:10px;
+
+box-shadow:0 20px 40px rgba(0,0,0,.18);
+
+}
+
+
+.texto{
+
+flex:1;
+
+}
+
+
+.texto h4{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:45px;
+
+color:#8b1e3f;
+
+margin-bottom:20px;
+
+}
+
+
+.texto p{
+
+text-align:left;
+
+font-size:18px;
+
+}
+
+
+.invertido{
+
+flex-direction:row-reverse;
+
+}
+
+
+@media(max-width:800px){
+
+.momento,
+.invertido{
+
+flex-direction:column;
+
+}
+
+
+.momento img{
+
+width:100%;
+
+}
+
+.texto p{
+
+text-align:center;
+
+}
+
+}
