@@ -353,18 +353,24 @@ display:flex;
 
 align-items:center;
 
-gap:60px;
+justify-content:center;
 
-margin:80px auto;
+gap:80px;
 
-max-width:1100px;
+margin:120px auto;
+
+max-width:1000px;
 
 }
 
 
 .momento img{
 
-width:45%;
+width:380px;
+
+height:380px;
+
+object-fit:cover;
 
 border-radius:10px;
 
@@ -430,5 +436,23 @@ width:100%;
 text-align:center;
 
 }
+.momento img{
+
+transform:rotate(-2deg);
+
+transition:.4s;
+
+}
+
+.momento img:hover{
+
+transform:rotate(0deg) scale(1.05);
+
+}
+
+
+.momento:nth-child(even) img{
+
+transform:rotate(3deg);
 
 }
