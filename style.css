@@ -32,7 +32,7 @@ PORTADA
 
 height:100vh;
 
-background:url("hero.jpg") center center/cover no-repeat;
+background:url("fondo1.jpg") center center/cover no-repeat;
 
 position:relative;
 
@@ -182,7 +182,7 @@ HISTORIA
 
 .historia{
 
-background:url("fondo-historia.jpg") center center/cover no-repeat;
+background:url("fondo2.jpg") center center/cover no-repeat;
 
 padding:140px 8%;
 
@@ -332,7 +332,7 @@ CARTA
 
 .carta{
 
-background:url("fondo-carta.jpg") center center/cover no-repeat;
+background:url("fondo3.jpg") center center/cover no-repeat;
 
 padding:150px 8%;
 
