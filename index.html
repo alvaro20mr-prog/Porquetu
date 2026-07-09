@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Porque Tú | Melissa ❤️</title>
+<title>Porque Tú ❤️</title>
 
 <link rel="stylesheet" href="style.css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Great+Vibes&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 </head>
 
@@ -20,7 +21,7 @@
 
 <header class="hero" id="inicio">
 
-<nav class="menu">
+<nav>
 
 <div class="logo">
 
@@ -31,18 +32,15 @@
 <ul>
 
 <li><a href="#inicio">Inicio</a></li>
-
 <li><a href="#historia">Historia</a></li>
-
 <li><a href="#cancion">Canción</a></li>
-
 <li><a href="#carta">Carta</a></li>
-
-<li><a href="#final">Final</a></li>
 
 </ul>
 
 </nav>
+
+<div class="hero-overlay"></div>
 
 <div class="hero-contenido">
 
@@ -60,7 +58,7 @@ Esta es la nuestra.
 
 </p>
 
-<a href="#historia" class="boton">
+<a href="#historia" class="btn">
 
 Comenzar ❤️
 
@@ -70,7 +68,7 @@ Comenzar ❤️
 
 </header>
 
-<section class="historia" id="historia">
+<section id="historia" class="historia">
 
 <div class="titulo">
 
@@ -87,107 +85,108 @@ Cada fotografía guarda un pedacito de nuestra historia.
 <div class="collage">
 
 <div class="polaroid grande">
-<img src="Imagen0.jpg" style="width:300px;border:5px solid red;">
+
+<img src="Imagen0.jpg">
+
 </div>
 
 <div class="polaroid">
+
 <img src="Imagen1.jpg">
+
 </div>
 
 <div class="polaroid">
+
 <img src="Imagen2.jpg">
+
 </div>
 
 <div class="polaroid grande">
+
 <img src="Imagen3.jpg">
+
 </div>
 
 <div class="polaroid">
+
 <img src="Imagen4.jpg">
+
 </div>
 
 <div class="polaroid">
+
 <img src="Imagen5.jpg">
+
 </div>
 
 <div class="polaroid">
+
 <img src="Imagen6.jpg">
+
 </div>
 
 <div class="polaroid grande">
+
 <img src="Imagen7.jpg">
+
 </div>
 
 </div>
-    
+
 </section>
-
+    
 <section class="cancion" id="cancion">
 
-<div class="card-musica">
+    <div class="musica-card">
 
-<img src="portada.jpg" class="cover">
+        <img src="portada.jpg" class="portada">
 
-<h2>Porque Tú</h2>
+        <h2>Porque Tú</h2>
 
-<p>
+        <h3>Álvaro Manzano</h3>
 
-Álvaro Manzano
+        <audio controls>
+            <source src="PorqueTu.flac" type="audio/flac">
+        </audio>
 
-</p>
-
-<audio controls>
-
-<source src="PorqueTu.flac" type="audio/flac">
-
-</audio>
-
-</div>
+    </div>
 
 </section>
-    
+
 <section class="carta" id="carta">
 
     <div class="carta-contenedor">
 
-        <div class="foto-carta">
+        <div class="carta-foto">
 
-            <div class="polaroid grande">
-                <img src="imagenes/imagen03.jpg" alt="Melissa">
+            <div class="polaroid">
+
+                <img src="Imagen8.jpg">
+
             </div>
 
         </div>
 
-        <div class="texto-carta">
+        <div class="carta-texto">
 
             <h2>Para Melissa ❤️</h2>
 
             <p>
-                Hay personas que llegan a nuestra vida y cambian su rumbo para siempre.
+                Hay personas que llegan a nuestra vida y cambian todo para siempre.
             </p>
 
             <p>
-                Tú hiciste mucho más que eso. Me enseñaste que el amor también es paciencia, compañerismo, respeto y hogar.
+                Gracias por cada abrazo, cada risa y cada momento que hemos construido juntos.
             </p>
 
             <p>
-                Gracias por cada risa, por cada abrazo, por creer en mí incluso cuando yo mismo dudaba.
+                Esta canción y esta página son una pequeña forma de decirte cuánto te amo.
             </p>
 
-            <p>
-                Gracias por regalarme la familia con la que siempre soñé.
-            </p>
+            <h3>Con todo mi amor...</h3>
 
-            <p>
-                Esta canción, esta página y cada detalle tienen un solo propósito...
-            </p>
-
-            <h3>
-                Recordarte cuánto te amo.
-            </h3>
-
-            <span class="firma">
-                Con todo mi amor,<br>
+            <span>
                 Álvaro ❤️
             </span>
 
@@ -197,31 +196,14 @@ Cada fotografía guarda un pedacito de nuestra historia.
 
 </section>
 
-<section class="final" id="final">
-
-    <div class="final-contenido">
-
-        <h2>Gracias por recorrer nuestra historia.</h2>
-
-        <p>
-            Espero que cada vez que vuelvas aquí recuerdes lo mucho que significas para mí.
-        </p>
-
-        <h1>Te amo ❤️</h1>
-
-    </div>
-
-</section>
-
 <footer>
 
-    <p>
-        Porque Tú • 2026
-    </p>
+    <h2>Gracias por recorrer nuestra historia ❤️</h2>
 
 </footer>
 
 <script src="script.js"></script>
 
 </body>
+
 </html>
