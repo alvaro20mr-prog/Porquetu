@@ -162,6 +162,9 @@ section{
 
 padding:90px 8%;
 
+.historia{
+    background:url("fondo2") center center/cover no-repeat;
+    background-attachment:fixed;
 }
 
 .titulo{
@@ -235,9 +238,9 @@ transform:scale(1.04);
 /*========================*/
 
 .cancion{
-
-text-align:center;
-
+    background:#f8f1e8;
+    text-align:center;
+    padding:120px 8%;
 }
 
 .cover{
@@ -263,21 +266,8 @@ max-width:100%;
 /*========================*/
 
 .carta{
-
-max-width:850px;
-
-margin:auto;
-
-text-align:center;
-
-background:white;
-
-padding:60px;
-
-border-radius:15px;
-
-box-shadow:0 10px 30px rgba(0,0,0,.12);
-
+    background:url("fondo-carta.jpg") center center/cover no-repeat;
+    padding:120px 8%;
 }
 
 .carta h2{
