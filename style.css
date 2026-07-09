@@ -1,6 +1,6 @@
-/*=========================================
+/*==========================
 RESET
-=========================================*/
+==========================*/
 
 *{
 margin:0;
@@ -16,19 +16,19 @@ body{
 
 font-family:'Poppins',sans-serif;
 
-background:#f9f4ef url("paper.png");
+background:url("paper.png");
 
 background-size:450px;
 
-color:#444;
+color:#333;
 
 overflow-x:hidden;
 
 }
 
-/*=========================================
+/*==========================
 MENÚ
-=========================================*/
+==========================*/
 
 nav{
 
@@ -40,7 +40,7 @@ left:0;
 
 width:100%;
 
-padding:22px 7%;
+padding:20px 7%;
 
 display:flex;
 
@@ -48,13 +48,11 @@ justify-content:space-between;
 
 align-items:center;
 
-z-index:1000;
+background:rgba(0,0,0,.20);
 
-background:rgba(18,18,18,.22);
+backdrop-filter:blur(10px);
 
-backdrop-filter:blur(12px);
-
-transition:.4s;
+z-index:999;
 
 }
 
@@ -66,8 +64,6 @@ font-size:42px;
 
 color:white;
 
-letter-spacing:1px;
-
 }
 
 nav ul{
@@ -76,7 +72,7 @@ display:flex;
 
 list-style:none;
 
-gap:38px;
+gap:35px;
 
 }
 
@@ -86,27 +82,21 @@ color:white;
 
 text-decoration:none;
 
-font-size:15px;
-
-letter-spacing:1px;
-
-transition:.35s;
+transition:.3s;
 
 }
 
 nav a:hover{
 
-color:#ffd4a6;
+color:#ffd5a3;
 
 }
 
-/*=========================================
+/*==========================
 PORTADA
-=========================================*/
+==========================*/
 
 .hero{
-
-position:relative;
 
 height:100vh;
 
@@ -116,6 +106,8 @@ background-size:cover;
 
 background-position:center;
 
+position:relative;
+
 display:flex;
 
 justify-content:center;
@@ -124,23 +116,13 @@ align-items:center;
 
 }
 
-.hero::before{
-
-content:"";
+.overlay{
 
 position:absolute;
 
 inset:0;
 
-background:linear-gradient(
-
-180deg,
-
-rgba(0,0,0,.25),
-
-rgba(0,0,0,.55)
-
-);
+background:linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.60));
 
 }
 
@@ -148,15 +130,15 @@ rgba(0,0,0,.55)
 
 position:relative;
 
-z-index:10;
+z-index:2;
 
 text-align:center;
 
+color:white;
+
 width:90%;
 
-max-width:900px;
-
-color:white;
+max-width:800px;
 
 }
 
@@ -164,13 +146,11 @@ color:white;
 
 font-family:'Great Vibes',cursive;
 
-font-size:135px;
+font-size:130px;
 
 font-weight:400;
 
-margin-bottom:5px;
-
-text-shadow:0 8px 20px rgba(0,0,0,.35);
+margin-bottom:10px;
 
 }
 
@@ -180,9 +160,7 @@ font-family:'Cormorant Garamond',serif;
 
 font-size:42px;
 
-font-weight:500;
-
-margin-bottom:30px;
+margin-bottom:25px;
 
 }
 
@@ -190,13 +168,9 @@ margin-bottom:30px;
 
 font-size:21px;
 
-line-height:1.9;
+line-height:1.8;
 
-max-width:700px;
-
-margin:auto;
-
-margin-bottom:45px;
+margin-bottom:40px;
 
 }
 
@@ -206,17 +180,15 @@ display:inline-block;
 
 padding:18px 45px;
 
-background:#9f1d49;
+background:#a51e49;
+
+border-radius:40px;
 
 color:white;
 
 text-decoration:none;
 
-border-radius:40px;
-
-transition:.35s;
-
-box-shadow:0 12px 35px rgba(0,0,0,.35);
+transition:.3s;
 
 }
 
@@ -224,19 +196,15 @@ box-shadow:0 12px 35px rgba(0,0,0,.35);
 
 transform:translateY(-5px);
 
-background:#ba2d5b;
-
 }
 
-/*=========================================
+/*==========================
 SECCIONES
-=========================================*/
+==========================*/
 
 section{
 
-padding:110px 8%;
-
-position:relative;
+padding:120px 8%;
 
 }
 
@@ -252,67 +220,59 @@ margin-bottom:70px;
 
 font-family:'Great Vibes',cursive;
 
-font-size:72px;
+font-size:70px;
 
-color:#8f2142;
-
-margin-bottom:15px;
+color:#8b1e3f;
 
 }
 
 .titulo p{
 
-font-size:20px;
+margin-top:
 
-font-style:italic;
-
-color:#666;
-
-}
-
-/*=========================================
-HISTORIA
-=========================================*/
+/*==========================
+MESA DE FOTOS
+==========================*/
 
 .historia{
 
-padding-top:140px;
-
-padding-bottom:140px;
+min-height:1200px;
 
 }
 
-.collage{
+.mesa{
 
 position:relative;
 
 max-width:1200px;
 
-margin:auto;
+height:900px;
 
-height:950px;
+margin:auto;
 
 }
 
-/* Base */
+/* POLAROID */
 
-.polaroid{
+.foto{
 
 position:absolute;
 
-background:#fff;
+background:white;
 
 padding:12px 12px 45px;
 
+box-shadow:0 18px 35px rgba(0,0,0,.18);
+
 border-radius:4px;
 
-box-shadow:0 20px 45px rgba(0,0,0,.18);
+transition:.35s;
 
-transition:.45s;
+cursor:pointer;
 
 }
 
-.polaroid img{
+.foto img{
 
 display:block;
 
@@ -322,104 +282,140 @@ height:100%;
 
 object-fit:cover;
 
-border-radius:2px;
+}
+
+.foto:hover{
+
+transform:scale(1.08) rotate(0deg);
+
+z-index:50;
 
 }
 
-.polaroid:hover{
+/* FOTO 1 */
 
-transform:scale(1.06) rotate(0deg);
+.foto1{
 
-z-index:99;
+width:250px;
 
-}
-
-/* Distribución */
-
-.polaroid:nth-child(1){
-
-width:300px;
-height:360px;
+height:320px;
 
 left:20px;
-top:40px;
+
+top:20px;
 
 transform:rotate(-8deg);
 
 }
 
-.polaroid:nth-child(2){
+/* FOTO 2 */
 
-width:240px;
-height:300px;
+.foto2{
 
-left:330px;
-top:10px;
+width:220px;
 
-transform:rotate(6deg);
+height:280px;
 
-}
+left:300px;
 
-.polaroid:nth-child(3){
-
-width:290px;
-height:360px;
-
-left:640px;
-top:60px;
-
-transform:rotate(-5deg);
-
-}
-
-.polaroid:nth-child(4){
-
-width:260px;
-height:330px;
-
-right:10px;
-top:20px;
-
-transform:rotate(7deg);
-
-}
-
-.polaroid:nth-child(5){
-
-width:340px;
-height:250px;
-
-left:80px;
-top:430px;
+top:40px;
 
 transform:rotate(5deg);
 
 }
 
-.polaroid:nth-child(6){
+/* FOTO 3 */
 
-width:250px;
+.foto3{
+
+width:260px;
+
 height:330px;
 
-left:470px;
-top:430px;
+left:560px;
+
+top:10px;
 
 transform:rotate(-6deg);
 
 }
 
-.polaroid:nth-child(7){
+/* FOTO 4 */
+
+.foto4{
+
+width:240px;
+
+height:300px;
+
+right:10px;
+
+top:30px;
+
+transform:rotate(7deg);
+
+}
+
+/* FOTO 5 */
+
+.foto5{
+
+width:330px;
+
+height:220px;
+
+left:70px;
+
+top:420px;
+
+transform:rotate(6deg);
+
+}
+
+/* FOTO 6 */
+
+.foto6{
+
+width:230px;
+
+height:300px;
+
+left:470px;
+
+top:430px;
+
+transform:rotate(-5deg);
+
+}
+
+/* FOTO 7 */
+
+.foto7{
 
 width:300px;
-height:230px;
 
-right:40px;
-top:430px;
+height:220px;
+
+right:50px;
+
+top:420px;
 
 transform:rotate(4deg);
 
 }
 
-.polaroid:nth-child(8){
+/* FOTO 8 */
 
-width:260
+.foto8{
+
+width:230px;
+
+height:290px;
+
+left:360px;
+
+top:720px;
+
+transform:rotate(-3deg);
+
+}
