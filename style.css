@@ -456,3 +456,83 @@ transform:rotate(0deg) scale(1.05);
 transform:rotate(3deg);
 
 }
+
+    /* ===== NUEVO COLLAGE ===== */
+
+.collage{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:35px;
+
+margin-top:60px;
+
+}
+
+.polaroid{
+
+background:white;
+
+padding:15px;
+
+border-radius:6px;
+
+box-shadow:0 15px 35px rgba(0,0,0,.18);
+
+transition:.35s;
+
+}
+
+.polaroid:hover{
+
+transform:translateY(-10px) rotate(2deg);
+
+}
+
+.polaroid img{
+
+width:100%;
+
+display:block;
+
+border-radius:3px;
+
+}
+
+.polaroid.grande{
+
+grid-column:span 2;
+
+}
+
+.titulo{
+
+text-align:center;
+
+margin-bottom:60px;
+
+}
+
+.titulo h2{
+
+font-family:'Great Vibes',cursive;
+
+font-size:70px;
+
+color:#8b1e3f;
+
+}
+
+.titulo p{
+
+font-size:20px;
+
+margin-top:15px;
+
+font-style:italic;
+
+color:#666;
+
+}
