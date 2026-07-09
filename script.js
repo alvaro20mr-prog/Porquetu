@@ -1,47 +1,77 @@
-function iniciarHistoria() {
+// Desplazamiento suave del menú
 
-    const musica = document.getElementById("musica");
+document.querySelectorAll('a[href^="#"]').forEach(enlace => {
 
-    musica.scrollIntoView({
-        behavior: "smooth"
+    enlace.addEventListener('click', function(e){
+
+        e.preventDefault();
+
+        const destino = document.querySelector(this.getAttribute('href'));
+
+        destino.scrollIntoView({
+            behavior: 'smooth'
+        });
+
     });
 
-    const audio = document.querySelector("audio");
+});
 
-    if (audio) {
-        audio.play().catch(() => {});
-    }
 
-}
+// Animación de aparición al hacer scroll
 
-// Cambia el color del menú al hacer scroll
+const elementos = document.querySelectorAll(
+    '.historia, .cancion, .carta, .final, .polaroid'
+);
 
-const nav = document.querySelector("nav");
 
-window.addEventListener("scroll", () => {
+const observador = new IntersectionObserver((entradas)=>{
 
-    if (window.scrollY > 80) {
+    entradas.forEach(entrada=>{
 
-        nav.style.background = "rgba(255,255,255,.95)";
-        nav.style.boxShadow = "0 10px 30px rgba(0,0,0,.10)";
+        if(entrada.isIntersecting){
 
-        document.querySelector(".logo").style.color = "#8b1e3f";
+            entrada.target.classList.add('visible');
 
-        document.querySelectorAll("nav a").forEach(link => {
-            link.style.color = "#333";
-        });
+        }
 
-    } else {
+    });
 
-        nav.style.background = "rgba(0,0,0,.15)";
-        nav.style.boxShadow = "none";
+},{
+    threshold:0.15
+});
 
-        document.querySelector(".logo").style.color = "white";
 
-        document.querySelectorAll("nav a").forEach(link => {
-            link.style.color = "white";
-        });
+elementos.forEach(elemento=>{
 
-    }
+    observador.observe(elemento);
+
+});
+
+
+// Efecto ligero en las fotografías
+
+const fotos = document.querySelectorAll('.polaroid');
+
+
+fotos.forEach((foto,index)=>{
+
+    foto.style.setProperty(
+        '--orden',
+        index
+    );
+
+
+    foto.addEventListener('mouseenter',()=>{
+
+        foto.style.zIndex = 10;
+
+    });
+
+
+    foto.addEventListener('mouseleave',()=>{
+
+        foto.style.zIndex = 1;
+
+    });
 
 });
