@@ -230,253 +230,85 @@ color:#8b1e3f;
 
 margin-top:
 
-/*==========================
-MESA DE FOTOS
-==========================*/
+/*=========================
+        HISTORIA
+=========================*/
 
 .historia{
+    padding:100px 6%;
+    background:#faf8f5;
+}
 
-min-height:1200px;
+.titulo{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.titulo h2{
+    font-family:'Great Vibes',cursive;
+    font-size:58px;
+    color:#8b1e3f;
+}
+
+.titulo p{
+    font-size:18px;
+    color:#666;
+    margin-top:10px;
+}
+
+.collage{
+    column-count:4;
+    column-gap:18px;
+}
+
+.polaroid{
+    break-inside:avoid;
+    margin-bottom:18px;
+    background:white;
+    padding:10px;
+    border-radius:8px;
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+    transition:.35s;
+}
+
+.polaroid:hover{
+    transform:translateY(-8px) scale(1.03);
+}
+
+.polaroid img{
+    width:100%;
+    display:block;
+    border-radius:6px;
+}
+
+.polaroid.grande{
+    transform:scale(1.08);
+}
+
+.polaroid.grande:hover{
+    transform:scale(1.12);
+}
+
+@media(max-width:1100px){
+
+.collage{
+column-count:3;
+}
 
 }
 
-.mesa{
+@media(max-width:800px){
 
-position:relative;
-
-max-width:1200px;
-
-height:900px;
-
-margin:auto;
+.collage{
+column-count:2;
+}
 
 }
 
-/* POLAROID */
+@media(max-width:500px){
 
-.foto{
-
-position:absolute;
-
-background:white;
-
-padding:12px 12px 45px;
-
-box-shadow:0 18px 35px rgba(0,0,0,.18);
-
-border-radius:4px;
-
-transition:.35s;
-
-cursor:pointer;
-
+.collage{
+column-count:1;
 }
 
-.foto img{
-
-display:block;
-
-width:100%;
-
-height:100%;
-
-object-fit:cover;
-
 }
-
-.foto:hover{
-
-transform:scale(1.08) rotate(0deg);
-
-z-index:50;
-
-}
-
-/* FOTO 1 */
-
-.foto1{
-
-width:250px;
-
-height:320px;
-
-left:20px;
-
-top:20px;
-
-transform:rotate(-8deg);
-
-}
-
-/* FOTO 2 */
-
-.foto2{
-
-width:220px;
-
-height:280px;
-
-left:300px;
-
-top:40px;
-
-transform:rotate(5deg);
-
-}
-
-/* FOTO 3 */
-
-.foto3{
-
-width:260px;
-
-height:330px;
-
-left:560px;
-
-top:10px;
-
-transform:rotate(-6deg);
-
-}
-
-/* FOTO 4 */
-
-.foto4{
-
-width:240px;
-
-height:300px;
-
-right:10px;
-
-top:30px;
-
-transform:rotate(7deg);
-
-}
-
-/* FOTO 5 */
-
-.foto5{
-
-width:330px;
-
-height:220px;
-
-left:70px;
-
-top:420px;
-
-transform:rotate(6deg);
-
-}
-
-/* FOTO 6 */
-
-.foto6{
-
-width:230px;
-
-height:300px;
-
-left:470px;
-
-top:430px;
-
-transform:rotate(-5deg);
-
-}
-
-/* FOTO 7 */
-
-.foto7{
-
-width:300px;
-
-height:220px;
-
-right:50px;
-
-top:420px;
-
-transform:rotate(4deg);
-
-}
-
-/* FOTO 8 */
-
-.foto8{
-
-width:230px;
-
-height:290px;
-
-left:360px;
-
-top:720px;
-
-transform:rotate(-3deg);
-
-}
-
-// Desplazamiento suave
-
-document.querySelectorAll('a[href^="#"]').forEach(link=>{
-
-link.addEventListener('click',e=>{
-
-e.preventDefault();
-
-document.querySelector(link.getAttribute('href')).scrollIntoView({
-
-behavior:'smooth'
-
-});
-
-});
-
-});
-
-
-// Animación al aparecer
-
-const observer=new IntersectionObserver((entries)=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-
-entry.target.classList.add('mostrar');
-
-}
-
-});
-
-},{threshold:0.2});
-
-
-document.querySelectorAll('section,.foto').forEach(el=>{
-
-observer.observe(el);
-
-});
-
-
-// Efecto Polaroid
-
-document.querySelectorAll('.foto').forEach(foto=>{
-
-foto.addEventListener('mouseenter',()=>{
-
-foto.style.zIndex="100";
-
-});
-
-foto.addEventListener('mouseleave',()=>{
-
-foto.style.zIndex="1";
-
-});
-
-});
