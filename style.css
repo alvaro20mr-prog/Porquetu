@@ -401,3 +401,49 @@ RESPONSIVE
 grid-template-columns:1fr;
 
 }
+
+<section id="historia" class="historia">
+
+<div class="historia-contenedor">
+
+<div class="historia-texto">
+
+<h2>Nuestra Historia</h2>
+
+<p>
+Cada fotografía guarda un pedacito de nuestra historia.
+</p>
+
+</div>
+
+<div class="historia-fotos">
+
+<div class="polaroid p1">
+<img src="Imagen1.jpg">
+</div>
+
+<div class="polaroid p2">
+<img src="Imagen2.jpg">
+</div>
+
+<div class="polaroid p3">
+<img src="Imagen3.jpg">
+</div>
+
+<div class="polaroid p4">
+<img src="Imagen4.jpg">
+</div>
+
+<div class="polaroid p5">
+<img src="Imagen5.jpg">
+</div>
+
+<div class="polaroid p6">
+<img src="Imagen6.jpg">
+</div>
+
+</div>
+
+</div>
+
+</section>
