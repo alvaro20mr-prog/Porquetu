@@ -10,7 +10,10 @@
 
 <link rel="stylesheet" href="style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 </head>
 
@@ -18,42 +21,50 @@
 
 <header class="hero" id="inicio">
 
-    <nav class="menu">
+<nav>
 
-        <div class="logo">♡ Porque Tú</div>
+<div class="logo">
+♡ Porque Tú
+</div>
 
-        <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#historia">Historia</a></li>
-            <li><a href="#cancion">Canción</a></li>
-            <li><a href="#carta">Carta</a></li>
-            <li><a href="#final">Para ti</a></li>
-        </ul>
+<ul>
 
-    </nav>
+<li><a href="#inicio">Inicio</a></li>
 
-    <div class="hero-overlay"></div>
+<li><a href="#historia">Historia</a></li>
 
-    <div class="hero-contenido">
+<li><a href="#cancion">Canción</a></li>
 
-        <h1>Porque Tú ♡</h1>
+<li><a href="#carta">Carta</a></li>
 
-        <h2>Una canción para Melissa</h2>
+<li><a href="#final">Final</a></li>
 
-        <div class="linea"></div>
+</ul>
 
-        <p>
-            Hay historias que el corazón<br>
-            nunca deja de escribir...
-        </p>
+</nav>
 
-        <h3>Esta es la nuestra.</h3>
+<div class="overlay"></div>
 
-        <a href="#cancion" class="boton">
-            ♡ Escuchar la canción
-        </a>
+<div class="hero-text">
 
-    </div>
+<h1>Porque Tú</h1>
+
+<h2>Una canción para Melissa</h2>
+
+<p>
+
+Hay historias que el corazón<br>
+nunca deja de escribir...
+
+</p>
+
+<a href="#cancion" class="boton">
+
+♡ Escuchar la canción
+
+</a>
+
+</div>
 
 </header>
 
@@ -63,43 +74,28 @@
 
 <h2>Nuestra Historia</h2>
 
-<p>Cada fotografía es un recuerdo.</p>
+<p>Cada fotografía guarda un pedacito de nuestra historia.</p>
 
 </div>
 
 <div class="collage">
 
-<div class="polaroid grande"><img src="Imagen0.jpg"></div>
-
-<div class="polaroid"><img src="Imagen1.jpg"></div>
-
+    <div class="polaroid"><img src="Imagen1.jpg"></div>
 <div class="polaroid"><img src="Imagen2.jpg"></div>
-
 <div class="polaroid"><img src="Imagen3.jpg"></div>
-
-<div class="polaroid grande"><img src="Imagen4.jpg"></div>
-
+<div class="polaroid"><img src="Imagen4.jpg"></div>
 <div class="polaroid"><img src="Imagen5.jpg"></div>
-
 <div class="polaroid"><img src="Imagen6.jpg"></div>
-
 <div class="polaroid"><img src="Imagen7.jpg"></div>
-
 <div class="polaroid"><img src="Imagen8.jpg"></div>
-
-<div class="polaroid grande"><img src="Imagen9.jpg"></div>
-
+<div class="polaroid"><img src="Imagen9.jpg"></div>
 <div class="polaroid"><img src="Imagen10.jpg"></div>
-
 <div class="polaroid"><img src="Imagen11.jpg"></div>
-
 <div class="polaroid"><img src="Imagen12.jpg"></div>
-
 <div class="polaroid"><img src="Imagen13.jpg"></div>
-
 <div class="polaroid"><img src="Imagen14.jpg"></div>
-
-<div class="polaroid grande"><img src="Imagen15.jpg"></div>
+<div class="polaroid"><img src="Imagen15.jpg"></div>
+<div class="polaroid"><img src="Imagen16.jpg"></div>
 
 </div>
 
@@ -107,19 +103,35 @@
 
 <section class="cancion" id="cancion">
 
-<img src="portada.jpg" class="cover">
+<div class="reproductor">
+
+<div class="cover">
+
+<img src="portada.jpg">
+
+</div>
+
+<div class="player">
 
 <h2>Porque Tú</h2>
 
+<h3>Álvaro Manzano</h3>
+
 <audio controls>
 
-<source src="PorqueTu.flac" type="audio/flac">
+<source src="PorqueTu.mp3" type="audio/mpeg">
 
 </audio>
+
+</div>
+
+</div>
 
 </section>
 
 <section class="carta" id="carta">
+
+<div class="papel">
 
 <h2>Para Melissa ❤️</h2>
 
@@ -135,16 +147,17 @@ Te amo más de lo que estas palabras pueden decir.
 
 </p>
 
+</div>
+
 </section>
 
-<footer>
+<footer id="final">
 
-Porque Tú ❤️
+♡ Porque Tú
 
 </footer>
 
 <script src="script.js"></script>
 
 </body>
-
 </html>
