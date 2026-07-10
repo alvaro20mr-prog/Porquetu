@@ -613,3 +613,32 @@ text-align:center;
 }
 
 }
+/*=========================
+SCRIPT
+=========================*/
+
+.menu.activo{
+
+background:rgba(35,25,20,.92);
+
+box-shadow:0 10px 25px rgba(0,0,0,.18);
+
+}
+
+section{
+
+opacity:0;
+
+transform:translateY(80px);
+
+transition:1s;
+
+}
+
+section.mostrar{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
