@@ -1,6 +1,6 @@
-// =========================
-// Scroll suave
-// =========================
+//=============================
+// SCROLL SUAVE
+//=============================
 
 document.querySelectorAll('a[href^="#"]').forEach(link=>{
 
@@ -19,9 +19,9 @@ behavior:"smooth"
 });
 
 
-// =========================
-// Menú al hacer scroll
-// =========================
+//=============================
+// MENÚ
+//=============================
 
 const menu=document.querySelector(".menu");
 
@@ -40,9 +40,9 @@ menu.classList.remove("activo");
 });
 
 
-// =========================
-// Animaciones
-// =========================
+//=============================
+// ANIMACIÓN
+//=============================
 
 const observer=new IntersectionObserver((entries)=>{
 
@@ -50,13 +50,13 @@ entries.forEach(entry=>{
 
 if(entry.isIntersecting){
 
-entry.target.classList.add("mostrar");
+entry.target.classList.add("visible");
 
 }
 
 });
 
-},{threshold:0.15});
+},{threshold:.20});
 
 document.querySelectorAll("section").forEach(sec=>{
 
@@ -65,9 +65,9 @@ observer.observe(sec);
 });
 
 
-// =========================
-// Polaroids
-// =========================
+//=============================
+// POLAROIDS
+//=============================
 
 document.querySelectorAll(".polaroid").forEach(foto=>{
 
