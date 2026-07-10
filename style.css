@@ -1,6 +1,6 @@
-/*=========================
+/*=================================
 RESET
-=========================*/
+=================================*/
 
 *{
 margin:0;
@@ -14,7 +14,7 @@ scroll-behavior:smooth;
 
 body{
 font-family:'Poppins',sans-serif;
-background:#f7f3ed;
+background:#f7f2eb;
 color:#333;
 overflow-x:hidden;
 }
@@ -24,13 +24,17 @@ display:block;
 width:100%;
 }
 
-section{
-padding:120px 8%;
+a{
+text-decoration:none;
 }
 
-/*=========================
+section{
+padding:110px 8%;
+}
+
+/*=================================
 MENÚ
-=========================*/
+=================================*/
 
 .menu{
 
@@ -42,7 +46,7 @@ left:0;
 
 width:100%;
 
-padding:22px 8%;
+padding:22px 7%;
 
 display:flex;
 
@@ -50,13 +54,19 @@ justify-content:space-between;
 
 align-items:center;
 
-background:rgba(25,20,18,.28);
+background:rgba(20,18,18,.25);
 
 backdrop-filter:blur(12px);
 
 z-index:999;
 
 transition:.35s;
+
+}
+
+.menu.activo{
+
+background:rgba(30,25,25,.92);
 
 }
 
@@ -84,8 +94,6 @@ list-style:none;
 
 color:white;
 
-text-decoration:none;
-
 font-size:16px;
 
 transition:.3s;
@@ -94,13 +102,13 @@ transition:.3s;
 
 .menu a:hover{
 
-color:#f7d2b4;
+color:#f7d0ae;
 
 }
 
-/*=========================
+/*=================================
 PORTADA
-=========================*/
+=================================*/
 
 .hero{
 
@@ -108,98 +116,13 @@ height:100vh;
 
 background:url("fondo1.jpg") center center/cover no-repeat;
 
-position:relative;
-
 display:flex;
 
 justify-content:center;
-
-align-items:center;
-
-}
-
-.overlay{
-
-position:absolute;
-
-inset:0;
-
-background:linear-gradient(rgba(0,0,0,.15),rgba(0,0,0,.45));
-
-}
-
-.hero-contenido{
-
-position:relative;
-
-z-index:5;
-
-text-align:center;
-
-color:white;
-
-}
-
-.hero-contenido h1{
-
-font-family:'Great Vibes',cursive;
-
-font-size:125px;
-
-font-weight:400;
-
-margin-bottom:20px;
-
-}
-
-.frase{
-
-font-family:'Cormorant Garamond',serif;
-
-font-size:42px;
-
-font-style:italic;
-
-line-height:1.5;
-
-max-width:800px;
-
-margin:auto;
-
-margin-bottom:45px;
-
-}
-
-.boton{
-
-display:inline-block;
-
-padding:18px 48px;
-
-background:white;
-
-color:#6b4637;
-
-text-decoration:none;
-
-border-radius:40px;
-
-font-weight:600;
-
-transition:.35s;
-
-}
-
-.boton:hover{
-
-transform:translateY(-5px);
-
-box-shadow:0 12px 30px rgba(0,0,0,.25);
-
-}
-/*=========================
+  
+/*=================================
 HISTORIA
-=========================*/
+=================================*/
 
 .historia{
 
@@ -213,11 +136,11 @@ align-items:center;
 
 }
 
-.contenido-historia{
+.contenido{
 
 width:100%;
 
-max-width:1400px;
+max-width:1450px;
 
 margin:auto;
 
@@ -231,19 +154,19 @@ align-items:center;
 
 }
 
-.texto-historia h2{
+.texto h2{
 
 font-family:'Great Vibes',cursive;
 
-font-size:72px;
+font-size:76px;
 
-color:#5d3d31;
+color:#634133;
 
 margin-bottom:25px;
 
 }
 
-.texto-historia p{
+.texto p{
 
 font-family:'Cormorant Garamond',serif;
 
@@ -253,11 +176,11 @@ line-height:1.8;
 
 font-style:italic;
 
-color:#4f4038;
+color:#4d3d36;
 
 }
 
-.mesa{
+.polaroids{
 
 position:relative;
 
@@ -265,13 +188,15 @@ height:760px;
 
 }
 
-/* POLAROIDS */
+/*==============================
+POLAROIDS
+==============================*/
 
 .polaroid{
 
 position:absolute;
 
-width:170px;
+width:165px;
 
 background:white;
 
@@ -293,72 +218,69 @@ cursor:pointer;
 
 width:100%;
 
+display:block;
+
 }
 
 .polaroid:hover{
 
-transform:scale(1.30) rotate(0deg);
+transform:scale(1.35) rotate(0deg);
 
 z-index:100;
 
 }
 
-.p1{top:0;left:0;transform:rotate(-8deg);}
-.p2{top:20px;left:210px;transform:rotate(5deg);}
-.p3{top:10px;left:430px;transform:rotate(-5deg);}
-.p4{top:30px;left:650px;transform:rotate(
-  .p5{top:230px;left:80px;transform:rotate(6deg);}
-.p6{top:250px;left:300px;transform:rotate(-7deg);}
-.p7{top:240px;left:520px;transform:rotate(5deg);}
-.p8{top:260px;left:740px;transform:rotate(-4deg);}
+.p1{top:10px;left:20px;transform:rotate(-8deg);}
+.p2{top:0;left:210px;transform:rotate(6deg);}
+.p3{top:25px;left:400px;transform:rotate(-6deg);}
+.p4{top:10px;left:590px;transform:rotate(8deg);}
 
-.p9{top:470px;left:30px;transform:rotate(-6deg);}
-.p10{top:490px;left:250px;transform:rotate(5deg);}
-.p11{top:500px;left:470px;transform:rotate(-5deg);}
-.p12{top:480px;left:690px;transform:rotate(7deg);}
-
-.p13{top:650px;left:140px;transform:rotate(-8deg);}
-.p14{top:640px;left:370px;transform:rotate(4deg);}
-.p15{top:660px;left:600px;transform:rotate(-5deg);}
-.p16{top:650px;left:830px;transform:rotate(6deg);}
-
-/*=========================
+.p5{top:220px;left:90px;transform:rotate(5deg);}
+.p6{top:245px;left:285px;transform:rotate(-7deg);}
+.p7{top:225px;left:495px;transform:rotate(5deg);}
+.p8{top:240px;left:690
+  
+/*=================================
 CANCIÓN
-=========================*/
+=================================*/
 
 .cancion{
 
 min-height:100vh;
 
-background:#f8f1e8;
+background:#f7f2eb;
 
 display:flex;
 
+align-items:center;
+
 justify-content:center;
 
-align-items:center;
+padding:100px 8%;
 
 }
 
-.reproductor{
+.cancion-contenedor{
+
+max-width:950px;
 
 width:100%;
 
-max-width:1200px;
-
 display:grid;
 
-grid-template-columns:420px 1fr;
+grid-template-columns:320px 1fr;
 
-gap:70px;
+gap:50px;
 
-background:white;
+background:rgba(255,255,255,.90);
 
-padding:50px;
+backdrop-filter:blur(8px);
 
 border-radius:24px;
 
-box-shadow:0 25px 60px rgba(0,0,0,.18);
+padding:40px;
+
+box-shadow:0 20px 45px rgba(0,0,0,.15);
 
 }
 
@@ -366,9 +288,11 @@ box-shadow:0 25px 60px rgba(0,0,0,.18);
 
 border-radius:18px;
 
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+
 }
 
-.musica{
+.reproductor{
 
 display:flex;
 
@@ -378,11 +302,11 @@ justify-content:center;
 
 }
 
-.musica h2{
+.reproductor h2{
 
 font-family:'Great Vibes',cursive;
 
-font-size:74px;
+font-size:68px;
 
 color:#8d2143;
 
@@ -390,25 +314,25 @@ margin-bottom:10px;
 
 }
 
-.musica p{
+.reproductor p{
 
-font-size:22px;
+font-size:20px;
 
 color:#777;
 
-margin-bottom:35px;
+margin-bottom:30px;
 
 }
 
-audio{
+.reproductor audio{
 
 width:100%;
 
 }
 
-/*=========================
+/*=================================
 CARTA
-=========================*/
+=================================*/
 
 .carta{
 
@@ -424,31 +348,31 @@ align-items:center;
 
 }
 
-.papel{
+.carta-contenido{
 
-width:700px;
+width:650px;
 
-padding:110px 90px;
+padding:100px 80px;
 
 background:transparent;
 
 }
 
-.papel h2{
+.carta-contenido h2{
 
 font-family:'Great Vibes',cursive;
 
-font-size:72px;
+font-size:70px;
 
 text-align:center;
 
-margin-bottom:40px;
+color:#684132;
 
-color:#6a4335;
+margin-bottom:40px;
 
 }
 
-.papel p{
+.carta-contenido p{
 
 font-family:'Cormorant Garamond',serif;
 
@@ -456,15 +380,15 @@ font-size:28px;
 
 line-height:2;
 
-color:#514039;
+color:#4c3d36;
 
 }
 
-/*=========================
+/*=================================
 FINAL
-=========================*/
+=================================*/
 
-.despedida{
+.final{
 
 height:100vh;
 
@@ -478,21 +402,25 @@ align-items:center;
 
 }
 
-.despedida h2{
+.final h2{
 
 font-family:'Great Vibes',cursive;
 
 font-size:82px;
 
+font-weight:400;
+
 color:white;
 
 text-shadow:0 5px 20px rgba(0,0,0,.35);
+
+text-align:center;
 
 }
 
 footer{
 
-padding:35px;
+padding:30px;
 
 background:#5d3d31;
 
@@ -502,15 +430,15 @@ text-align:center;
 
 }
 
-/*=========================
-MÓVIL
-=========================*/
+/*=================================
+RESPONSIVE
+=================================*/
 
 @media(max-width:900px){
 
 .menu{
 
-padding:18px 20px;
+padding:16px 20px;
 
 }
 
@@ -522,13 +450,13 @@ display:none;
 
 .logo{
 
-font-size:26px;
+font-size:24px;
 
 }
 
 .hero-contenido h1{
 
-font-size:70px;
+font-size:72px;
 
 }
 
@@ -536,25 +464,33 @@ font-size:70px;
 
 font-size:28px;
 
-padding:0 20px;
+padding:0 15px;
 
 }
 
-.contenido-historia{
+.contenido{
 
-grid-template-columns:1fr;
+display:block;
 
 }
 
-.mesa{
+.texto{
 
-height:auto;
+text-align:center;
+
+margin-bottom:40px;
+
+}
+
+.polaroids{
 
 display:grid;
 
 grid-template-columns:repeat(2,1fr);
 
 gap:18px;
+
+height:auto;
 
 position:static;
 
@@ -574,71 +510,38 @@ transform:rotate(0deg)!important;
 
 }
 
-.reproductor{
+.cancion-contenedor{
 
 grid-template-columns:1fr;
 
-padding:25px;
-
 }
 
-.papel{
+.carta-contenido{
 
 width:100%;
 
-padding:70px 40px;
+padding:60px 30px;
 
 }
 
-.papel h2{
+.carta-contenido h2{
 
 font-size:54px;
 
 }
 
-.papel p{
+.carta-contenido p{
 
 font-size:22px;
 
 }
 
-.despedida h2{
+.final h2{
 
 font-size:46px;
 
 padding:20px;
 
-text-align:center;
-
 }
-
-}
-/*=========================
-SCRIPT
-=========================*/
-
-.menu.activo{
-
-background:rgba(35,25,20,.92);
-
-box-shadow:0 10px 25px rgba(0,0,0,.18);
-
-}
-
-section{
-
-opacity:0;
-
-transform:translateY(80px);
-
-transition:1s;
-
-}
-
-section.mostrar{
-
-opacity:1;
-
-transform:translateY(0);
 
 }
