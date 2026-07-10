@@ -1,4 +1,4 @@
-// Desplazamiento suave
+// Scroll suave
 
 document.querySelectorAll('a[href^="#"]').forEach(link=>{
 
@@ -8,7 +8,7 @@ e.preventDefault();
 
 document.querySelector(link.getAttribute('href')).scrollIntoView({
 
-behavior:'smooth'
+behavior:"smooth"
 
 });
 
@@ -17,7 +17,7 @@ behavior:'smooth'
 });
 
 
-// Animación al aparecer
+// Aparición de secciones
 
 const observer=new IntersectionObserver((entries)=>{
 
@@ -25,35 +25,35 @@ entries.forEach(entry=>{
 
 if(entry.isIntersecting){
 
-entry.target.classList.add('mostrar');
+entry.target.classList.add("visible");
 
 }
 
 });
 
-},{threshold:0.2});
+},{threshold:.15});
 
 
-document.querySelectorAll('section,.foto').forEach(el=>{
+document.querySelectorAll("section").forEach(sec=>{
 
-observer.observe(el);
-
-});
-
-
-// Efecto Polaroid
-
-document.querySelectorAll('.foto').forEach(foto=>{
-
-foto.addEventListener('mouseenter',()=>{
-
-foto.style.zIndex="100";
+observer.observe(sec);
 
 });
 
-foto.addEventListener('mouseleave',()=>{
 
-foto.style.zIndex="1";
+// Polaroids
+
+document.querySelectorAll(".polaroid").forEach(card=>{
+
+card.addEventListener("mouseenter",()=>{
+
+card.style.zIndex="100";
+
+});
+
+card.addEventListener("mouseleave",()=>{
+
+card.style.zIndex="1";
 
 });
 
