@@ -1,12 +1,14 @@
+// =========================
 // Scroll suave
+// =========================
 
 document.querySelectorAll('a[href^="#"]').forEach(link=>{
 
-link.addEventListener('click',e=>{
+link.addEventListener("click",function(e){
 
 e.preventDefault();
 
-document.querySelector(link.getAttribute('href')).scrollIntoView({
+document.querySelector(this.getAttribute("href")).scrollIntoView({
 
 behavior:"smooth"
 
@@ -17,7 +19,30 @@ behavior:"smooth"
 });
 
 
-// Aparición de secciones
+// =========================
+// Menú al hacer scroll
+// =========================
+
+const menu=document.querySelector(".menu");
+
+window.addEventListener("scroll",()=>{
+
+if(window.scrollY>80){
+
+menu.classList.add("activo");
+
+}else{
+
+menu.classList.remove("activo");
+
+}
+
+});
+
+
+// =========================
+// Animaciones
+// =========================
 
 const observer=new IntersectionObserver((entries)=>{
 
@@ -25,14 +50,13 @@ entries.forEach(entry=>{
 
 if(entry.isIntersecting){
 
-entry.target.classList.add("visible");
+entry.target.classList.add("mostrar");
 
 }
 
 });
 
-},{threshold:.15});
-
+},{threshold:0.15});
 
 document.querySelectorAll("section").forEach(sec=>{
 
@@ -41,19 +65,21 @@ observer.observe(sec);
 });
 
 
+// =========================
 // Polaroids
+// =========================
 
-document.querySelectorAll(".polaroid").forEach(card=>{
+document.querySelectorAll(".polaroid").forEach(foto=>{
 
-card.addEventListener("mouseenter",()=>{
+foto.addEventListener("mouseenter",()=>{
 
-card.style.zIndex="100";
+foto.style.zIndex="999";
 
 });
 
-card.addEventListener("mouseleave",()=>{
+foto.addEventListener("mouseleave",()=>{
 
-card.style.zIndex="1";
+foto.style.zIndex="1";
 
 });
 
