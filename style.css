@@ -35,124 +35,117 @@ body {
 
 /* ===== HERO ===== */
 
-.hero{
-height:100vh;
-background:url("fondo1.jpg") center center/cover no-repeat;
-display:flex;
-justify-content:center;
-align-items:center;
-position:relative;
-overflow:hidden;
+.hero {
+    height: 100vh;
+    background: url("fondo1.jpg") center center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
 }
 
-.hero-overlay{
-position:absolute;
-inset:0;
-background:linear-gradient(rgba(0,0,0,.20),rgba(0,0,0,.45));
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(0,0,0,.20),rgba(0,0,0,.45));
 }
 
-.menu{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-padding:22px 8%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-z-index:1000;
-background:rgba(0,0,0,.15);
-backdrop-filter:blur(12px);
-transition:.35s;
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 22px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    background: rgba(0,0,0,.15);
+    backdrop-filter: blur(12px);
+    transition: .35s;
 }
 
-.menu ul{
-display:flex;
-gap:35px;
-list-style:none;
+.menu ul {
+    display: flex;
+    gap: 35px;
+    list-style: none;
 }
 
-.menu a{
-color:white;
-text-decoration:none;
-font-size:15px;
-letter-spacing:1px;
-transition:.3s;
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    letter-spacing: 1px;
+    transition: .3s;
 }
 
-.menu a:hover{
-color:#f8d8b8;
+.menu a:hover {
+    color: #f8d8b8;
 }
 
-.logo{
-font-family:'Great Vibes',cursive;
-font-size:34px;
-color:white;
+.logo {
+    font-family: 'Great Vibes', cursive;
+    font-size: 34px;
+    color: white;
 }
 
-.hero-content{
-position:relative;
-z-index:5;
-text-align:center;
-color:white;
-max-width:900px;
-padding:20px;
+.hero-content {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    color: white;
+    max-width: 900px;
+    padding: 20px;
 }
 
-.main-title{
-font-family:'Great Vibes',cursive;
-font-size:130px;
-font-weight:400;
-margin-bottom:20px;
-text-shadow:0 8px 25px rgba(0,0,0,.35);
-animation:none;
+.main-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 130px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    text-shadow: 0 8px 25px rgba(0,0,0,.35);
+    animation: none;
 }
 
-.subtitle{
-font-family:'Cormorant Garamond',serif;
-font-size:40px;
-font-style:italic;
-line-height:1.5;
-margin-bottom:45px;
+.subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    font-style: italic;
+    line-height: 1.5;
+    margin-bottom: 45px;
 }
 
-.hero-btn{
-display:inline-block;
-padding:18px 48px;
-background:white;
-color:#6a4334;
-border-radius:40px;
-font-weight:600;
-text-decoration:none;
-transition:.35s;
+.hero-btn {
+    display: inline-block;
+    padding: 18px 48px;
+    background: white;
+    color: #6a4334;
+    border-radius: 40px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: .35s;
 }
 
-.hero-btn:hover{
-transform:translateY(-4px);
-box-shadow:0 15px 35px rgba(0,0,0,.25);
+.hero-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(0,0,0,.25);
 }
 
-.scroll-down{
-position:absolute;
-bottom:35px;
-left:50%;
-transform:translateX(-50%);
-font-size:34px;
-color:white;
-animation:subeBaja 2s infinite;
-cursor:pointer;
+.scroll-down {
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 34px;
+    color: white;
+    animation: subeBaja 2s infinite;
+    cursor: pointer;
 }
 
-@keyframes subeBaja{
-
-0%,100%{
-transform:translate(-50%,0);
-}
-
-50%{
-transform:translate(-50%,10px);
-}
-
+@keyframes subeBaja {
+    0%, 100% { transform: translate(-50%,0); }
+    50% { transform: translate(-50%,10px); }
 }
 
 /* ===== MUSIC SECTION ===== */
@@ -198,28 +191,18 @@ transform:translate(-50%,10px);
 }
 
 /* ===== STORY SECTION ===== */
-.story-section{
-
-padding:90px 20px;
-
-background:url("fondo2.jpg") center center/cover no-repeat;
-
+.story-section {
+    padding: 90px 20px;
+    background: url("fondo2.jpg") center center/cover no-repeat;
 }
 
-.section-title{
-
-font-family:'Great Vibes',cursive;
-
-font-size:74px;
-
-font-weight:400;
-
-text-align:center;
-
-color:#7d2947;
-
-margin-bottom:70px;
-
+.section-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 74px;
+    font-weight: 400;
+    text-align: center;
+    color: #7d2947;
+    margin-bottom: 70px;
 }
 
 .section-title::after {
@@ -271,24 +254,15 @@ margin-bottom:70px;
     text-align: right;
 }
 
-.timeline-date{
-
-font-family:'Great Vibes',cursive;
-
-font-size:62px;
-
-font-weight:400;
-
-color:#8d2143;
-
-text-align:center;
-
-position:relative;
-
-z-index:2;
-
-text-shadow:0 2px 10px rgba(0,0,0,.08);
-
+.timeline-date {
+    font-family: 'Great Vibes', cursive;
+    font-size: 62px;
+    font-weight: 400;
+    color: #8d2143;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 2px 10px rgba(0,0,0,.08);
 }
 
 .timeline-date::before {
@@ -317,32 +291,20 @@ text-shadow:0 2px 10px rgba(0,0,0,.08);
     transform: translateY(-5px);
 }
 
-.timeline-content h3{
-
-font-family:'Cormorant Garamond',serif;
-
-font-size:34px;
-
-font-weight:600;
-
-color:#7d2947;
-
-margin-bottom:15px;
-
+.timeline-content h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 34px;
+    font-weight: 600;
+    color: #7d2947;
+    margin-bottom: 15px;
 }
 
-.timeline-content p{
-
-font-family:'Cormorant Garamond',serif;
-
-font-size:24px;
-
-line-height:1.9;
-
-font-style:italic;
-
-color:#555;
-
+.timeline-content p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    line-height: 1.9;
+    font-style: italic;
+    color: #555;
 }
 
 /* ===== GALERÍA SECTION ===== */
@@ -352,22 +314,14 @@ color:#555;
 }
 
 /* Polaroid Gallery */
-.polaroid-gallery{
-
-display:grid;
-
-grid-template-columns:repeat(3,1fr);
-
-gap:35px;
-
-margin-bottom:80px;
-
-max-width:950px;
-
-margin-left:auto;
-
-margin-right:auto;
-
+.polaroid-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+    margin-bottom: 80px;
+    max-width: 950px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .polaroid-card {
@@ -409,20 +363,13 @@ margin-right:auto;
     margin-top: 60px;
 }
 
-.full-gallery h3{
-
-font-family:'Great Vibes',cursive;
-
-font-size:60px;
-
-font-weight:400;
-
-color:#7d2947;
-
-text-align:center;
-
-margin-bottom:40px;
-
+.full-gallery h3 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 60px;
+    font-weight: 400;
+    color: #7d2947;
+    text-align: center;
+    margin-bottom: 40px;
 }
 
 .gallery-grid {
@@ -482,12 +429,9 @@ margin-bottom:40px;
 }
 
 /* ===== MESSAGE SECTION ===== */
-.message-section{
-
-background:url("fondo3.jpg") center center/cover no-repeat;
-
-padding:90px 20px;
-
+.message-section {
+    background: url("fondo3.jpg") center center/cover no-repeat;
+    padding: 90px 20px;
 }
 
 .love-message {
@@ -591,36 +535,18 @@ padding:90px 20px;
 
 /* ===== ANIMACIONES ===== */
 @keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeIn {
@@ -640,6 +566,33 @@ padding:90px 20px;
 
     .section-title {
         font-size: 2em;
+    }
+
+    /* Ajustes nuevos para el Menú */
+    .menu {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .menu ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        padding-top: 10px;
+    }
+
+    .logo {
+        font-size: 28px;
+    }
+
+    /* Ajuste para el título de la galería */
+    .full-gallery h3 {
+        font-size: 2.5em;
+    }
+
+    /* Ajuste de texto para la línea de tiempo */
+    .timeline-content p {
+        font-size: 18px;
     }
 
     .timeline::before {
