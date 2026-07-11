@@ -12,7 +12,6 @@
 </head>
 <body>
 
-    <!-- HEADER HERO -->
     <header class="hero" id="inicio">
         <nav class="menu">
             <div class="logo">Acá comienza tu sorpresa...</div>
@@ -30,7 +29,7 @@
         <div class="hero-content">
             <h1 class="main-title">Porque Tú</h1>
             <p class="subtitle">Hay historias que el corazón<br>nunca deja de escribir...</p>
-            <a href="#cancion" class="hero-btn">Comenzar</a>
+            <a href="#historia" class="hero-btn">Comenzar</a>
         </div>
 
         <div class="scroll-down">
@@ -38,23 +37,6 @@
         </div>
     </header>
 
-    <!-- REPRODUCTOR DE MÚSICA -->
-    <section class="music-section" id="cancion">
-        <div class="music-container">
-            <h2><i class="fas fa-music"></i> Escucha Nuestra Canción</h2>
-            <div class="player-wrapper">
-                <audio id="audioPlayer" controls>
-                    <source src="Porque Tú.m4a" type="audio/mp4">
-                    Tu navegador no soporta audio HTML5
-                </audio>
-            </div>
-            <div class="lyrics-preview">
-                <p>"Si volviera a empezar, volvería a elegirte"</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- NUESTRA HISTORIA -->
     <section class="story-section" id="historia">
         <div class="container">
             <h2 class="section-title">Nuestra Historia</h2>
@@ -95,12 +77,10 @@
         </div>
     </section>
 
-    <!-- GALERÍA DE FOTOS -->
     <section class="gallery-section" id="momentos">
         <div class="container">
             <h2 class="section-title">Nuestros Momentos</h2>
             
-            <!-- Fotos tipo Polaroid -->
             <div class="polaroid-gallery">
                 <div class="polaroid-card">
                     <img src="Imagen1.jpg" alt="Nuestro primer viaje">
@@ -128,16 +108,13 @@
                 </div>
             </div>
 
-            <!-- Galería completa - AHORA COMO CARRUSEL -->
             <div class="full-gallery">
                 <h3>Más Momentos Especiales</h3>
                 
                 <div class="carousel-wrapper">
-                    <!-- Botón Izquierda -->
                     <button class="carousel-btn prev" onclick="moveCarousel(-1)"><i class="fas fa-chevron-left"></i></button>
                     
                     <div class="carousel-track" id="track">
-                        <!-- Puse desde la Imagen 7 hasta la 15 -->
                         <div class="gallery-item carousel-item" onclick="openModal(this)">
                             <img src="Imagen7.jpg" alt="Momento 7">
                             <div class="overlay"><i class="fas fa-search-plus"></i></div>
@@ -176,14 +153,27 @@
                         </div>
                     </div>
 
-                    <!-- Botón Derecha -->
                     <button class="carousel-btn next" onclick="moveCarousel(1)"><i class="fas fa-chevron-right"></i></button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- MENSAJE ESPECIAL -->
+    <section class="music-section" id="cancion">
+        <div class="music-container">
+            <h2><i class="fas fa-music"></i> Escucha Nuestra Canción</h2>
+            <div class="player-wrapper">
+                <audio id="audioPlayer" controls>
+                    <source src="Porque Tú.m4a" type="audio/mp4">
+                    Tu navegador no soporta audio HTML5
+                </audio>
+            </div>
+            <div class="lyrics-preview">
+                <p>"Si volviera a empezar, volvería a elegirte"</p>
+            </div>
+        </div>
+    </section>
+
     <section class="message-section" id="carta">
         <div class="container">
             <div class="love-message">
@@ -195,13 +185,11 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="footer">
         <p>Gracias por caminar esta vida conmigo.</p>
         <p><i class="fas fa-heart"></i> Te amo, Melissa. Para siempre. <i class="fas fa-heart"></i></p>
     </footer>
 
-    <!-- MODAL PARA VER FOTOS EN GRANDE -->
     <div id="photoModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
