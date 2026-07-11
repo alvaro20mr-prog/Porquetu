@@ -57,6 +57,7 @@ body {
     background: linear-gradient(rgba(0,0,0,.20),rgba(0,0,0,.45));
 }
 
+/* === MENÚ BASE (Transparente en la portada) === */
 .menu {
     position: fixed;
     top: 0;
@@ -69,7 +70,14 @@ body {
     z-index: 1000;
     background: rgba(0,0,0,.15);
     backdrop-filter: blur(12px);
-    transition: .35s;
+    transition: all 0.4s ease; /* Transición suave */
+}
+
+/* === MENÚ SCROLLED (Oscuro al bajar) === */
+.menu.scrolled {
+    background: rgba(0, 0, 0, 0.85); /* Fondo oscuro para que resalte la letra blanca */
+    padding: 15px 8%; /* Se hace un poquito más delgado para no tapar tanto */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* Sombra elegante */
 }
 
 .menu ul {
@@ -152,48 +160,6 @@ body {
 @keyframes subeBaja {
     0%, 100% { transform: translate(-50%,0); }
     50% { transform: translate(-50%,10px); }
-}
-
-/* ===== MUSIC SECTION ===== */
-.music-section {
-    background: linear-gradient(135deg, var(--light-bg) 0%, white 100%);
-    padding: 60px 20px;
-    text-align: center;
-}
-
-.music-container {
-    max-width: 600px;
-    margin: 0 auto;
-    animation: slideUp 0.8s ease-out;
-}
-
-.music-section h2 {
-    color: var(--primary-color);
-    font-size: 2em;
-    margin-bottom: 30px;
-    font-weight: normal;
-}
-
-.player-wrapper {
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 8px 30px rgba(128, 0, 32, 0.15);
-    margin-bottom: 20px;
-}
-
-#audioPlayer {
-    width: 100%;
-    height: 40px;
-    cursor: pointer;
-}
-
-.lyrics-preview {
-    color: var(--primary-color);
-    font-size: 1.3em;
-    font-style: italic;
-    font-weight: bold;
-    padding: 20px;
 }
 
 /* ===== STORY SECTION ===== */
@@ -468,6 +434,47 @@ body {
 .carousel-btn.prev { left: -15px; }
 .carousel-btn.next { right: -15px; }
 
+/* ===== MUSIC SECTION ===== */
+.music-section {
+    background: linear-gradient(135deg, var(--light-bg) 0%, white 100%);
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.music-container {
+    max-width: 600px;
+    margin: 0 auto;
+    animation: slideUp 0.8s ease-out;
+}
+
+.music-section h2 {
+    color: var(--primary-color);
+    font-size: 2em;
+    margin-bottom: 30px;
+    font-weight: normal;
+}
+
+.player-wrapper {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(128, 0, 32, 0.15);
+    margin-bottom: 20px;
+}
+
+#audioPlayer {
+    width: 100%;
+    height: 40px;
+    cursor: pointer;
+}
+
+.lyrics-preview {
+    color: var(--primary-color);
+    font-size: 1.3em;
+    font-style: italic;
+    font-weight: bold;
+    padding: 20px;
+}
 
 /* ===== MESSAGE SECTION ===== */
 .message-section {
@@ -566,18 +573,13 @@ body {
 .footer i { color: var(--secondary-color); }
 
 /* ===== ANIMACIONES ===== */
-@keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
 @keyframes slideUp {
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(-30px); }
+    from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
@@ -608,6 +610,7 @@ body {
     .subtitle { font-size: 1.3em; }
     .section-title { font-size: 2em; }
 
+    /* Ajustes del menú para móvil */
     .menu {
         flex-direction: column;
         padding: 15px;
@@ -651,7 +654,6 @@ body {
         flex: 0 0 calc(50% - 10px); 
     }
 
-    /* Ajustamos posición de botones en tablets */
     .carousel-btn.prev { left: 5px; }
     .carousel-btn.next { right: 5px; }
 
@@ -674,6 +676,17 @@ body {
     .section-title { font-size: 1.5em; }
     .music-container { padding: 0 10px; }
 
+    /* === SOLUCIÓN FONDO CELULAR: Quitamos el 'fixed' para evitar el zoom gigante === */
+    .story-section {
+        background-attachment: scroll; /* Esto evita el zoom brutal en iPhone/Android */
+        background-position: top center; /* Mantiene las flores y la taza en la parte superior */
+        background-size: cover; /* Mantiene la proporción sin estirar feo */
+    }
+
+    .message-section {
+        background-attachment: scroll;
+    }
+
     .polaroid-gallery {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
@@ -686,13 +699,12 @@ body {
         height: 200px;
     }
 
-    /* === RE-ACTIVADOS CON AJUSTES EN MÓVIL === */
     .carousel-btn {
         display: flex; 
         width: 36px;
         height: 36px;
         font-size: 14px;
-        background: rgba(128, 0, 32, 0.85); /* Un fondo semitransparente elegante */
+        background: rgba(128, 0, 32, 0.85);
     }
 
     .carousel-btn.prev { left: 5px; }
