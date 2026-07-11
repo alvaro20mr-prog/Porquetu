@@ -12,6 +12,7 @@
 </head>
 <body>
 
+    <!-- 1. HEADER HERO (INICIO) -->
     <header class="hero" id="inicio">
         <nav class="menu">
             <div class="logo">Acá comienza tu sorpresa...</div>
@@ -37,6 +38,7 @@
         </div>
     </header>
 
+    <!-- 2. NUESTRA HISTORIA -->
     <section class="story-section" id="historia">
         <div class="container">
             <h2 class="section-title">Nuestra Historia</h2>
@@ -77,10 +79,12 @@
         </div>
     </section>
 
+    <!-- 3. GALERÍA DE FOTOS (MOMENTOS) -->
     <section class="gallery-section" id="momentos">
         <div class="container">
             <h2 class="section-title">Nuestros Momentos</h2>
             
+            <!-- Fotos tipo Polaroid -->
             <div class="polaroid-gallery">
                 <div class="polaroid-card">
                     <img src="imagenes/primer_viaje.jpg" alt="Nuestro primer viaje" loading="lazy">
@@ -108,6 +112,7 @@
                 </div>
             </div>
 
+            <!-- Carrusel de fotos adicionales (Imágenes numeradas del 0 al 30) -->
             <div class="full-gallery">
                 <h3>Más Momentos Especiales</h3>
                 
@@ -115,6 +120,7 @@
                     <button class="carousel-btn prev" onclick="moveCarousel(-1)"><i class="fas fa-chevron-left"></i></button>
                     
                     <div class="carousel-track" id="track">
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/0.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
                         <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/1.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
                         <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/2.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
                         <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/3.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
@@ -153,21 +159,30 @@
         </div>
     </section>
 
+    <!-- 4. REPRODUCTOR DE MÚSICA (NUEVO DISEÑO TARJETA) -->
     <section class="music-section" id="cancion">
-        <div class="music-container">
-            <h2><i class="fas fa-music"></i> Escucha Nuestra Canción</h2>
-            <div class="player-wrapper">
-                <audio id="audioPlayer" controls>
-                    <source src="musica/Porque Tú.m4a" type="audio/mp4">
-                    Tu navegador no soporta audio HTML5
-                </audio>
-            </div>
-            <div class="lyrics-preview">
-                <p>"Si volviera a empezar, volvería a elegirte"</p>
+        <div class="container">
+            <h2 class="section-title">Nuestra Canción</h2>
+            
+            <div class="music-card">
+                <!-- Imagen de la izquierda (asegúrate de subirla a la carpeta imagenes) -->
+                <img src="imagenes/musica.jpg" alt="Carátula de nuestra canción" class="music-cover" loading="lazy">
+                
+                <div class="music-info">
+                    <h3>Para ti...</h3>
+                    <p>"Si volviera a empezar, volvería a elegirte"</p>
+                    
+                    <!-- Ruta actualizada a la carpeta Musica (M mayúscula) -->
+                    <audio id="audioPlayer" controls>
+                        <source src="Musica/Porque Tú.m4a" type="audio/mp4">
+                        Tu navegador no soporta audio HTML5
+                    </audio>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- 5. MENSAJE ESPECIAL (CARTA) -->
     <section class="message-section" id="carta">
         <div class="container">
             <div class="love-message">
@@ -179,11 +194,13 @@
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer class="footer">
         <p>Gracias por caminar esta vida conmigo.</p>
         <p><i class="fas fa-heart"></i> Te amo, Melissa. Para siempre. <i class="fas fa-heart"></i></p>
     </footer>
 
+    <!-- MODAL PARA VER FOTOS EN GRANDE -->
     <div id="photoModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
