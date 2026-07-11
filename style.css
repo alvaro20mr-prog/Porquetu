@@ -20,9 +20,9 @@ html {
     scroll-behavior: smooth;
 }
 
-/* === SOLUCIÓN 1: Margen para que el menú no tape los títulos === */
+/* === MARGEN PARA PC: Frena antes de chocar con el menú === */
 section, header {
-    scroll-margin-top: 85px; 
+    scroll-margin-top: 100px; 
 }
 
 body {
@@ -572,9 +572,14 @@ body {
 
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 768px) {
-    /* === SOLUCIÓN 2: Fondo rellenado en celular === */
+    
+    /* === MARGEN PARA CELULAR: Compensamos que el menú es más alto === */
+    section, header {
+        scroll-margin-top: 180px; 
+    }
+
     .hero {
-        background-size: cover; /* Vuelve a llenar la pantalla */
+        background-size: cover;
         background-position: center center;
     }
 
@@ -648,7 +653,6 @@ body {
     .section-title { font-size: 1.5em; }
     .music-container { padding: 0 10px; }
 
-    /* Forzamos 2 columnas para el collage Polaroid en celulares */
     .polaroid-gallery {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
@@ -658,7 +662,6 @@ body {
         height: 180px; 
     }
 
-    /* Forzamos 2 columnas para la galería final en celulares */
     .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
