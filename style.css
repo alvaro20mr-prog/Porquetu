@@ -289,10 +289,10 @@ body {
     color: #555;
 }
 
-/* ===== GALERÍA SECTION ===== */
+/* ===== GALERÍA SECTION (NUESTRO FONDO 4) ===== */
 .gallery-section {
     padding: 80px 20px;
-    background: url("imagenes/Fondo_momentos.jpg") center center fixed no-repeat;
+    background: url("imagenes/fondo4.jpg") center center fixed no-repeat;
     background-size: cover;
 }
 
@@ -779,7 +779,7 @@ body {
     }
 
     .gallery-section {
-        background: linear-gradient(to bottom, rgba(253,246,240,0) 100px, #FDF6F0 250px), url("imagenes/Fondo_momentos.jpg") top center no-repeat;
+        background: linear-gradient(to bottom, rgba(253,246,240,0) 100px, #FDF6F0 250px), url("imagenes/fondo4.jpg") top center no-repeat;
         background-size: 100% auto;
         background-color: var(--background-color);
     }
