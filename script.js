@@ -1,7 +1,20 @@
+// === CAMBIO DE COLOR DEL MENÚ AL HACER SCROLL ===
+window.addEventListener('scroll', function() {
+    const menu = document.querySelector('.menu');
+    // Si bajamos más de 50 píxeles, oscurecemos el menú
+    if (window.scrollY > 50) {
+        menu.classList.add('scrolled');
+    } else {
+        // Si volvemos arriba, vuelve a ser transparente
+        menu.classList.remove('scrolled');
+    }
+});
+
+
 // === LÓGICA DEL CARRUSEL DE FOTOS ===
 function moveCarousel(direction) {
     const track = document.getElementById('track');
-    // Calculamos cuánto desplazarnos (aproximadamente el tamaño de una foto + el margen)
+    // Calculamos cuánto desplazarnos
     const scrollAmount = track.clientWidth > 0 ? track.clientWidth / 2 : 300; 
     
     track.scrollBy({ 
