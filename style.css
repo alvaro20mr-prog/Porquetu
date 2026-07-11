@@ -39,7 +39,7 @@ body {
     padding: 0 20px;
 }
 
-/* ===== HERO (PORTADA - Fondo_inicio.png) ===== */
+/* ===== HERO (PORTADA) ===== */
 
 .hero {
     height: 100vh;
@@ -166,7 +166,7 @@ body {
     50% { transform: translate(-50%,10px); }
 }
 
-/* ===== STORY SECTION (HISTORIA - fondo2.jpg) ===== */
+/* ===== STORY SECTION (HISTORIA) ===== */
 .story-section {
     padding: 90px 20px;
     background: url("imagenes/fondo2.jpg") center top fixed no-repeat;
@@ -182,8 +182,9 @@ body {
     margin-bottom: 70px;
 }
 
-/* Agregamos una suave sombra blanca al título para que resalte sobre la madera */
+/* Sombras finas sobre los títulos para resaltar sobre la madera */
 .story-section .section-title,
+.gallery-section .section-title,
 .music-section .section-title {
     text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.8);
 }
@@ -288,10 +289,11 @@ body {
     color: #555;
 }
 
-/* ===== GALERÍA SECTION ===== */
+/* ===== GALERÍA SECTION (NUEVO FONDO PROPIO) ===== */
 .gallery-section {
     padding: 80px 20px;
-    background: white;
+    background: url("imagenes/Fondo_momentos.jpg") center center fixed no-repeat;
+    background-size: cover;
 }
 
 .polaroid-gallery {
@@ -349,6 +351,7 @@ body {
     color: #7d2947;
     text-align: center;
     margin-bottom: 40px;
+    text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.8);
 }
 
 .carousel-wrapper {
@@ -451,7 +454,7 @@ body {
 .carousel-btn.prev { left: -15px; }
 .carousel-btn.next { right: -15px; }
 
-/* ===== MUSIC SECTION (NUEVO FONDO Y DISEÑO) ===== */
+/* ===== MUSIC SECTION ===== */
 .music-section {
     background: url("imagenes/Fondo_musica.jpg") center center fixed no-repeat;
     background-size: cover;
@@ -464,7 +467,7 @@ body {
     display: flex;
     max-width: 800px;
     margin: 0 auto;
-    background: rgba(255, 255, 255, 0.95); /* Blanco ligeramente translúcido */
+    background: rgba(255, 255, 255, 0.95); 
     border-radius: 15px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
     overflow: hidden;
@@ -506,7 +509,7 @@ body {
     outline: none;
 }
 
-/* ===== MESSAGE SECTION (CARTA - fondo3.jpg) ===== */
+/* ===== MESSAGE SECTION (CARTA) ===== */
 .message-section {
     background: url("imagenes/fondo3.jpg") center center fixed no-repeat;
     background-size: cover;
@@ -680,15 +683,39 @@ body {
 
 @media (max-width: 768px) {
     
-    section, header { scroll-margin-top: 180px; }
+    section, header { scroll-margin-top: 140px; }
 
-    .hero { background-position: center center; }
+    /* === AJUSTE DE ENFOQUES MÓVIL PARA VER DETALLES === */
+    .hero { 
+        background-image: url("imagenes/Fondo_inicio.png");
+        background-position: right top; /* Muestra el paño y la ramita en el celular */
+    }
 
     .main-title { font-size: 2.5em; }
     .subtitle { font-size: 1.3em; }
     .section-title { font-size: 2em; }
 
-    .logo { font-size: 28px; }
+    /* Optimización del Menú Móvil Compacto */
+    .menu {
+        flex-direction: column;
+        padding: 10px 5px;
+        background: rgba(0, 0, 0, 0.85) !important;
+    }
+    
+    .logo { 
+        font-size: 18px; 
+        margin-bottom: 5px;
+    }
+    
+    .menu ul {
+        gap: 12px;
+        margin-top: 0;
+    }
+    
+    .menu a {
+        font-size: 13px;
+    }
+
     .full-gallery h3 { font-size: 2.5em; }
     .timeline-content p { font-size: 18px; }
     .timeline::before { left: 20px; }
@@ -762,25 +789,32 @@ body {
     .hero { padding: 60px 20px; }
     .section-title { font-size: 1.5em; }
 
-    /* Quitamos el 'fixed' a todos los fondos de madera para el celular */
+    /* === POSICIONES MÓVILES EXACTAS PARA ENFOCAR DETALLES EN PANTALLAS LARGAS === */
     .story-section {
         background-image: url("imagenes/fondo2.jpg");
         background-attachment: scroll; 
-        background-position: top center; 
+        background-position: left center; /* Enfoca el pergamino y los anillos */
         background-size: cover; 
+    }
+
+    .gallery-section {
+        background-image: url("imagenes/Fondo_momentos.jpg");
+        background-attachment: scroll;
+        background-position: center center;
+        background-size: cover;
     }
 
     .music-section {
         background-image: url("imagenes/Fondo_musica.jpg");
         background-attachment: scroll; 
-        background-position: center center; 
+        background-position: right center; /* Enfoca el florero de lavanda */
         background-size: cover; 
     }
 
     .message-section {
         background-image: url("imagenes/fondo3.jpg");
         background-attachment: scroll;
-        background-position: center center; 
+        background-position: left center; /* Enfoca el florero con rosas */
         background-size: cover; 
     }
 
