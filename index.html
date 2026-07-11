@@ -6,68 +6,37 @@
     <title>Porque Tú - Para Melissa</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <!-- HEADER HERO -->
-<!-- HEADER HERO -->
-<header class="hero" id="inicio">
+    <header class="hero" id="inicio">
+        <nav class="menu">
+            <div class="logo">Acá comienza tu sorpresa...</div>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#historia">Historia</a></li>
+                <li><a href="#momentos">Momentos</a></li>
+                <li><a href="#cancion">Canción</a></li>
+                <li><a href="#carta">Carta</a></li>
+            </ul>
+        </nav>
 
-<nav class="menu">
+        <div class="hero-overlay"></div>
 
-<div class="logo">
-Acá comienza tu sorpresa...
-</div>
+        <div class="hero-content">
+            <h1 class="main-title">Porque Tú</h1>
+            <p class="subtitle">Hay historias que el corazón<br>nunca deja de escribir...</p>
+            <a href="#cancion" class="hero-btn">Comenzar</a>
+        </div>
 
-<ul>
-
-<li><a href="#inicio">Inicio</a></li>
-
-<li><a href="#historia">Historia</a></li>
-
-<li><a href="#momentos">Momentos</a></li>
-
-<li><a href="#cancion">Canción</a></li>
-
-<li><a href="#carta">Carta</a></li>
-
-</ul>
-
-</nav>
-
-<div class="hero-overlay"></div>
-
-<div class="hero-content">
-
-<h1 class="main-title">
-Porque Tú
-</h1>
-
-<p class="subtitle">
-
-Hay historias que el corazón<br>
-nunca deja de escribir...
-
-</p>
-
-<a href="#cancion" class="hero-btn">
-
-Comenzar
-
-</a>
-
-</div>
-
-<div class="scroll-down">
-
-<i class="fas fa-angle-down"></i>
-
-</div>
-
-</header>
+        <div class="scroll-down">
+            <i class="fas fa-angle-down"></i>
+        </div>
+    </header>
 
     <!-- REPRODUCTOR DE MÚSICA -->
     <section class="music-section" id="cancion">
@@ -75,7 +44,8 @@ Comenzar
             <h2><i class="fas fa-music"></i> Escucha Nuestra Canción</h2>
             <div class="player-wrapper">
                 <audio id="audioPlayer" controls>
-                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                    <!-- Aquí conectamos tu archivo de audio local -->
+                    <source src="Porque Tú.m4a" type="audio/mp4">
                     Tu navegador no soporta audio HTML5
                 </audio>
             </div>
@@ -103,8 +73,7 @@ Comenzar
                     <div class="timeline-date">2018</div>
                     <div class="timeline-content">
                         <h3>La Vida Nos Volvió a Juntar</h3>
-                        <p>Recuerdo aquel doce de octubre, como si fuera ayer; cuando vencí todos mis miedos 
-                        y te besé por primera vez..</p>
+                        <p>Recuerdo aquel doce de octubre, como si fuera ayer; cuando vencí todos mis miedos y te besé por primera vez..</p>
                     </div>
                 </div>
                 
@@ -112,8 +81,7 @@ Comenzar
                     <div class="timeline-date">2023</div>
                     <div class="timeline-content">
                         <h3>El Mejor Regalo De La Vida</h3>
-                        <p>Lo que empezó con una mirada un día aprendió a respirar, y en unos pequeños ojos
-                            descubrimos una nueva forma de amar..</p>
+                        <p>Lo que empezó con una mirada un día aprendió a respirar, y en unos pequeños ojos descubrimos una nueva forma de amar..</p>
                     </div>
                 </div>
                 
@@ -121,8 +89,9 @@ Comenzar
                     <div class="timeline-date">Hoy</div>
                     <div class="timeline-content">
                         <h3>Aun Hay Mas Capitulos...</h3>
-                        <p>Y aquel sueño que parecía lejano, hoy lo podemos abrazar, porque juntos construimos un hogar
-                           donde siempre quiero regresar.</p>
+                        <p>Y aquel sueño que parecía lejano, hoy lo podemos abrazar, porque juntos construimos un hogar donde siempre quiero regresar.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -132,67 +101,66 @@ Comenzar
         <div class="container">
             <h2 class="section-title">Nuestros Momentos</h2>
             
-          <div class="polaroid-gallery">
+            <!-- Fotos tipo Polaroid -->
+            <div class="polaroid-gallery">
+                <div class="polaroid-card">
+                    <img src="Imagen1.jpg" alt="Nuestro primer viaje">
+                    <p class="polaroid-text">Nuestro primer viaje</p>
+                </div>
 
-    <div class="polaroid-card">
-        <img src="https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=300&h=350&fit=crop" alt="">
-        <p class="polaroid-text">Nuestro primer viaje</p>
-    </div>
+                <div class="polaroid-card">
+                    <img src="Imagen2.jpg" alt="Abrazos sin fin">
+                    <p class="polaroid-text">Abrazos sin fin</p>
+                </div>
 
-    <div class="polaroid-card">
-        <img src="https://images.unsplash.com/photo-1530268729831-4be0a882b594?w=300&h=350&fit=crop" alt="">
-        <p class="polaroid-text">Abrazos sin fin</p>
-    </div>
+                <div class="polaroid-card">
+                    <img src="Imagen3.jpg" alt="Aventuras compartidas">
+                    <p class="polaroid-text">Aventuras compartidas</p>
+                </div>
 
-    <div class="polaroid-card">
-        <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=300&h=350&fit=crop" alt="">
-        <p class="polaroid-text">Aventuras compartidas</p>
-    </div>
+                <div class="polaroid-card">
+                    <img src="Imagen4.jpg" alt="Nuestra conexión">
+                    <p class="polaroid-text">Nuestra conexión</p>
+                </div>
 
-    <div class="polaroid-card">
-        <img src="https://images.unsplash.com/photo-1520763185298-1b434c919abe?w=300&h=350&fit=crop" alt="">
-        <p class="polaroid-text">Nuestra conexión</p>
-    </div>
+                <div class="polaroid-card">
+                    <img src="Imagen5.jpg" alt="Siempre juntos">
+                    <p class="polaroid-text">Siempre juntos</p>
+                </div>
 
-    <div class="polaroid-card">
-        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=300&h=350&fit=crop" alt="">
-        <p class="polaroid-text">Siempre juntos</p>
-    </div>
-
-    <div class="polaroid-card">
-        <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=300&h=350&fit=crop" alt="">
-        <p class="polaroid-text">Un amor eterno</p>
-    </div>
-
-</div>
+                <div class="polaroid-card">
+                    <img src="Imagen6.jpg" alt="Un amor eterno">
+                    <p class="polaroid-text">Un amor eterno</p>
+                </div>
+            </div>
 
             <!-- Galería completa -->
             <div class="full-gallery">
                 <h3>Más Momentos Especiales</h3>
                 <div class="gallery-grid">
                     <div class="gallery-item" onclick="openModal(this)">
-                        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=250&h=250&fit=crop" alt="Risas">
+                        <img src="Imagen7.jpg" alt="Risas">
                         <div class="overlay">
                             <i class="fas fa-search-plus"></i>
                         </div>
                     </div>
                     
                     <div class="gallery-item" onclick="openModal(this)">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=250&h=250&fit=crop" alt="Sonrisa">
+                        <img src="Imagen8.jpg" alt="Sonrisa">
                         <div class="overlay">
                             <i class="fas fa-search-plus"></i>
                         </div>
                     </div>
                     
                     <div class="gallery-item" onclick="openModal(this)">
-                        <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=250&h=250&fit=crop" alt="Juntos">
+                        <img src="Imagen9.jpg" alt="Juntos">
                         <div class="overlay">
                             <i class="fas fa-search-plus"></i>
                         </div>
                     </div>
                     
                     <div class="gallery-item" onclick="openModal(this)">
-                        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=250&h=250&fit=crop" alt="Amor">
+                        <img src="Imagen10.jpg" alt="Amor">
                         <div class="overlay">
                             <i class="fas fa-search-plus"></i>
                         </div>
