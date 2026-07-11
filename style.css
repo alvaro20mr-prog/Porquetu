@@ -20,7 +20,7 @@ html {
     scroll-behavior: smooth;
 }
 
-/* === MARGEN PARA PC: Frena antes de chocar con el menú === */
+/* === MARGEN PARA PC === */
 section, header {
     scroll-margin-top: 100px; 
 }
@@ -43,7 +43,7 @@ body {
 .hero {
     height: 100vh;
     background: url("fondo1.jpg") center center no-repeat;
-    background-size: cover; /* Volvemos a que llene la pantalla completa sin bordes negros */
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -221,7 +221,6 @@ body {
     margin: 20px auto 0;
 }
 
-/* Timeline */
 .timeline {
     display: grid;
     grid-template-columns: 1fr;
@@ -252,10 +251,7 @@ body {
     grid-template-columns: 1fr 1fr;
 }
 
-.timeline-item:nth-child(even) .timeline-date {
-    order: 2;
-}
-
+.timeline-item:nth-child(even) .timeline-date { order: 2; }
 .timeline-item:nth-child(even) .timeline-content {
     order: 1;
     text-align: right;
@@ -320,7 +316,6 @@ body {
     background: white;
 }
 
-/* Polaroid Gallery */
 .polaroid-gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -340,10 +335,7 @@ body {
     cursor: pointer;
 }
 
-.polaroid-card:nth-child(2n) {
-    transform: rotate(3deg);
-}
-
+.polaroid-card:nth-child(2n) { transform: rotate(3deg); }
 .polaroid-card:hover {
     transform: rotate(0) scale(1.05);
     box-shadow: 0 12px 30px rgba(128, 0, 32, 0.25);
@@ -365,7 +357,7 @@ body {
     font-weight: bold;
 }
 
-/* Full Gallery */
+/* ===== NUEVO: CARRUSEL DE FOTOS ===== */
 .full-gallery {
     margin-top: 60px;
 }
@@ -379,18 +371,37 @@ body {
     margin-bottom: 40px;
 }
 
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+.carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    margin: 0 auto;
 }
 
-.gallery-item {
+.carousel-track {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 20px 0;
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+}
+
+.carousel-track::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+}
+
+.gallery-item.carousel-item {
+    flex: 0 0 calc(33.333% - 14px); /* Muestra 3 fotos a la vez en PC */
+    scroll-snap-align: center;
+    height: 250px;
     position: relative;
     overflow: hidden;
     border-radius: 8px;
     cursor: pointer;
-    height: 250px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
 }
@@ -427,13 +438,36 @@ body {
     font-size: 2.5em;
 }
 
-.gallery-item:hover .overlay {
-    opacity: 1;
+.gallery-item:hover .overlay { opacity: 1; }
+.gallery-item:hover img { filter: brightness(0.5); }
+
+/* Botones del Carrusel */
+.carousel-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.gallery-item:hover img {
-    filter: brightness(0.5);
+.carousel-btn:hover {
+    background: var(--secondary-color);
+    transform: scale(1.1);
 }
+
+.carousel-btn.prev { left: -15px; }
+.carousel-btn.next { right: -15px; }
+
 
 /* ===== MESSAGE SECTION ===== */
 .message-section {
@@ -528,13 +562,8 @@ body {
     font-size: 1.1em;
 }
 
-.footer p {
-    margin: 10px 0;
-}
-
-.footer i {
-    color: var(--secondary-color);
-}
+.footer p { margin: 10px 0; }
+.footer i { color: var(--secondary-color); }
 
 /* ===== ANIMACIONES ===== */
 @keyframes fadeInDown {
@@ -562,7 +591,6 @@ body {
     50% { opacity: 0.6; }
 }
 
-/* Efecto de flotación para elementos en móvil */
 @keyframes flotar {
     0% { transform: translateY(0px) rotate(-2deg); }
     50% { transform: translateY(-8px) rotate(2deg); }
@@ -572,15 +600,9 @@ body {
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 768px) {
     
-    /* === MARGEN PARA CELULAR: Compensamos que el menú es más alto === */
-    section, header {
-        scroll-margin-top: 180px; 
-    }
+    section, header { scroll-margin-top: 180px; }
 
-    .hero {
-        background-size: cover;
-        background-position: center center;
-    }
+    .hero { background-position: center center; }
 
     .main-title { font-size: 2.5em; }
     .subtitle { font-size: 1.3em; }
@@ -590,7 +612,6 @@ body {
         flex-direction: column;
         padding: 15px;
     }
-
     .menu ul {
         flex-wrap: wrap;
         justify-content: center;
@@ -601,7 +622,6 @@ body {
     .logo { font-size: 28px; }
     .full-gallery h3 { font-size: 2.5em; }
     .timeline-content p { font-size: 18px; }
-    
     .timeline::before { left: 20px; }
 
     .timeline-item, .timeline-item:nth-child(even) {
@@ -622,9 +642,14 @@ body {
         font-size: 1.3em;
     }
 
-    .polaroid-gallery, .gallery-grid {
+    .polaroid-gallery {
         grid-template-columns: 1fr 1fr;
         gap: 20px;
+    }
+
+    /* Ajuste de carrusel en Tablet/Celular grande */
+    .gallery-item.carousel-item {
+        flex: 0 0 calc(50% - 10px); /* Muestra 2 fotos a la vez */
     }
 
     .love-message h2 { font-size: 2em; }
@@ -635,14 +660,8 @@ body {
         font-size: 28px;
     }
 
-    /* Animación aplicada a los elementos en pantallas móviles */
-    .polaroid-card, .timeline-content {
-        animation: flotar 4s ease-in-out infinite;
-    }
-
-    .polaroid-card:nth-child(odd) {
-        animation-delay: 1s;
-    }
+    .polaroid-card, .timeline-content { animation: flotar 4s ease-in-out infinite; }
+    .polaroid-card:nth-child(odd) { animation-delay: 1s; }
 }
 
 @media (max-width: 480px) {
@@ -657,17 +676,17 @@ body {
         gap: 15px;
     }
     
-    .polaroid-card img {
-        height: 180px; 
+    .polaroid-card img { height: 180px; }
+
+    /* Ajuste de carrusel en Celular Pequeño */
+    .gallery-item.carousel-item {
+        flex: 0 0 85%; /* Muestra 1 foto centrada casi completa */
+        height: 200px;
     }
 
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-    }
-
-    .gallery-item {
-        height: 150px;
+    /* Ocultamos los botones en celulares porque pueden deslizar con el dedo */
+    .carousel-btn {
+        display: none; 
     }
 
     .story-section, .gallery-section, .message-section {
