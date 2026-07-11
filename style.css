@@ -39,7 +39,7 @@ body {
     padding: 0 20px;
 }
 
-/* ===== HERO (PORTADA) ===== */
+/* ===== HERO (PORTADA - Fondo_inicio.png) ===== */
 
 .hero {
     height: 100vh;
@@ -166,7 +166,7 @@ body {
     50% { transform: translate(-50%,10px); }
 }
 
-/* ===== STORY SECTION (HISTORIA) ===== */
+/* ===== STORY SECTION (HISTORIA - fondo2.jpg) ===== */
 .story-section {
     padding: 90px 20px;
     background: url("imagenes/fondo2.jpg") center top fixed no-repeat;
@@ -289,7 +289,7 @@ body {
     color: #555;
 }
 
-/* ===== GALERÍA SECTION (NUEVO FONDO PROPIO) ===== */
+/* ===== GALERÍA SECTION ===== */
 .gallery-section {
     padding: 80px 20px;
     background: url("imagenes/Fondo_momentos.jpg") center center fixed no-repeat;
@@ -509,7 +509,7 @@ body {
     outline: none;
 }
 
-/* ===== MESSAGE SECTION (CARTA) ===== */
+/* ===== MESSAGE SECTION (CARTA - fondo3.jpg) ===== */
 .message-section {
     background: url("imagenes/fondo3.jpg") center center fixed no-repeat;
     background-size: cover;
@@ -685,37 +685,17 @@ body {
     
     section, header { scroll-margin-top: 140px; }
 
-    /* === AJUSTE DE ENFOQUES MÓVIL PARA VER DETALLES === */
     .hero { 
         background-image: url("imagenes/Fondo_inicio.png");
-        background-position: right top; /* Muestra el paño y la ramita en el celular */
+        /* Focaliza la derecha donde está el paño */
+        background-position: right top; 
     }
 
     .main-title { font-size: 2.5em; }
     .subtitle { font-size: 1.3em; }
     .section-title { font-size: 2em; }
 
-    /* Optimización del Menú Móvil Compacto */
-    .menu {
-        flex-direction: column;
-        padding: 10px 5px;
-        background: rgba(0, 0, 0, 0.85) !important;
-    }
-    
-    .logo { 
-        font-size: 18px; 
-        margin-bottom: 5px;
-    }
-    
-    .menu ul {
-        gap: 12px;
-        margin-top: 0;
-    }
-    
-    .menu a {
-        font-size: 13px;
-    }
-
+    .logo { font-size: 28px; }
     .full-gallery h3 { font-size: 2.5em; }
     .timeline-content p { font-size: 18px; }
     .timeline::before { left: 20px; }
@@ -789,33 +769,31 @@ body {
     .hero { padding: 60px 20px; }
     .section-title { font-size: 1.5em; }
 
-    /* === POSICIONES MÓVILES EXACTAS PARA ENFOCAR DETALLES EN PANTALLAS LARGAS === */
+    /* === EL TRUCO DE LOS FONDOS CELULAR === */
+    /* Achica la foto para que se vea completa como un hermoso encabezado difuminado */
+    
     .story-section {
-        background-image: url("imagenes/fondo2.jpg");
-        background-attachment: scroll; 
-        background-position: left center; /* Enfoca el pergamino y los anillos */
-        background-size: cover; 
+        background: linear-gradient(to bottom, rgba(253,246,240,0) 100px, #FDF6F0 250px), url("imagenes/fondo2.jpg") top center no-repeat;
+        background-size: 100% auto;
+        background-color: var(--background-color);
     }
 
     .gallery-section {
-        background-image: url("imagenes/Fondo_momentos.jpg");
-        background-attachment: scroll;
-        background-position: center center;
-        background-size: cover;
+        background: linear-gradient(to bottom, rgba(253,246,240,0) 100px, #FDF6F0 250px), url("imagenes/Fondo_momentos.jpg") top center no-repeat;
+        background-size: 100% auto;
+        background-color: var(--background-color);
     }
 
     .music-section {
-        background-image: url("imagenes/Fondo_musica.jpg");
-        background-attachment: scroll; 
-        background-position: right center; /* Enfoca el florero de lavanda */
-        background-size: cover; 
+        background: linear-gradient(to bottom, rgba(253,246,240,0) 100px, #FDF6F0 250px), url("imagenes/Fondo_musica.jpg") top center no-repeat;
+        background-size: 100% auto;
+        background-color: var(--background-color);
     }
 
     .message-section {
-        background-image: url("imagenes/fondo3.jpg");
-        background-attachment: scroll;
-        background-position: left center; /* Enfoca el florero con rosas */
-        background-size: cover; 
+        background: linear-gradient(to bottom, rgba(253,246,240,0) 100px, #FDF6F0 250px), url("imagenes/fondo3.jpg") top center no-repeat;
+        background-size: 100% auto;
+        background-color: var(--background-color);
     }
 
     .polaroid-gallery {
