@@ -39,7 +39,7 @@ body {
     padding: 0 20px;
 }
 
-/* ===== HERO (PORTADA - Fondo_inicio.png) ===== */
+/* ===== HERO (PORTADA) ===== */
 
 .hero {
     height: 100vh;
@@ -166,27 +166,23 @@ body {
     50% { transform: translate(-50%,10px); }
 }
 
-/* ===== STORY SECTION (HISTORIA - fondo2.jpg) ===== */
+/* ===== STORY SECTION (HISTORIA) ===== */
 .story-section {
     padding: 90px 20px;
     background: url("imagenes/fondo2.jpg") center top fixed no-repeat;
     background-size: cover;
 }
 
+/* === AJUSTE PARA FONDOS DE MADERA === */
+/* Convertimos los títulos flotantes en blanco/crema con sombra oscura para máxima legibilidad */
 .section-title {
     font-family: 'Great Vibes', cursive;
     font-size: 74px;
     font-weight: 400;
     text-align: center;
-    color: #7d2947;
+    color: #FFF8F3; /* Crema claro en lugar de color vino */
     margin-bottom: 70px;
-}
-
-/* Sombras finas sobre los títulos para resaltar sobre la madera */
-.story-section .section-title,
-.gallery-section .section-title,
-.music-section .section-title {
-    text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.8);
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); /* Sombra oscura fuerte para separar de la madera */
 }
 
 .section-title::after {
@@ -194,7 +190,7 @@ body {
     display: block;
     width: 60px;
     height: 3px;
-    background: linear-gradient(to right, transparent, var(--primary-color), transparent);
+    background: linear-gradient(to right, transparent, #FFF8F3, transparent); /* Línea crema */
     margin: 20px auto 0;
 }
 
@@ -213,7 +209,8 @@ body {
     top: 0;
     bottom: 0;
     width: 3px;
-    background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+    /* La línea de tiempo ahora resalta un poco más sobre madera */
+    background: linear-gradient(to bottom, rgba(255,255,255,0.2), #FFF8F3, rgba(255,255,255,0.2));
     transform: translateX(-50%);
 }
 
@@ -238,11 +235,11 @@ body {
     font-family: 'Great Vibes', cursive;
     font-size: 62px;
     font-weight: 400;
-    color: #8d2143;
+    color: #FFF8F3; /* Los años en crema claro */
     text-align: center;
     position: relative;
     z-index: 2;
-    text-shadow: 0 2px 10px rgba(255,255,255,0.8);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Sombra oscura para que se lean perfecto */
 }
 
 .timeline-date::before {
@@ -256,20 +253,22 @@ body {
     border: 4px solid var(--primary-color);
     border-radius: 50%;
     transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Sombra circular */
 }
 
+/* El contenido dentro de la tarjeta se mantiene vino porque el fondo es blanco */
 .timeline-content {
     background: white;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(128, 0, 32, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     will-change: transform; 
     -webkit-backface-visibility: hidden; 
 }
 
 .timeline-content:hover {
-    box-shadow: 0 8px 30px rgba(128, 0, 32, 0.2);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
     transform: translateY(-5px);
 }
 
@@ -289,7 +288,7 @@ body {
     color: #555;
 }
 
-/* ===== GALERÍA SECTION (NUESTRO FONDO 4) ===== */
+/* ===== GALERÍA SECTION ===== */
 .gallery-section {
     padding: 80px 20px;
     background: url("imagenes/fondo4.jpg") center center fixed no-repeat;
@@ -309,7 +308,7 @@ body {
 .polaroid-card {
     background: white;
     padding: 15px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Sombra más fuerte para madera */
     transform: rotate(-3deg);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
@@ -320,7 +319,7 @@ body {
 .polaroid-card:nth-child(2n) { transform: rotate(3deg); }
 .polaroid-card:hover {
     transform: rotate(0) scale(1.05);
-    box-shadow: 0 12px 30px rgba(128, 0, 32, 0.25);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
 }
 
 .polaroid-card img {
@@ -348,10 +347,10 @@ body {
     font-family: 'Great Vibes', cursive;
     font-size: 60px;
     font-weight: 400;
-    color: #7d2947;
+    color: #FFF8F3; /* Crema claro para destacar en la madera */
     text-align: center;
     margin-bottom: 40px;
-    text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.8);
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); /* Sombra oscura */
 }
 
 .carousel-wrapper {
@@ -386,7 +385,7 @@ body {
     overflow: hidden;
     border-radius: 8px;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra reforzada */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     will-change: transform; 
     -webkit-backface-visibility: hidden;
@@ -394,7 +393,7 @@ body {
 
 .gallery-item:hover {
     transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(128, 0, 32, 0.2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
 .gallery-item img {
@@ -439,7 +438,7 @@ body {
     cursor: pointer;
     position: absolute;
     z-index: 10;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
     transition: transform 0.3s ease, background 0.3s ease;
     display: flex;
     justify-content: center;
@@ -469,7 +468,7 @@ body {
     margin: 0 auto;
     background: rgba(255, 255, 255, 0.95); 
     border-radius: 15px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
     overflow: hidden;
     text-align: left;
     animation: slideUp 0.8s ease-out;
@@ -509,7 +508,7 @@ body {
     outline: none;
 }
 
-/* ===== MESSAGE SECTION (CARTA - fondo3.jpg) ===== */
+/* ===== MESSAGE SECTION (CARTA) ===== */
 .message-section {
     background: url("imagenes/fondo3.jpg") center center fixed no-repeat;
     background-size: cover;
@@ -524,7 +523,7 @@ body {
     padding: 80px 60px 60px;
     border-radius: 4px; 
     box-shadow: 
-        0 20px 50px rgba(0, 0, 0, 0.4), 
+        0 20px 50px rgba(0, 0, 0, 0.5), 
         inset 0 0 0 1px rgba(128, 0, 32, 0.2),
         inset 0 0 0 8px rgba(255, 255, 255, 0.6),
         inset 0 0 0 9px rgba(128, 0, 32, 0.15); 
@@ -687,7 +686,6 @@ body {
 
     .hero { 
         background-image: url("imagenes/Fondo_inicio.png");
-        /* Focaliza la derecha donde está el paño */
         background-position: right top; 
     }
 
@@ -769,9 +767,6 @@ body {
     .hero { padding: 60px 20px; }
     .section-title { font-size: 1.5em; }
 
-    /* === EL TRUCO DE LOS FONDOS CELULAR === */
-    /* Achica la foto para que se vea completa como un hermoso encabezado difuminado */
-    
     .story-section {
         background: linear-gradient(to bottom, rgba(253,246,240,0) 100px, #FDF6F0 250px), url("imagenes/fondo2.jpg") top center no-repeat;
         background-size: 100% auto;
