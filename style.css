@@ -352,12 +352,22 @@ color:#555;
 }
 
 /* Polaroid Gallery */
-.polaroid-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-bottom: 80px;
-    animation: fadeIn 1s ease-out;
+.polaroid-gallery{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:35px;
+
+margin-bottom:80px;
+
+max-width:950px;
+
+margin-left:auto;
+
+margin-right:auto;
+
 }
 
 .polaroid-card {
