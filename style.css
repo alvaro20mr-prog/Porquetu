@@ -357,7 +357,7 @@ body {
     font-weight: bold;
 }
 
-/* ===== NUEVO: CARRUSEL DE FOTOS ===== */
+/* ===== CARRUSEL DE FOTOS ===== */
 .full-gallery {
     margin-top: 60px;
 }
@@ -386,16 +386,16 @@ body {
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     padding: 20px 0;
-    -ms-overflow-style: none; /* Internet Explorer 10+ */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
 }
 
 .carousel-track::-webkit-scrollbar {
-    display: none; /* Safari and Chrome */
+    display: none; 
 }
 
 .gallery-item.carousel-item {
-    flex: 0 0 calc(33.333% - 14px); /* Muestra 3 fotos a la vez en PC */
+    flex: 0 0 calc(33.333% - 14px); 
     scroll-snap-align: center;
     height: 250px;
     position: relative;
@@ -577,7 +577,7 @@ body {
 }
 
 @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
+    from { opacity: 0; transform: translateY(-30px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
@@ -647,10 +647,13 @@ body {
         gap: 20px;
     }
 
-    /* Ajuste de carrusel en Tablet/Celular grande */
     .gallery-item.carousel-item {
-        flex: 0 0 calc(50% - 10px); /* Muestra 2 fotos a la vez */
+        flex: 0 0 calc(50% - 10px); 
     }
+
+    /* Ajustamos posición de botones en tablets */
+    .carousel-btn.prev { left: 5px; }
+    .carousel-btn.next { right: 5px; }
 
     .love-message h2 { font-size: 2em; }
     .love-message p { font-size: 1em; }
@@ -678,16 +681,22 @@ body {
     
     .polaroid-card img { height: 180px; }
 
-    /* Ajuste de carrusel en Celular Pequeño */
     .gallery-item.carousel-item {
-        flex: 0 0 85%; /* Muestra 1 foto centrada casi completa */
+        flex: 0 0 80%; 
         height: 200px;
     }
 
-    /* Ocultamos los botones en celulares porque pueden deslizar con el dedo */
+    /* === RE-ACTIVADOS CON AJUSTES EN MÓVIL === */
     .carousel-btn {
-        display: none; 
+        display: flex; 
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
+        background: rgba(128, 0, 32, 0.85); /* Un fondo semitransparente elegante */
     }
+
+    .carousel-btn.prev { left: 5px; }
+    .carousel-btn.next { right: 5px; }
 
     .story-section, .gallery-section, .message-section {
         padding: 40px 20px;
