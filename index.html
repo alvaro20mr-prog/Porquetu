@@ -44,7 +44,6 @@
             <h2><i class="fas fa-music"></i> Escucha Nuestra Canción</h2>
             <div class="player-wrapper">
                 <audio id="audioPlayer" controls>
-                    <!-- Aquí conectamos tu archivo de audio local -->
                     <source src="Porque Tú.m4a" type="audio/mp4">
                     Tu navegador no soporta audio HTML5
                 </audio>
@@ -107,64 +106,78 @@
                     <img src="Imagen1.jpg" alt="Nuestro primer viaje">
                     <p class="polaroid-text">Nuestro primer viaje</p>
                 </div>
-
                 <div class="polaroid-card">
                     <img src="Imagen2.jpg" alt="Abrazos sin fin">
                     <p class="polaroid-text">Abrazos sin fin</p>
                 </div>
-
                 <div class="polaroid-card">
                     <img src="Imagen3.jpg" alt="Aventuras compartidas">
                     <p class="polaroid-text">Aventuras compartidas</p>
                 </div>
-
                 <div class="polaroid-card">
                     <img src="Imagen4.jpg" alt="Nuestra conexión">
                     <p class="polaroid-text">Nuestra conexión</p>
                 </div>
-
                 <div class="polaroid-card">
                     <img src="Imagen5.jpg" alt="Siempre juntos">
                     <p class="polaroid-text">Siempre juntos</p>
                 </div>
-
                 <div class="polaroid-card">
                     <img src="Imagen6.jpg" alt="Un amor eterno">
                     <p class="polaroid-text">Un amor eterno</p>
                 </div>
             </div>
 
-            <!-- Galería completa -->
+            <!-- Galería completa - AHORA COMO CARRUSEL -->
             <div class="full-gallery">
                 <h3>Más Momentos Especiales</h3>
-                <div class="gallery-grid">
-                    <div class="gallery-item" onclick="openModal(this)">
-                        <img src="Imagen7.jpg" alt="Risas">
-                        <div class="overlay">
-                            <i class="fas fa-search-plus"></i>
-                        </div>
-                    </div>
+                
+                <div class="carousel-wrapper">
+                    <!-- Botón Izquierda -->
+                    <button class="carousel-btn prev" onclick="moveCarousel(-1)"><i class="fas fa-chevron-left"></i></button>
                     
-                    <div class="gallery-item" onclick="openModal(this)">
-                        <img src="Imagen8.jpg" alt="Sonrisa">
-                        <div class="overlay">
-                            <i class="fas fa-search-plus"></i>
+                    <div class="carousel-track" id="track">
+                        <!-- Puse desde la Imagen 7 hasta la 15 -->
+                        <div class="gallery-item carousel-item" onclick="openModal(this)">
+                            <img src="Imagen7.jpg" alt="Momento 7">
+                            <div class="overlay"><i class="fas fa-search-plus"></i></div>
+                        </div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)">
+                            <img src="Imagen8.jpg" alt="Momento 8">
+                            <div class="overlay"><i class="fas fa-search-plus"></i></div>
+                        </div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)">
+                            <img src="Imagen9.jpg" alt="Momento 9">
+                            <div class="overlay"><i class="fas fa-search-plus"></i></div>
+                        </div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)">
+                            <img src="Imagen10.jpg" alt="Momento 10">
+                            <div class="overlay"><i class="fas fa-search-plus"></i></div>
+                        </div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)">
+                            <img src="Imagen11.jpg" alt="Momento 11">
+                            <div class="overlay"><i class="fas fa-search-plus"></i></div>
+                        </div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)">
+                            <img src="Imagen12.jpg" alt="Momento 12">
+                            <div class="overlay"><i class="fas fa-search-plus"></i></div>
+                        </div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)">
+                            <img src="Imagen13.jpg" alt="Momento 13">
+                            <div class="overlay"><i class="fas fa-search-plus"></i></div>
+                        </div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)">
+                            <img src="Imagen14.jpg" alt="Momento 14">
+                            <div class="overlay"><i class="fas fa-search-plus"></i></div>
+                        </div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)">
+                            <img src="Imagen15.jpg" alt="Momento 15">
+                            <div class="overlay"><i class="fas fa-search-plus"></i></div>
                         </div>
                     </div>
-                    
-                    <div class="gallery-item" onclick="openModal(this)">
-                        <img src="Imagen9.jpg" alt="Juntos">
-                        <div class="overlay">
-                            <i class="fas fa-search-plus"></i>
-                        </div>
-                    </div>
-                    
-                    <div class="gallery-item" onclick="openModal(this)">
-                        <img src="Imagen10.jpg" alt="Amor">
-                        <div class="overlay">
-                            <i class="fas fa-search-plus"></i>
-                        </div>
-                    </div>
+
+                    <!-- Botón Derecha -->
+                    <button class="carousel-btn next" onclick="moveCarousel(1)"><i class="fas fa-chevron-right"></i></button>
                 </div>
             </div>
         </div>
