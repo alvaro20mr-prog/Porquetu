@@ -198,9 +198,12 @@ transform:translate(-50%,10px);
 }
 
 /* ===== STORY SECTION ===== */
-.story-section {
-    padding: 80px 20px;
-    background: linear-gradient(to bottom, white 0%, var(--light-bg) 100%);
+.story-section{
+
+padding:90px 20px;
+
+background:url("fondo2.jpg") center center/cover no-repeat;
+
 }
 
 .section-title{
@@ -396,12 +399,20 @@ color:#555;
     margin-top: 60px;
 }
 
-.full-gallery h3 {
-    text-align: center;
-    color: var(--primary-color);
-    margin-bottom: 30px;
-    font-size: 1.5em;
-    font-weight: normal;
+.full-gallery h3{
+
+font-family:'Great Vibes',cursive;
+
+font-size:60px;
+
+font-weight:400;
+
+color:#7d2947;
+
+text-align:center;
+
+margin-bottom:40px;
+
 }
 
 .gallery-grid {
@@ -461,10 +472,12 @@ color:#555;
 }
 
 /* ===== MESSAGE SECTION ===== */
-.message-section {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-    padding: 80px 20px;
-    text-align: center;
+.message-section{
+
+background:url("fondo3.jpg") center center/cover no-repeat;
+
+padding:90px 20px;
+
 }
 
 .love-message {
