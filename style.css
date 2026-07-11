@@ -30,7 +30,6 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.6;
-    /* Evita saltos de repintado en el texto */
     -webkit-font-smoothing: antialiased;
 }
 
@@ -40,11 +39,11 @@ body {
     padding: 0 20px;
 }
 
-/* ===== HERO ===== */
+/* ===== HERO (PORTADA - Fondo_inicio.png) ===== */
 
 .hero {
     height: 100vh;
-    background: url("fondo1.jpg") center center no-repeat;
+    background: url("imagenes/Fondo_inicio.png") center center no-repeat;
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -59,7 +58,7 @@ body {
     background: linear-gradient(rgba(0,0,0,.20),rgba(0,0,0,.45));
 }
 
-/* === MENÚ BASE (Transparente en la portada) === */
+/* === MENÚ BASE === */
 .menu {
     position: fixed;
     top: 0;
@@ -72,8 +71,8 @@ body {
     z-index: 1000;
     background: rgba(0,0,0,.15);
     backdrop-filter: blur(12px);
-    transition: all 0.3s ease-out; /* Optimizado para más fluidez */
-    will-change: background, padding; /* Aceleración GPU */
+    transition: all 0.3s ease-out; 
+    will-change: background, padding; 
 }
 
 /* === MENÚ SCROLLED (Oscuro al bajar) === */
@@ -167,10 +166,10 @@ body {
     50% { transform: translate(-50%,10px); }
 }
 
-/* ===== STORY SECTION ===== */
+/* ===== STORY SECTION (HISTORIA - fondo2.jpg) ===== */
 .story-section {
     padding: 90px 20px;
-    background: url("fondo2.jpg") center top fixed no-repeat;
+    background: url("imagenes/fondo2.jpg") center top fixed no-repeat;
     background-size: cover;
 }
 
@@ -258,8 +257,8 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(128, 0, 32, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    will-change: transform; /* Aceleración GPU */
-    -webkit-backface-visibility: hidden; /* Evita parpadeos en móviles */
+    will-change: transform; 
+    -webkit-backface-visibility: hidden; 
 }
 
 .timeline-content:hover {
@@ -306,7 +305,7 @@ body {
     transform: rotate(-3deg);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-    will-change: transform; /* Aceleración GPU */
+    will-change: transform; 
     -webkit-backface-visibility: hidden;
 }
 
@@ -363,7 +362,7 @@ body {
     padding: 20px 0;
     -ms-overflow-style: none; 
     scrollbar-width: none; 
-    will-change: scroll-position; /* Evita que el scroll se pegue */
+    will-change: scroll-position; 
 }
 
 .carousel-track::-webkit-scrollbar {
@@ -380,7 +379,7 @@ body {
     cursor: pointer;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    will-change: transform; /* Aceleración GPU */
+    will-change: transform; 
     -webkit-backface-visibility: hidden;
 }
 
@@ -488,9 +487,9 @@ body {
     padding: 20px;
 }
 
-/* ===== MESSAGE SECTION (CARTA ELEGANTE) ===== */
+/* ===== MESSAGE SECTION (CARTA - fondo3.jpg) ===== */
 .message-section {
-    background: url("fondo3.jpg") center center fixed no-repeat;
+    background: url("imagenes/fondo3.jpg") center center fixed no-repeat;
     background-size: cover;
     padding: 100px 20px;
     position: relative;
@@ -510,10 +509,9 @@ body {
     text-align: center;
     position: relative;
     animation: fadeInUp 1s ease-out;
-    will-change: transform, opacity; /* Aceleración GPU */
+    will-change: transform, opacity; 
 }
 
-/* Adorno floral / literario en la parte superior */
 .love-message::before {
     content: '❦'; 
     font-size: 40px;
@@ -649,7 +647,7 @@ body {
     
     section, header { scroll-margin-top: 180px; }
 
-    .hero { background-position: center center; }
+    .hero { background-image: url("imagenes/Fondo_inicio.png"); background-position: center center; }
 
     .main-title { font-size: 2.5em; }
     .subtitle { font-size: 1.3em; }
@@ -729,12 +727,14 @@ body {
     .music-container { padding: 0 10px; }
 
     .story-section {
+        background-image: url("imagenes/fondo2.jpg");
         background-attachment: scroll; 
         background-position: top center; 
         background-size: cover; 
     }
 
     .message-section {
+        background-image: url("imagenes/fondo3.jpg");
         background-attachment: scroll;
     }
 
