@@ -33,58 +33,126 @@ body {
     padding: 0 20px;
 }
 
-/* ===== HERO SECTION ===== */
-.hero {
-    background: linear-gradient(135deg, #800020 0%, #C41E3A 100%);
-    color: white;
-    padding: 120px 20px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
+/* ===== HERO ===== */
+
+.hero{
+height:100vh;
+background:url("fondo1.jpg") center center/cover no-repeat;
+display:flex;
+justify-content:center;
+align-items:center;
+position:relative;
+overflow:hidden;
 }
 
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><defs><pattern id="hearts" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse"><text x="15" y="45" font-size="40" fill="rgba(255,255,255,0.1)">♥</text></pattern></defs><rect width="1200" height="120" fill="url(%23hearts)"/></svg>') repeat;
-    opacity: 0.3;
+.hero-overlay{
+position:absolute;
+inset:0;
+background:linear-gradient(rgba(0,0,0,.20),rgba(0,0,0,.45));
 }
 
-.hero-content {
-    position: relative;
-    z-index: 1;
-    animation: fadeInDown 1s ease-out;
+.menu{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:22px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:1000;
+background:rgba(0,0,0,.15);
+backdrop-filter:blur(12px);
+transition:.35s;
 }
 
-.main-title {
-    font-size: 4em;
-    margin-bottom: 10px;
-    font-weight: normal;
-    letter-spacing: 2px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    animation: heartbeat 1.5s ease-in-out infinite;
+.menu ul{
+display:flex;
+gap:35px;
+list-style:none;
 }
 
-@keyframes heartbeat {
-    0%, 100% { transform: scale(1); }
-    25% { transform: scale(1.05); }
-    50% { transform: scale(1); }
+.menu a{
+color:white;
+text-decoration:none;
+font-size:15px;
+letter-spacing:1px;
+transition:.3s;
 }
 
-.subtitle {
-    font-size: 1.8em;
-    margin-bottom: 10px;
-    opacity: 0.95;
-    font-style: italic;
+.menu a:hover{
+color:#f8d8b8;
 }
 
-.date {
-    font-size: 1.2em;
-    opacity: 0.85;
+.logo{
+font-family:'Great Vibes',cursive;
+font-size:34px;
+color:white;
+}
+
+.hero-content{
+position:relative;
+z-index:5;
+text-align:center;
+color:white;
+max-width:900px;
+padding:20px;
+}
+
+.main-title{
+font-family:'Great Vibes',cursive;
+font-size:130px;
+font-weight:400;
+margin-bottom:20px;
+text-shadow:0 8px 25px rgba(0,0,0,.35);
+animation:none;
+}
+
+.subtitle{
+font-family:'Cormorant Garamond',serif;
+font-size:40px;
+font-style:italic;
+line-height:1.5;
+margin-bottom:45px;
+}
+
+.hero-btn{
+display:inline-block;
+padding:18px 48px;
+background:white;
+color:#6a4334;
+border-radius:40px;
+font-weight:600;
+text-decoration:none;
+transition:.35s;
+}
+
+.hero-btn:hover{
+transform:translateY(-4px);
+box-shadow:0 15px 35px rgba(0,0,0,.25);
+}
+
+.scroll-down{
+position:absolute;
+bottom:35px;
+left:50%;
+transform:translateX(-50%);
+font-size:34px;
+color:white;
+animation:subeBaja 2s infinite;
+cursor:pointer;
+}
+
+@keyframes subeBaja{
+
+0%,100%{
+transform:translate(-50%,0);
+}
+
+50%{
+transform:translate(-50%,10px);
+}
+
 }
 
 /* ===== MUSIC SECTION ===== */
