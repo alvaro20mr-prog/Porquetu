@@ -37,7 +37,9 @@ body {
 
 .hero {
     height: 100vh;
-    background: url("fondo1.jpg") center center/cover no-repeat;
+    background: url("fondo1.jpg") center top no-repeat;
+    background-size: contain;
+    background-color: #1a1a1a;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -193,7 +195,8 @@ body {
 /* ===== STORY SECTION ===== */
 .story-section {
     padding: 90px 20px;
-    background: url("fondo2.jpg") center center/cover no-repeat;
+    background: url("fondo2.jpg") center top fixed no-repeat;
+    background-size: cover;
 }
 
 .section-title {
@@ -430,7 +433,8 @@ body {
 
 /* ===== MESSAGE SECTION ===== */
 .message-section {
-    background: url("fondo3.jpg") center center/cover no-repeat;
+    background: url("fondo3.jpg") center top fixed no-repeat;
+    background-size: cover;
     padding: 90px 20px;
 }
 
@@ -465,28 +469,6 @@ body {
 .signature i {
     color: #FFB6C1;
     animation: pulse 1.5s ease-in-out infinite;
-}
-
-@keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.6; }
-}
-
-/* ===== FOOTER ===== */
-.footer {
-    background: #333;
-    color: white;
-    text-align: center;
-    padding: 30px 20px;
-    font-size: 1.1em;
-}
-
-.footer p {
-    margin: 10px 0;
-}
-
-.footer i {
-    color: var(--secondary-color);
 }
 
 /* ===== MODAL ===== */
@@ -533,6 +515,23 @@ body {
     transform: scale(1.2);
 }
 
+/* ===== FOOTER ===== */
+.footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 1.1em;
+}
+
+.footer p {
+    margin: 10px 0;
+}
+
+.footer i {
+    color: var(--secondary-color);
+}
+
 /* ===== ANIMACIONES ===== */
 @keyframes fadeInDown {
     from { opacity: 0; transform: translateY(-30px); }
@@ -554,21 +553,24 @@ body {
     to { opacity: 1; }
 }
 
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+/* Efecto de flotación para elementos en móvil */
+@keyframes flotar {
+    0% { transform: translateY(0px) rotate(-2deg); }
+    50% { transform: translateY(-8px) rotate(2deg); }
+    100% { transform: translateY(0px) rotate(-2deg); }
+}
+
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 768px) {
-    .main-title {
-        font-size: 2.5em;
-    }
+    .main-title { font-size: 2.5em; }
+    .subtitle { font-size: 1.3em; }
+    .section-title { font-size: 2em; }
 
-    .subtitle {
-        font-size: 1.3em;
-    }
-
-    .section-title {
-        font-size: 2em;
-    }
-
-    /* Ajustes nuevos para el Menú */
     .menu {
         flex-direction: column;
         padding: 15px;
@@ -581,122 +583,87 @@ body {
         padding-top: 10px;
     }
 
-    .logo {
-        font-size: 28px;
-    }
+    .logo { font-size: 28px; }
+    .full-gallery h3 { font-size: 2.5em; }
+    .timeline-content p { font-size: 18px; }
+    
+    .timeline::before { left: 20px; }
 
-    /* Ajuste para el título de la galería */
-    .full-gallery h3 {
-        font-size: 2.5em;
-    }
-
-    /* Ajuste de texto para la línea de tiempo */
-    .timeline-content p {
-        font-size: 18px;
-    }
-
-    .timeline::before {
-        left: 20px;
-    }
-
-    .timeline-item {
+    .timeline-item, .timeline-item:nth-child(even) {
         grid-template-columns: 1fr !important;
         gap: 0;
         margin-left: 60px;
     }
 
-    .timeline-item:nth-child(even) {
-        grid-template-columns: 1fr !important;
-    }
-
-    .timeline-item:nth-child(even) .timeline-date {
-        order: unset;
-    }
-
+    .timeline-item:nth-child(even) .timeline-date,
     .timeline-item:nth-child(even) .timeline-content {
         order: unset;
         text-align: left;
     }
 
-    .timeline-date::before {
-        left: -37px;
-    }
-
+    .timeline-date::before { left: -37px; }
     .timeline-date {
         text-align: left;
         font-size: 1.3em;
     }
 
-    .polaroid-gallery {
+    .polaroid-gallery, .gallery-grid {
         grid-template-columns: 1fr 1fr;
         gap: 20px;
     }
 
-    .gallery-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .love-message h2 {
-        font-size: 2em;
-    }
-
-    .love-message p {
-        font-size: 1em;
-    }
-
+    .love-message h2 { font-size: 2em; }
+    .love-message p { font-size: 1em; }
     .close {
         top: 20px;
         right: 20px;
         font-size: 28px;
     }
+
+    /* Animación aplicada a los elementos en pantallas móviles */
+    .polaroid-card, .timeline-content {
+        animation: flotar 4s ease-in-out infinite;
+    }
+
+    .polaroid-card:nth-child(odd) {
+        animation-delay: 1s;
+    }
 }
 
 @media (max-width: 480px) {
-    .main-title {
-        font-size: 1.8em;
-    }
+    .main-title { font-size: 1.8em; }
+    .subtitle { font-size: 1em; }
+    .hero { padding: 60px 20px; }
+    .section-title { font-size: 1.5em; }
+    .music-container { padding: 0 10px; }
 
-    .subtitle {
-        font-size: 1em;
-    }
-
-    .hero {
-        padding: 60px 20px;
-    }
-
-    .section-title {
-        font-size: 1.5em;
-    }
-
-    .music-container {
-        padding: 0 10px;
-    }
-
+    /* Forzamos 2 columnas para el collage Polaroid en celulares */
     .polaroid-gallery {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .polaroid-card img {
+        height: 180px; 
     }
 
+    /* Forzamos 2 columnas para la galería final en celulares */
     .gallery-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
     }
 
-    .story-section,
-    .gallery-section,
-    .message-section {
+    .gallery-item {
+        height: 150px;
+    }
+
+    .story-section, .gallery-section, .message-section {
         padding: 40px 20px;
     }
 
-    .love-message h2 {
-        font-size: 1.5em;
-    }
-
-    .love-message p {
-        font-size: 0.95em;
-    }
-
-    .timeline-item {
-        margin-left: 40px;
-    }
+    .love-message h2 { font-size: 1.5em; }
+    .love-message p { font-size: 0.95em; }
+    .timeline-item { margin-left: 40px; }
 
     .timeline-date::before {
         left: -30px;
