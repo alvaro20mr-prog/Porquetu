@@ -42,9 +42,8 @@ body {
 
 .hero {
     height: 100vh;
-    background: url("fondo1.jpg") center top no-repeat;
-    background-size: contain;
-    background-color: #1a1a1a;
+    background: url("fondo1.jpg") center center no-repeat;
+    background-size: cover; /* Volvemos a que llene la pantalla completa sin bordes negros */
     display: flex;
     justify-content: center;
     align-items: center;
