@@ -476,7 +476,7 @@ body {
     padding: 20px;
 }
 
-/* ===== MESSAGE SECTION (CARTA EN FORMA DE TARJETA) ===== */
+/* ===== MESSAGE SECTION (CARTA ELEGANTE) ===== */
 .message-section {
     background: url("fondo3.jpg") center center fixed no-repeat;
     background-size: cover;
@@ -485,43 +485,54 @@ body {
 }
 
 .love-message {
-    max-width: 750px;
+    max-width: 800px;
     margin: 0 auto;
-    background: #FDF6F0; /* Color de la tarjeta (cremita) */
-    padding: 60px 50px;
-    border-radius: 15px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3); /* Sombra elegante */
+    background: linear-gradient(135deg, #FFF8F3 0%, #FDF6F0 100%); /* Gradiente muy sutil */
+    padding: 80px 60px 60px;
+    border-radius: 4px; /* Un poco más cuadrado, tipo papel fino */
+    
+    /* El truco mágico: Crea un doble marco interno súper elegante y una gran sombra exterior */
+    box-shadow: 
+        0 20px 50px rgba(0, 0, 0, 0.4), 
+        inset 0 0 0 1px rgba(128, 0, 32, 0.2),
+        inset 0 0 0 8px rgba(255, 255, 255, 0.6),
+        inset 0 0 0 9px rgba(128, 0, 32, 0.15); 
+        
     text-align: center;
     position: relative;
     animation: fadeInUp 1s ease-out;
 }
 
-/* Borde sutil interno de la tarjeta */
+/* Adorno floral / literario en la parte superior */
 .love-message::before {
-    content: '';
+    content: '❦'; 
+    font-size: 40px;
+    color: #C41E3A;
     position: absolute;
-    top: 15px; left: 15px; right: 15px; bottom: 15px;
-    border: 1px solid rgba(128, 0, 32, 0.2); 
-    border-radius: 10px;
-    pointer-events: none;
+    top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.6;
 }
 
 .love-message h2 {
     font-family: 'Great Vibes', cursive;
-    font-size: 4em;
+    font-size: 4.5em;
     color: #7d2947; 
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 30px;
     font-weight: 400;
+    text-shadow: 2px 2px 4px rgba(128, 0, 32, 0.08); /* Sombra suave para efecto tinta */
     position: relative;
     z-index: 1;
 }
 
 .love-message p {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.6em;
-    color: #444; 
-    margin: 20px 0;
-    line-height: 1.8;
+    font-size: 1.7em;
+    color: #333; 
+    margin: 25px 0;
+    line-height: 1.9;
     font-style: italic;
     position: relative;
     z-index: 1;
@@ -634,7 +645,6 @@ body {
     .subtitle { font-size: 1.3em; }
     .section-title { font-size: 2em; }
 
-    /* Ajustes del menú para móvil */
     .menu {
         flex-direction: column;
         padding: 15px;
@@ -681,15 +691,15 @@ body {
     .carousel-btn.prev { left: 5px; }
     .carousel-btn.next { right: 5px; }
 
-    /* Ajustes de la nueva tarjeta Carta en tablets */
+    /* Ajustes de la nueva tarjeta en tablets */
     .love-message { 
-        padding: 40px 25px; 
+        padding: 60px 30px 40px; 
     }
     .love-message h2 { 
-        font-size: 3em; 
+        font-size: 3.5em; 
     }
     .love-message p { 
-        font-size: 1.3em; 
+        font-size: 1.4em; 
     }
 
     .close {
@@ -709,7 +719,6 @@ body {
     .section-title { font-size: 1.5em; }
     .music-container { padding: 0 10px; }
 
-    /* Quitamos el 'fixed' para evitar el zoom gigante en móviles */
     .story-section {
         background-attachment: scroll; 
         background-position: top center; 
@@ -747,15 +756,19 @@ body {
         padding: 40px 20px;
     }
 
-    /* Ajustes de la nueva tarjeta Carta en celulares pequeños */
+    /* Ajustes de la nueva tarjeta en celulares pequeños */
     .love-message { 
-        padding: 30px 15px; 
+        padding: 50px 20px 30px; 
+    }
+    .love-message::before {
+        font-size: 30px;
+        top: 12px;
     }
     .love-message h2 { 
-        font-size: 2.5em; 
+        font-size: 2.8em; 
     }
     .love-message p { 
-        font-size: 1.1em; 
+        font-size: 1.2em; 
     }
 
     .timeline-item { margin-left: 40px; }
