@@ -445,46 +445,57 @@ body {
 .carousel-btn.prev { left: -15px; }
 .carousel-btn.next { right: -15px; }
 
-/* ===== MUSIC SECTION ===== */
+/* ===== MUSIC SECTION NUEVO DISEÑO ===== */
 .music-section {
     background: linear-gradient(135deg, var(--light-bg) 0%, white 100%);
-    padding: 60px 20px;
+    padding: 80px 20px;
     text-align: center;
 }
 
-.music-container {
-    max-width: 600px;
+.music-card {
+    display: flex;
+    max-width: 800px;
     margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(128, 0, 32, 0.15);
+    overflow: hidden;
+    text-align: left;
     animation: slideUp 0.8s ease-out;
 }
 
-.music-section h2 {
-    color: var(--primary-color);
-    font-size: 2em;
-    margin-bottom: 30px;
-    font-weight: normal;
+.music-cover {
+    width: 300px;
+    object-fit: cover;
 }
 
-.player-wrapper {
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 8px 30px rgba(128, 0, 32, 0.15);
-    margin-bottom: 20px;
+.music-info {
+    padding: 40px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.music-info h3 {
+    color: var(--primary-color);
+    font-family: 'Great Vibes', cursive;
+    font-size: 3em;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+
+.music-info p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5em;
+    color: #555;
+    font-style: italic;
+    margin-bottom: 25px;
 }
 
 #audioPlayer {
     width: 100%;
-    height: 40px;
-    cursor: pointer;
-}
-
-.lyrics-preview {
-    color: var(--primary-color);
-    font-size: 1.3em;
-    font-style: italic;
-    font-weight: bold;
-    padding: 20px;
+    outline: none;
 }
 
 /* ===== MESSAGE SECTION (CARTA - fondo3.jpg) ===== */
@@ -643,16 +654,8 @@ body {
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
-@media (max-width: 768px) {
-    
-    section, header { scroll-margin-top: 180px; }
-
-    .hero { background-image: url("imagenes/Fondo_inicio.png"); background-position: center center; }
-
-    .main-title { font-size: 2.5em; }
-    .subtitle { font-size: 1.3em; }
-    .section-title { font-size: 2em; }
-
+@media (max-width: 900px) {
+    /* CORRECCIÓN MENÚ: Fuerza que los botones bajen si la pantalla se achica */
     .menu {
         flex-direction: column;
         padding: 15px;
@@ -661,8 +664,22 @@ body {
         flex-wrap: wrap;
         justify-content: center;
         gap: 15px;
-        padding-top: 10px;
+        margin-top: 10px;
     }
+    .menu a {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    
+    section, header { scroll-margin-top: 180px; }
+
+    .hero { background-position: center center; }
+
+    .main-title { font-size: 2.5em; }
+    .subtitle { font-size: 1.3em; }
+    .section-title { font-size: 2em; }
 
     .logo { font-size: 28px; }
     .full-gallery h3 { font-size: 2.5em; }
@@ -699,6 +716,20 @@ body {
     .carousel-btn.prev { left: 5px; }
     .carousel-btn.next { right: 5px; }
 
+    /* Ajuste Tarjeta de Música para celular/tablet */
+    .music-card {
+        flex-direction: column;
+        max-width: 400px;
+    }
+    .music-cover {
+        width: 100%;
+        height: 250px;
+    }
+    .music-info {
+        text-align: center;
+        padding: 30px 20px;
+    }
+
     .love-message { 
         padding: 60px 30px 40px; 
     }
@@ -724,7 +755,6 @@ body {
     .subtitle { font-size: 1em; }
     .hero { padding: 60px 20px; }
     .section-title { font-size: 1.5em; }
-    .music-container { padding: 0 10px; }
 
     .story-section {
         background-image: url("imagenes/fondo2.jpg");
