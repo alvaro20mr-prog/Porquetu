@@ -70,14 +70,14 @@ body {
     z-index: 1000;
     background: rgba(0,0,0,.15);
     backdrop-filter: blur(12px);
-    transition: all 0.4s ease; /* Transición suave */
+    transition: all 0.4s ease; 
 }
 
 /* === MENÚ SCROLLED (Oscuro al bajar) === */
 .menu.scrolled {
-    background: rgba(0, 0, 0, 0.85); /* Fondo oscuro para que resalte la letra blanca */
-    padding: 15px 8%; /* Se hace un poquito más delgado para no tapar tanto */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* Sombra elegante */
+    background: rgba(0, 0, 0, 0.85); 
+    padding: 15px 8%; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3); 
 }
 
 .menu ul {
@@ -476,43 +476,67 @@ body {
     padding: 20px;
 }
 
-/* ===== MESSAGE SECTION ===== */
+/* ===== MESSAGE SECTION (CARTA EN FORMA DE TARJETA) ===== */
 .message-section {
-    background: url("fondo3.jpg") center top fixed no-repeat;
+    background: url("fondo3.jpg") center center fixed no-repeat;
     background-size: cover;
-    padding: 90px 20px;
+    padding: 100px 20px;
+    position: relative;
 }
 
 .love-message {
-    max-width: 600px;
+    max-width: 750px;
     margin: 0 auto;
-    color: white;
+    background: #FDF6F0; /* Color de la tarjeta (cremita) */
+    padding: 60px 50px;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3); /* Sombra elegante */
+    text-align: center;
+    position: relative;
     animation: fadeInUp 1s ease-out;
 }
 
+/* Borde sutil interno de la tarjeta */
+.love-message::before {
+    content: '';
+    position: absolute;
+    top: 15px; left: 15px; right: 15px; bottom: 15px;
+    border: 1px solid rgba(128, 0, 32, 0.2); 
+    border-radius: 10px;
+    pointer-events: none;
+}
+
 .love-message h2 {
-    font-size: 2.5em;
+    font-family: 'Great Vibes', cursive;
+    font-size: 4em;
+    color: #7d2947; 
     margin-bottom: 20px;
-    font-weight: normal;
-    letter-spacing: 1px;
+    font-weight: 400;
+    position: relative;
+    z-index: 1;
 }
 
 .love-message p {
-    font-size: 1.2em;
-    margin: 15px 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6em;
+    color: #444; 
+    margin: 20px 0;
     line-height: 1.8;
     font-style: italic;
+    position: relative;
+    z-index: 1;
 }
 
 .signature {
-    margin-top: 40px;
-    font-size: 1.1em;
-    font-style: normal;
-    letter-spacing: 0.5px;
+    margin-top: 50px;
+    font-size: 1.4em !important;
+    font-style: normal !important;
+    color: #7d2947;
+    font-weight: bold;
 }
 
 .signature i {
-    color: #FFB6C1;
+    color: #C41E3A;
     animation: pulse 1.5s ease-in-out infinite;
 }
 
@@ -657,8 +681,17 @@ body {
     .carousel-btn.prev { left: 5px; }
     .carousel-btn.next { right: 5px; }
 
-    .love-message h2 { font-size: 2em; }
-    .love-message p { font-size: 1em; }
+    /* Ajustes de la nueva tarjeta Carta en tablets */
+    .love-message { 
+        padding: 40px 25px; 
+    }
+    .love-message h2 { 
+        font-size: 3em; 
+    }
+    .love-message p { 
+        font-size: 1.3em; 
+    }
+
     .close {
         top: 20px;
         right: 20px;
@@ -676,11 +709,11 @@ body {
     .section-title { font-size: 1.5em; }
     .music-container { padding: 0 10px; }
 
-    /* === SOLUCIÓN FONDO CELULAR: Quitamos el 'fixed' para evitar el zoom gigante === */
+    /* Quitamos el 'fixed' para evitar el zoom gigante en móviles */
     .story-section {
-        background-attachment: scroll; /* Esto evita el zoom brutal en iPhone/Android */
-        background-position: top center; /* Mantiene las flores y la taza en la parte superior */
-        background-size: cover; /* Mantiene la proporción sin estirar feo */
+        background-attachment: scroll; 
+        background-position: top center; 
+        background-size: cover; 
     }
 
     .message-section {
@@ -714,8 +747,17 @@ body {
         padding: 40px 20px;
     }
 
-    .love-message h2 { font-size: 1.5em; }
-    .love-message p { font-size: 0.95em; }
+    /* Ajustes de la nueva tarjeta Carta en celulares pequeños */
+    .love-message { 
+        padding: 30px 15px; 
+    }
+    .love-message h2 { 
+        font-size: 2.5em; 
+    }
+    .love-message p { 
+        font-size: 1.1em; 
+    }
+
     .timeline-item { margin-left: 40px; }
 
     .timeline-date::before {
