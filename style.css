@@ -43,7 +43,7 @@ body {
 
 .hero {
     height: 100vh;
-    background: url("imagenes/fondo1.jpg") center center no-repeat;
+    background: url("imagenes/Fondo_inicio.png") center center no-repeat;
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -754,7 +754,8 @@ body {
     }
     .subtitle { 
         font-size: 1.2em; 
-        color: white; 
+        color: var(--text-color); /* Color oscuro para que se lea perfecto sobre el crema */
+        text-shadow: none;
     }
     .section-title, 
     .full-gallery h3, 
@@ -789,13 +790,13 @@ body {
         box-shadow: 0 5px 15px rgba(128, 0, 32, 0.3);
     }
 
-    /* === Ajuste para la Portada en Móvil === */
+    /* === SOLUCIÓN FINAL FONDO INICIO MÓVIL === */
     .hero { 
         height: auto;
         min-height: 100vh;
-        /* Aumentamos el relleno superior para empujar el texto a la zona clara */
-        padding: 320px 20px 60px; 
-        background: linear-gradient(to bottom, rgba(253,246,240,0) 220px, #FDF6F0 320px), url("imagenes/fondo1.jpg") top center no-repeat;
+        padding: 350px 20px 60px; 
+        /* Ruta corregida a Fondo_inicio.png */
+        background: linear-gradient(to bottom, rgba(253,246,240,0) 250px, #FDF6F0 350px), url("imagenes/Fondo_inicio.png") top center no-repeat;
         background-size: 100% auto;
         background-color: var(--background-color);
         display: flex;
@@ -811,7 +812,6 @@ body {
         display: none; 
     }
 
-    /* Secciones con difuminado regular */
     .story-section {
         background: linear-gradient(to bottom, rgba(253,246,240,0) 180px, #FDF6F0 280px), url("imagenes/fondo2.jpg") top center no-repeat;
         background-size: 100% auto;
