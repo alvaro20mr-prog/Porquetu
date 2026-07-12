@@ -790,13 +790,13 @@ body {
         box-shadow: 0 5px 15px rgba(128, 0, 32, 0.3);
     }
 
-    /* === SOLUCIÓN: LA IMAGEN COMIENZA ABAJO DEL MENÚ CON DIFUMINADO MUY SUAVE === */
+    /* === SOLUCIÓN FINAL: DIFUMINADO ULTRA CORTO Y SUAVE === */
     .hero { 
         height: auto;
         min-height: 100vh;
         padding: 310px 20px 60px; 
-        /* Comienza invisible muy arriba, difumina despacio, y se funde en blanco-vino sólido antes que termine la imagen */
-        background: linear-gradient(to bottom, rgba(250,244,245,0) 80px, rgba(250,244,245,0.6) 200px, #FAF4F5 300px), url("imagenes/Fondo_inicio.png") center 75px no-repeat;
+        /* Totalmente transparente por 260px, y un difuminado corto de solo 35px en el borde inferior */
+        background: linear-gradient(to bottom, rgba(250,244,245,0) 0px, rgba(250,244,245,0) 260px, #FAF4F5 295px), url("imagenes/Fondo_inicio.png") center 75px no-repeat;
         background-size: 100% auto;
         background-color: var(--background-color);
         display: flex;
@@ -812,27 +812,27 @@ body {
         display: none; 
     }
 
-    /* === MISMOS DIFUMINADOS LARGOS Y SUAVES PARA LAS DEMÁS SECCIONES === */
+    /* Mismo efecto tenue y preciso para las otras secciones */
     .story-section {
-        background: linear-gradient(to bottom, rgba(250,244,245,0) 50px, rgba(250,244,245,0.5) 160px, #FAF4F5 260px), url("imagenes/fondo2.jpg") top center no-repeat;
+        background: linear-gradient(to bottom, rgba(250,244,245,0) 0px, rgba(250,244,245,0) 180px, #FAF4F5 220px), url("imagenes/fondo2.jpg") top center no-repeat;
         background-size: 100% auto;
         background-color: var(--background-color);
     }
 
     .gallery-section {
-        background: linear-gradient(to bottom, rgba(250,244,245,0) 50px, rgba(250,244,245,0.5) 160px, #FAF4F5 260px), url("imagenes/fondo4.jpg") top center no-repeat;
+        background: linear-gradient(to bottom, rgba(250,244,245,0) 0px, rgba(250,244,245,0) 180px, #FAF4F5 220px), url("imagenes/fondo4.jpg") top center no-repeat;
         background-size: 100% auto;
         background-color: var(--background-color);
     }
 
     .music-section {
-        background: linear-gradient(to bottom, rgba(250,244,245,0) 50px, rgba(250,244,245,0.5) 160px, #FAF4F5 260px), url("imagenes/Fondo_musica.jpg") top center no-repeat;
+        background: linear-gradient(to bottom, rgba(250,244,245,0) 0px, rgba(250,244,245,0) 180px, #FAF4F5 220px), url("imagenes/Fondo_musica.jpg") top center no-repeat;
         background-size: 100% auto;
         background-color: var(--background-color);
     }
 
     .message-section {
-        background: linear-gradient(to bottom, rgba(250,244,245,0) 50px, rgba(250,244,245,0.5) 160px, #FAF4F5 260px), url("imagenes/fondo3.jpg") top center no-repeat;
+        background: linear-gradient(to bottom, rgba(250,244,245,0) 0px, rgba(250,244,245,0) 180px, #FAF4F5 220px), url("imagenes/fondo3.jpg") top center no-repeat;
         background-size: 100% auto;
         background-color: var(--background-color);
     }
@@ -887,5 +887,4 @@ body {
         height: 16px;
         border-width: 3px;
     }
-   }
-
+       }
