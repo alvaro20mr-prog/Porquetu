@@ -39,7 +39,7 @@ body {
     padding: 0 20px;
 }
 
-/* ===== HERO (PORTADA - Fondo_inicio.png) ===== */
+/* ===== HERO (PORTADA) ===== */
 
 .hero {
     height: 100vh;
@@ -75,7 +75,6 @@ body {
     will-change: background, padding; 
 }
 
-/* === MENÚ SCROLLED (Oscuro al bajar) === */
 .menu.scrolled {
     background: rgba(0, 0, 0, 0.85); 
     padding: 15px 8%; 
@@ -115,12 +114,18 @@ body {
     padding: 20px;
 }
 
+/* === TÍTULOS CON RESPLANDOR (GLOW) BLANCO PARA LEERSE EN MADERA === */
+.main-title, .section-title, .timeline-date, .full-gallery h3 {
+    color: var(--primary-color);
+    /* El truco mágico: Crea un "halo" blanco brillante alrededor del texto vino */
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.9), 0px 0px 20px rgba(255, 255, 255, 1);
+}
+
 .main-title {
     font-family: 'Great Vibes', cursive;
     font-size: 130px;
     font-weight: 400;
     margin-bottom: 20px;
-    text-shadow: 0 8px 25px rgba(0,0,0,.35);
     animation: none;
 }
 
@@ -130,13 +135,15 @@ body {
     font-style: italic;
     line-height: 1.5;
     margin-bottom: 45px;
+    color: white;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5); /* Sombra oscura para el subtitulo blanco */
 }
 
 .hero-btn {
     display: inline-block;
     padding: 18px 48px;
     background: white;
-    color: #6a4334;
+    color: var(--primary-color);
     border-radius: 40px;
     font-weight: 600;
     text-decoration: none;
@@ -166,22 +173,19 @@ body {
     50% { transform: translate(-50%,10px); }
 }
 
-/* ===== STORY SECTION (HISTORIA) ===== */
+/* ===== STORY SECTION ===== */
 .story-section {
     padding: 90px 20px;
     background: url("imagenes/fondo2.jpg") center top fixed no-repeat;
     background-size: cover;
 }
 
-/* Títulos claros en versión PC */
 .section-title {
     font-family: 'Great Vibes', cursive;
     font-size: 74px;
     font-weight: 400;
     text-align: center;
-    color: #FFF8F3; 
     margin-bottom: 70px;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); 
 }
 
 .section-title::after {
@@ -208,7 +212,7 @@ body {
     top: 0;
     bottom: 0;
     width: 3px;
-    background: linear-gradient(to bottom, rgba(255,255,255,0.2), #FFF8F3, rgba(255,255,255,0.2));
+    background: linear-gradient(to bottom, rgba(128,0,32,0), var(--primary-color), rgba(128,0,32,0));
     transform: translateX(-50%);
 }
 
@@ -233,11 +237,9 @@ body {
     font-family: 'Great Vibes', cursive;
     font-size: 62px;
     font-weight: 400;
-    color: #FFF8F3; 
     text-align: center;
     position: relative;
     z-index: 2;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); 
 }
 
 .timeline-date::before {
@@ -251,21 +253,21 @@ body {
     border: 4px solid var(--primary-color);
     border-radius: 50%;
     transform: translate(-50%, -50%);
-    box-shadow: 0 0 10px rgba(0,0,0,0.5); 
+    box-shadow: 0 0 10px rgba(255,255,255,0.8); 
 }
 
 .timeline-content {
     background: white;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     will-change: transform; 
     -webkit-backface-visibility: hidden; 
 }
 
 .timeline-content:hover {
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
     transform: translateY(-5px);
 }
 
@@ -273,7 +275,7 @@ body {
     font-family: 'Cormorant Garamond', serif;
     font-size: 34px;
     font-weight: 600;
-    color: #7d2947;
+    color: var(--primary-color);
     margin-bottom: 15px;
 }
 
@@ -305,7 +307,7 @@ body {
 .polaroid-card {
     background: white;
     padding: 15px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); 
     transform: rotate(-3deg);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
@@ -316,7 +318,7 @@ body {
 .polaroid-card:nth-child(2n) { transform: rotate(3deg); }
 .polaroid-card:hover {
     transform: rotate(0) scale(1.05);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
 }
 
 .polaroid-card img {
@@ -344,10 +346,8 @@ body {
     font-family: 'Great Vibes', cursive;
     font-size: 60px;
     font-weight: 400;
-    color: #FFF8F3; 
     text-align: center;
     margin-bottom: 40px;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); 
 }
 
 .carousel-wrapper {
@@ -382,7 +382,7 @@ body {
     overflow: hidden;
     border-radius: 8px;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     will-change: transform; 
     -webkit-backface-visibility: hidden;
@@ -390,7 +390,7 @@ body {
 
 .gallery-item:hover {
     transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .gallery-item img {
@@ -423,10 +423,9 @@ body {
 .gallery-item:hover .overlay { opacity: 1; }
 .gallery-item:hover img { filter: brightness(0.5); }
 
-/* Botones del Carrusel */
 .carousel-btn {
-    background: var(--primary-color);
-    color: white;
+    background: white;
+    color: var(--primary-color);
     border: none;
     border-radius: 50%;
     width: 45px;
@@ -435,7 +434,7 @@ body {
     cursor: pointer;
     position: absolute;
     z-index: 10;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     transition: transform 0.3s ease, background 0.3s ease;
     display: flex;
     justify-content: center;
@@ -443,7 +442,7 @@ body {
 }
 
 .carousel-btn:hover {
-    background: var(--secondary-color);
+    background: var(--light-bg);
     transform: scale(1.1);
 }
 
@@ -465,7 +464,7 @@ body {
     margin: 0 auto;
     background: rgba(255, 255, 255, 0.95); 
     border-radius: 15px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     text-align: left;
     animation: slideUp 0.8s ease-out;
@@ -533,7 +532,7 @@ body {
 .love-message::before {
     content: '❦'; 
     font-size: 40px;
-    color: #C41E3A;
+    color: var(--secondary-color);
     position: absolute;
     top: 18px;
     left: 50%;
@@ -544,11 +543,11 @@ body {
 .love-message h2 {
     font-family: 'Great Vibes', cursive;
     font-size: 4.5em;
-    color: #7d2947; 
+    color: var(--primary-color); 
     margin-top: 10px;
     margin-bottom: 30px;
     font-weight: 400;
-    text-shadow: 2px 2px 4px rgba(128, 0, 32, 0.08); 
+    text-shadow: none; /* Quitamos la sombra aquí porque el fondo es blanco */
     position: relative;
     z-index: 1;
 }
@@ -568,12 +567,12 @@ body {
     margin-top: 50px;
     font-size: 1.4em !important;
     font-style: normal !important;
-    color: #7d2947;
+    color: var(--primary-color);
     font-weight: bold;
 }
 
 .signature i {
-    color: #C41E3A;
+    color: var(--primary-color);
     animation: pulse 1.5s ease-in-out infinite;
 }
 
@@ -749,22 +748,36 @@ body {
 }
 
 @media (max-width: 480px) {
-    /* AJUSTES DE COLORES PARA TEXTOS EN MÓVIL (Por el fondo difuminado claro) */
     .main-title { 
-        font-size: 4em; 
-        color: var(--primary-color);
-        text-shadow: none;
+        font-size: 4.5em; 
     }
     .subtitle { 
         font-size: 1.2em; 
-        color: var(--text-color); 
+        color: white; 
     }
     .section-title, 
     .full-gallery h3, 
     .timeline-date { 
-        font-size: 2.2em;
-        color: var(--primary-color); 
-        text-shadow: none;
+        font-size: 2.5em;
+    }
+
+    /* === SOLUCIÓN: MENÚ EN UNA SOLA LÍNEA === */
+    .menu {
+        padding: 10px 5px;
+    }
+    .logo {
+        font-size: 22px;
+        margin-bottom: 8px;
+    }
+    .menu ul {
+        flex-wrap: nowrap; /* Fuerza a que no salten de línea */
+        gap: 8px; /* Reduce el espacio entre palabras */
+        justify-content: space-around;
+        width: 100%;
+        margin-top: 0;
+    }
+    .menu a {
+        font-size: 12px; /* Letra un poco más pequeña para que quepan todos */
     }
 
     /* Ajuste del botón Comenzar en celular */
@@ -774,39 +787,35 @@ body {
         box-shadow: 0 5px 15px rgba(128, 0, 32, 0.3);
     }
 
-    /* === EL TRUCO DE LOS FONDOS EN CELULAR (Ahora con la Portada incluida) === */
+    /* === SOLUCIÓN: EL FONDO DE INICIO AHORA SE VE COMPLETO Y NO SE BORRA === */
     .hero { 
         padding: 60px 20px; 
-        /* Revela la imagen arriba y la difumina al crema */
-        background: linear-gradient(to bottom, rgba(253,246,240,0) 100px, #FDF6F0 250px), url("imagenes/Fondo_inicio.png") top center no-repeat;
-        background-size: 100% auto;
-        background-color: var(--background-color);
+        /* Quitamos el degradado que borraba la imagen, ahora se ve el paño completo */
+        background: url("imagenes/Fondo_inicio.png") right top no-repeat;
+        background-size: cover;
     }
 
-    .hero-overlay {
-        display: none; /* Quitamos la sombra negra extra en el celular para que brille el color crema */
-    }
-
+    /* Ajustamos el difuminado en las otras secciones para que revelen MÁS madera */
     .story-section {
-        background: linear-gradient(to bottom, rgba(253,246,240,0) 100px, #FDF6F0 250px), url("imagenes/fondo2.jpg") top center no-repeat;
+        background: linear-gradient(to bottom, rgba(253,246,240,0) 20%, #FDF6F0 50%), url("imagenes/fondo2.jpg") top center no-repeat;
         background-size: 100% auto;
         background-color: var(--background-color);
     }
 
     .gallery-section {
-        background: linear-gradient(to bottom, rgba(253,246,240,0) 100px, #FDF6F0 250px), url("imagenes/fondo4.jpg") top center no-repeat;
+        background: linear-gradient(to bottom, rgba(253,246,240,0) 20%, #FDF6F0 50%), url("imagenes/fondo4.jpg") top center no-repeat;
         background-size: 100% auto;
         background-color: var(--background-color);
     }
 
     .music-section {
-        background: linear-gradient(to bottom, rgba(253,246,240,0) 100px, #FDF6F0 250px), url("imagenes/Fondo_musica.jpg") top center no-repeat;
+        background: linear-gradient(to bottom, rgba(253,246,240,0) 20%, #FDF6F0 50%), url("imagenes/Fondo_musica.jpg") top center no-repeat;
         background-size: 100% auto;
         background-color: var(--background-color);
     }
 
     .message-section {
-        background: linear-gradient(to bottom, rgba(253,246,240,0) 100px, #FDF6F0 250px), url("imagenes/fondo3.jpg") top center no-repeat;
+        background: linear-gradient(to bottom, rgba(253,246,240,0) 20%, #FDF6F0 50%), url("imagenes/fondo3.jpg") top center no-repeat;
         background-size: 100% auto;
         background-color: var(--background-color);
     }
@@ -828,7 +837,8 @@ body {
         width: 36px;
         height: 36px;
         font-size: 14px;
-        background: rgba(128, 0, 32, 0.85);
+        background: white;
+        color: var(--primary-color);
     }
 
     .carousel-btn.prev { left: 5px; }
@@ -860,4 +870,4 @@ body {
         height: 16px;
         border-width: 3px;
     }
-}
+   }
