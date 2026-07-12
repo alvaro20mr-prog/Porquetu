@@ -11,7 +11,6 @@
 :root {
     --primary-color: #800020;
     --secondary-color: #C41E3A;
-    /* Cambiado al hermoso blanco con matiz vino sobrio sugerido por Álvaro */
     --background-color: #FAF4F5;
     --text-color: #333;
     --light-bg: #FFF8F3;
@@ -464,7 +463,7 @@ body {
     margin: 0 auto;
     background: rgba(255, 255, 255, 0.95); 
     border-radius: 15px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     text-align: left;
     animation: slideUp 0.8s ease-out;
@@ -791,14 +790,13 @@ body {
         box-shadow: 0 5px 15px rgba(128, 0, 32, 0.3);
     }
 
-    /* === SOLUCIÓN DE ÁLVARO: LA IMAGEN COMIENZA ABAJO DEL MENÚ === */
+    /* === SOLUCIÓN: LA IMAGEN COMIENZA ABAJO DEL MENÚ CON DIFUMINADO MUY SUAVE === */
     .hero { 
         height: auto;
         min-height: 100vh;
-        /* Espacio superior para acomodar el contenido justo tras el fin de la foto */
         padding: 310px 20px 60px; 
-        /* Corremos la imagen 75px hacia abajo para librar el menú y usamos el nuevo degradado blanco vino */
-        background: linear-gradient(to bottom, rgba(250,244,245,0) 180px, #FAF4F5 290px), url("imagenes/Fondo_inicio.png") center 75px no-repeat;
+        /* Comienza invisible muy arriba, difumina despacio, y se funde en blanco-vino sólido antes que termine la imagen */
+        background: linear-gradient(to bottom, rgba(250,244,245,0) 80px, rgba(250,244,245,0.6) 200px, #FAF4F5 300px), url("imagenes/Fondo_inicio.png") center 75px no-repeat;
         background-size: 100% auto;
         background-color: var(--background-color);
         display: flex;
@@ -814,27 +812,27 @@ body {
         display: none; 
     }
 
-    /* === REEMPLAZADO POR EL NUEVO COLOR BLANCO VINO SOBRIO (#FAF4F5) EN TODAS LAS TRANSICIONES === */
+    /* === MISMOS DIFUMINADOS LARGOS Y SUAVES PARA LAS DEMÁS SECCIONES === */
     .story-section {
-        background: linear-gradient(to bottom, rgba(250,244,245,0) 180px, #FAF4F5 280px), url("imagenes/fondo2.jpg") top center no-repeat;
+        background: linear-gradient(to bottom, rgba(250,244,245,0) 50px, rgba(250,244,245,0.5) 160px, #FAF4F5 260px), url("imagenes/fondo2.jpg") top center no-repeat;
         background-size: 100% auto;
         background-color: var(--background-color);
     }
 
     .gallery-section {
-        background: linear-gradient(to bottom, rgba(250,244,245,0) 180px, #FAF4F5 280px), url("imagenes/fondo4.jpg") top center no-repeat;
+        background: linear-gradient(to bottom, rgba(250,244,245,0) 50px, rgba(250,244,245,0.5) 160px, #FAF4F5 260px), url("imagenes/fondo4.jpg") top center no-repeat;
         background-size: 100% auto;
         background-color: var(--background-color);
     }
 
     .music-section {
-        background: linear-gradient(to bottom, rgba(250,244,245,0) 180px, #FAF4F5 280px), url("imagenes/Fondo_musica.jpg") top center no-repeat;
+        background: linear-gradient(to bottom, rgba(250,244,245,0) 50px, rgba(250,244,245,0.5) 160px, #FAF4F5 260px), url("imagenes/Fondo_musica.jpg") top center no-repeat;
         background-size: 100% auto;
         background-color: var(--background-color);
     }
 
     .message-section {
-        background: linear-gradient(to bottom, rgba(250,244,245,0) 180px, #FAF4F5 280px), url("imagenes/fondo3.jpg") top center no-repeat;
+        background: linear-gradient(to bottom, rgba(250,244,245,0) 50px, rgba(250,244,245,0.5) 160px, #FAF4F5 260px), url("imagenes/fondo3.jpg") top center no-repeat;
         background-size: 100% auto;
         background-color: var(--background-color);
     }
@@ -889,4 +887,5 @@ body {
         height: 16px;
         border-width: 3px;
     }
-       }
+   }
+
