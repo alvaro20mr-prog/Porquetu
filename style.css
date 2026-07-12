@@ -114,11 +114,12 @@ body {
     padding: 20px;
 }
 
-/* === SOLUCIÓN: LETRAS MÁS ANCHAS, EN NEGRITA Y SIN BORDE BLANCO === */
+/* === SOLUCIÓN: LETRA FINA Y ELEGANTE CON HALO LUMINOSO SUAVE === */
 .main-title, .section-title, .timeline-date, .full-gallery h3 {
     color: var(--primary-color);
-    font-weight: bold; /* Letras más anchas y corpóreas */
-    text-shadow: none; /* Eliminado por completo el borde blanco outline */
+    font-weight: 400; /* Letras finas originales */
+    /* Resplandor suave estilo halo, sin delineado duro */
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.9), 0 0 30px rgba(255, 255, 255, 0.8);
 }
 
 .main-title {
@@ -144,7 +145,7 @@ body {
     background: white;
     color: var(--primary-color);
     border-radius: 40px;
-    font-weight: bold;
+    font-weight: 600;
     text-decoration: none;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     will-change: transform;
@@ -172,6 +173,11 @@ body {
 @keyframes subeBaja {
     0%, 100% { transform: translate(-50%,0); }
     50% { transform: translate(-50%,10px); }
+}
+
+@keyframes subeBajaMobile {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
 }
 
 /* ===== STORY SECTION ===== */
@@ -273,7 +279,7 @@ body {
 .timeline-content h3 {
     font-family: 'Cormorant Garamond', serif;
     font-size: 34px;
-    font-weight: bold;
+    font-weight: 600;
     color: var(--primary-color);
     margin-bottom: 15px;
 }
@@ -380,7 +386,7 @@ body {
     overflow: hidden;
     border-radius: 8px;
     cursor: pointer;
-    box-shadow: 0 4px 12 rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     will-change: transform; 
     -webkit-backface-visibility: hidden;
@@ -486,7 +492,7 @@ body {
     font-family: 'Great Vibes', cursive;
     font-size: 3.5em;
     margin-bottom: 15px;
-    font-weight: bold;
+    font-weight: 400;
 }
 
 .music-info p {
@@ -544,7 +550,7 @@ body {
     color: var(--primary-color); 
     margin-top: 10px;
     margin-bottom: 30px;
-    font-weight: bold;
+    font-weight: 400;
     text-shadow: none; 
     position: relative;
     z-index: 1;
@@ -675,8 +681,8 @@ body {
 }
 
 @media (max-width: 768px) {
-    /* === RETORNO AL ENCUADRE ANTERIOR (140px) === */
-    section, header { scroll-margin-top: 140px; } 
+    
+    section, header { scroll-margin-top: 140px; }
 
     .logo { font-size: 28px; }
     .timeline-content p { font-size: 18px; }
@@ -746,20 +752,23 @@ body {
 }
 
 @media (max-width: 480px) {
-    /* === RETORNO AL ENCUADRE ANTERIOR (140px) === */
     section, header { scroll-margin-top: 140px; } 
 
     .main-title { 
         font-size: 4.5em; 
+        text-shadow: none; /* Sin sombra en el fondo claro para mantener elegancia */
     }
     .subtitle { 
         font-size: 1.2em; 
         color: var(--text-color); 
+        text-shadow: none;
     }
     .section-title, 
     .full-gallery h3, 
     .timeline-date { 
         font-size: 2.5em;
+        /* Solo un halo muuuy sutil por si el fondo de madera llega a tocar un pedacito de la letra */
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.9), 0 2px 4px rgba(0,0,0,0.1);
     }
 
     .menu {
@@ -807,17 +816,17 @@ body {
         display: none; 
     }
     
-    /* === SOLUCIÓN: FLECHA 2 ESPACIOS ABAJO DEL BOTÓN "COMENZAR" === */
+    /* === SOLUCIÓN: FLECHA CENTRADA 2 ESPACIOS ABAJO DEL BOTÓN === */
     .scroll-down {
         display: block; 
-        position: relative; /* Cambiado a flujo de bloque natural */
-        bottom: auto;
+        position: relative; 
         left: auto;
         transform: none;
-        margin: 40px auto 0; /* Espaciado controlado debajo del botón */
-        color: var(--primary-color);
-        font-size: 30px;
+        width: 100%;
         text-align: center;
+        margin: 30px auto 0; /* Centrado perfecto con espacio arriba */
+        color: var(--primary-color);
+        animation: subeBajaMobile 2s infinite; /* Usa la animación móvil que no rompe el centrado */
     }
 
     .story-section {
@@ -894,4 +903,4 @@ body {
         height: 16px;
         border-width: 3px;
     }
-}
+   }
