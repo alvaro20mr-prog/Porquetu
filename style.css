@@ -114,13 +114,17 @@ body {
     padding: 20px;
 }
 
+/* === SOLUCIÓN: LETRAS MÁS ANCHAS, EN NEGRITA Y SIN BORDE BLANCO === */
+.main-title, .section-title, .timeline-date, .full-gallery h3 {
+    color: var(--primary-color);
+    font-weight: bold; /* Letras más anchas y corpóreas */
+    text-shadow: none; /* Eliminado por completo el borde blanco outline */
+}
+
 .main-title {
     font-family: 'Great Vibes', cursive;
     font-size: 130px;
-    font-weight: 400;
     margin-bottom: 20px;
-    color: var(--primary-color);
-    text-shadow: -1px -1px 0 #FAF4F5, 1px -1px 0 #FAF4F5, -1px 1px 0 #FAF4F5, 1px 1px 0 #FAF4F5, 0px 0px 15px rgba(255,255,255,1);
     animation: none;
 }
 
@@ -140,7 +144,7 @@ body {
     background: white;
     color: var(--primary-color);
     border-radius: 40px;
-    font-weight: 600;
+    font-weight: bold;
     text-decoration: none;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     will-change: transform;
@@ -180,11 +184,8 @@ body {
 .section-title {
     font-family: 'Great Vibes', cursive;
     font-size: 74px;
-    font-weight: 400;
     text-align: center;
-    color: var(--primary-color);
     margin-bottom: 70px;
-    text-shadow: -1px -1px 0 #FAF4F5, 1px -1px 0 #FAF4F5, -1px 1px 0 #FAF4F5, 1px 1px 0 #FAF4F5, 0px 0px 15px rgba(255,255,255,1);
 }
 
 .section-title::after {
@@ -235,12 +236,9 @@ body {
 .timeline-date {
     font-family: 'Great Vibes', cursive;
     font-size: 62px;
-    font-weight: 400;
     text-align: center;
     position: relative;
     z-index: 2;
-    color: var(--primary-color);
-    text-shadow: -1px -1px 0 #FAF4F5, 1px -1px 0 #FAF4F5, -1px 1px 0 #FAF4F5, 1px 1px 0 #FAF4F5, 0px 0px 15px rgba(255,255,255,1);
 }
 
 .timeline-date::before {
@@ -275,7 +273,7 @@ body {
 .timeline-content h3 {
     font-family: 'Cormorant Garamond', serif;
     font-size: 34px;
-    font-weight: 600;
+    font-weight: bold;
     color: var(--primary-color);
     margin-bottom: 15px;
 }
@@ -346,11 +344,8 @@ body {
 .full-gallery h3 {
     font-family: 'Great Vibes', cursive;
     font-size: 60px;
-    font-weight: 400;
     text-align: center;
     margin-bottom: 40px;
-    color: var(--primary-color);
-    text-shadow: -1px -1px 0 #FAF4F5, 1px -1px 0 #FAF4F5, -1px 1px 0 #FAF4F5, 1px 1px 0 #FAF4F5, 0px 0px 15px rgba(255,255,255,1);
 }
 
 .carousel-wrapper {
@@ -385,7 +380,7 @@ body {
     overflow: hidden;
     border-radius: 8px;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 4px 12 rgba(0, 0, 0, 0.2); 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     will-change: transform; 
     -webkit-backface-visibility: hidden;
@@ -491,7 +486,7 @@ body {
     font-family: 'Great Vibes', cursive;
     font-size: 3.5em;
     margin-bottom: 15px;
-    font-weight: 400;
+    font-weight: bold;
 }
 
 .music-info p {
@@ -549,7 +544,7 @@ body {
     color: var(--primary-color); 
     margin-top: 10px;
     margin-bottom: 30px;
-    font-weight: 400;
+    font-weight: bold;
     text-shadow: none; 
     position: relative;
     z-index: 1;
@@ -680,8 +675,8 @@ body {
 }
 
 @media (max-width: 768px) {
-    
-    section, header { scroll-margin-top: 140px; }
+    /* === RETORNO AL ENCUADRE ANTERIOR (140px) === */
+    section, header { scroll-margin-top: 140px; } 
 
     .logo { font-size: 28px; }
     .timeline-content p { font-size: 18px; }
@@ -751,27 +746,20 @@ body {
 }
 
 @media (max-width: 480px) {
-    /* === AJUSTE DE ENCUADRE AL TOCAR EL MENÚ MÓVIL === */
-    section, header { scroll-margin-top: 180px; } /* Aumentado para que el menú no tape los títulos */
+    /* === RETORNO AL ENCUADRE ANTERIOR (140px) === */
+    section, header { scroll-margin-top: 140px; } 
 
     .main-title { 
         font-size: 4.5em; 
-        color: var(--primary-color);
-        /* BORDE BLANCO Y RESPLANDOR QUE HACE LEER PERFECTO EL COLOR VINO SOBRE MADERA */
-        text-shadow: -1px -1px 0 #FAF4F5, 1px -1px 0 #FAF4F5, -1px 1px 0 #FAF4F5, 1px 1px 0 #FAF4F5, 0px 0px 15px rgba(255,255,255,1);
     }
     .subtitle { 
         font-size: 1.2em; 
         color: var(--text-color); 
-        text-shadow: none;
     }
     .section-title, 
     .full-gallery h3, 
     .timeline-date { 
         font-size: 2.5em;
-        color: var(--primary-color);
-        /* BORDE BLANCO Y RESPLANDOR QUE HACE LEER PERFECTO EL COLOR VINO SOBRE MADERA */
-        text-shadow: -1px -1px 0 #FAF4F5, 1px -1px 0 #FAF4F5, -1px 1px 0 #FAF4F5, 1px 1px 0 #FAF4F5, 0px 0px 15px rgba(255,255,255,1);
     }
 
     .menu {
@@ -799,7 +787,6 @@ body {
         box-shadow: 0 5px 15px rgba(128, 0, 32, 0.3);
     }
 
-    /* === SOLUCIÓN FINAL: CORTE LIMPIO SIN DIFUMINADO === */
     .hero { 
         height: auto;
         min-height: 100vh;
@@ -820,15 +807,19 @@ body {
         display: none; 
     }
     
-    /* === RESCATE DE LA FLECHITA EN COLOR VINO === */
+    /* === SOLUCIÓN: FLECHA 2 ESPACIOS ABAJO DEL BOTÓN "COMENZAR" === */
     .scroll-down {
         display: block; 
+        position: relative; /* Cambiado a flujo de bloque natural */
+        bottom: auto;
+        left: auto;
+        transform: none;
+        margin: 40px auto 0; /* Espaciado controlado debajo del botón */
         color: var(--primary-color);
-        bottom: 5vh;
-        z-index: 20;
+        font-size: 30px;
+        text-align: center;
     }
 
-    /* === CORTE LIMPIO PARA LAS DEMÁS SECCIONES TAMBIÉN === */
     .story-section {
         background: url("imagenes/fondo2.jpg") top center no-repeat;
         background-size: 100% auto;
@@ -903,4 +894,4 @@ body {
         height: 16px;
         border-width: 3px;
     }
-   }
+}
