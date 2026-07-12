@@ -754,7 +754,7 @@ body {
     }
     .subtitle { 
         font-size: 1.2em; 
-        color: var(--text-color); /* Color oscuro para que se lea perfecto sobre el crema */
+        color: var(--text-color); 
         text-shadow: none;
     }
     .section-title, 
@@ -790,14 +790,15 @@ body {
         box-shadow: 0 5px 15px rgba(128, 0, 32, 0.3);
     }
 
-    /* === SOLUCIÓN FINAL FONDO INICIO MÓVIL === */
+    /* === Ajuste para que la foto del inicio gane protagonismo === */
     .hero { 
         height: auto;
         min-height: 100vh;
-        padding: 350px 20px 60px; 
-        /* Ruta corregida a Fondo_inicio.png */
-        background: linear-gradient(to bottom, rgba(253,246,240,0) 250px, #FDF6F0 350px), url("imagenes/Fondo_inicio.png") top center no-repeat;
-        background-size: 100% auto;
+        /* Reducimos el padding superior a 45vh para subir el texto */
+        padding: 45vh 20px 60px; 
+        /* Usamos background-size: cover para que la imagen llene el alto necesario */
+        background: linear-gradient(to bottom, rgba(253,246,240,0) 35vh, #FDF6F0 55vh), url("imagenes/Fondo_inicio.png") center center no-repeat;
+        background-size: cover;
         background-color: var(--background-color);
         display: flex;
         flex-direction: column;
@@ -886,4 +887,4 @@ body {
         height: 16px;
         border-width: 3px;
     }
-}
+   }
