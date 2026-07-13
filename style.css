@@ -681,7 +681,8 @@ body {
 
 @media (max-width: 768px) {
     
-    section, header { scroll-margin-top: 140px; }
+    /* Frenado ajustado para no dejar el margen blanco */
+    section, header { scroll-margin-top: 75px; }
 
     .logo { font-size: 28px; }
     .timeline-content p { font-size: 18px; }
@@ -751,8 +752,8 @@ body {
 }
 
 @media (max-width: 480px) {
-    /* === RETORNO AL ENCUADRE DE 140px QUE PREFERÍAS === */
-    section, header { scroll-margin-top: 140px; } 
+    /* === EL FRENO PERFECTO: 75px hace que la foto toque justo el borde del menú === */
+    section, header { scroll-margin-top: 75px; } 
 
     .main-title { 
         font-size: 4.5em; 
@@ -875,10 +876,28 @@ body {
     .carousel-btn.prev { left: 5px; }
     .carousel-btn.next { right: 5px; }
 
-    /* === RESTAURACIÓN DE LAS DIMENSIONES ORIGINALES DE LAS SECCIONES === */
+    /* === RESTAURACIÓN A LAS DIMENSIONES ORIGINALES GRANDES === */
     .story-section, .gallery-section, .message-section, .music-section {
         padding: 40px 20px;
-        padding-bottom: 60px; /* Un poco de aire abajo para evitar traslapes visuales */
+        padding-bottom: 60px;
+    }
+    
+    .music-cover {
+        width: 100%;
+        height: 250px; /* Vuelve a la altura grande */
+    }
+    
+    .music-info {
+        text-align: center;
+        padding: 30px 20px; /* Vuelven los márgenes con aire */
+    }
+
+    .music-info h3 {
+        font-size: 3.5em; /* Título vuelve al tamaño grande */
+    }
+
+    .music-info p {
+        font-size: 1.5em;
     }
 
     .love-message { 
