@@ -114,11 +114,10 @@ body {
     padding: 20px;
 }
 
-/* === SOLUCIÓN: LETRA FINA Y ELEGANTE CON HALO LUMINOSO SUAVE === */
+/* === TÍTULOS CON RESPLANDOR BLANCO PARA LEERSE EN MADERA === */
 .main-title, .section-title, .timeline-date, .full-gallery h3 {
     color: var(--primary-color);
-    font-weight: 400; /* Letras finas originales */
-    /* Resplandor suave estilo halo, sin delineado duro */
+    font-weight: 400; 
     text-shadow: 0 0 15px rgba(255, 255, 255, 0.9), 0 0 30px rgba(255, 255, 255, 0.8);
 }
 
@@ -682,7 +681,7 @@ body {
 
 @media (max-width: 768px) {
     
-    section, header { scroll-margin-top: 140px; }
+    section, header { scroll-margin-top: 100px; }
 
     .logo { font-size: 28px; }
     .timeline-content p { font-size: 18px; }
@@ -752,11 +751,12 @@ body {
 }
 
 @media (max-width: 480px) {
-    section, header { scroll-margin-top: 140px; } 
+    /* === AJUSTE DE FRENADO: Reducimos para subir el contenido al tocar el menú === */
+    section, header { scroll-margin-top: 100px; } 
 
     .main-title { 
         font-size: 4.5em; 
-        text-shadow: none; /* Sin sombra en el fondo claro para mantener elegancia */
+        text-shadow: none; 
     }
     .subtitle { 
         font-size: 1.2em; 
@@ -767,7 +767,6 @@ body {
     .full-gallery h3, 
     .timeline-date { 
         font-size: 2.5em;
-        /* Solo un halo muuuy sutil por si el fondo de madera llega a tocar un pedacito de la letra */
         text-shadow: 0 0 15px rgba(255, 255, 255, 0.9), 0 2px 4px rgba(0,0,0,0.1);
     }
 
@@ -816,7 +815,6 @@ body {
         display: none; 
     }
     
-    /* === SOLUCIÓN: FLECHA CENTRADA 2 ESPACIOS ABAJO DEL BOTÓN === */
     .scroll-down {
         display: block; 
         position: relative; 
@@ -824,9 +822,9 @@ body {
         transform: none;
         width: 100%;
         text-align: center;
-        margin: 30px auto 0; /* Centrado perfecto con espacio arriba */
+        margin: 30px auto 0; 
         color: var(--primary-color);
-        animation: subeBajaMobile 2s infinite; /* Usa la animación móvil que no rompe el centrado */
+        animation: subeBajaMobile 2s infinite; 
     }
 
     .story-section {
@@ -877,7 +875,31 @@ body {
     .carousel-btn.prev { left: 5px; }
     .carousel-btn.next { right: 5px; }
 
-    .story-section, .gallery-section, .message-section, .music-section {
+    /* === COMPACTAR SECCIÓN DE MÚSICA PARA EL CELULAR === */
+    .music-section {
+        padding: 40px 20px;
+    }
+    
+    .music-cover {
+        width: 100%;
+        height: 200px; /* Foto un poco más baja para ahorrar espacio vertical */
+    }
+    
+    .music-info {
+        padding: 20px 15px; /* Márgenes internos más pequeños */
+    }
+
+    .music-info h3 {
+        font-size: 2.8em; 
+        margin-bottom: 5px; /* Más pegado al texto */
+    }
+
+    .music-info p {
+        font-size: 1.3em;
+        margin-bottom: 15px;
+    }
+
+    .story-section, .gallery-section, .message-section {
         padding: 40px 20px;
     }
 
@@ -903,4 +925,4 @@ body {
         height: 16px;
         border-width: 3px;
     }
-   }
+}
