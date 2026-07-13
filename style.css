@@ -681,8 +681,8 @@ body {
 
 @media (max-width: 768px) {
     
-    /* Frenado ajustado para no dejar el margen blanco */
-    section, header { scroll-margin-top: 75px; }
+    /* Freno para tablets */
+    section, header { scroll-margin-top: 90px; }
 
     .logo { font-size: 28px; }
     .timeline-content p { font-size: 18px; }
@@ -752,8 +752,8 @@ body {
 }
 
 @media (max-width: 480px) {
-    /* === EL FRENO PERFECTO: 75px hace que la foto toque justo el borde del menú === */
-    section, header { scroll-margin-top: 75px; } 
+    /* === EL FRENO PERFECTO: 90px hace que la foto empiece exacto bajo el menú === */
+    section, header { scroll-margin-top: 90px; } 
 
     .main-title { 
         font-size: 4.5em; 
@@ -828,6 +828,7 @@ body {
         animation: subeBajaMobile 2s infinite; 
     }
 
+    /* === MANTENIMIENTO DEL CORTE LIMPIO === */
     .story-section {
         background: url("imagenes/fondo2.jpg") top center no-repeat;
         background-size: 100% auto;
@@ -876,7 +877,6 @@ body {
     .carousel-btn.prev { left: 5px; }
     .carousel-btn.next { right: 5px; }
 
-    /* === RESTAURACIÓN A LAS DIMENSIONES ORIGINALES GRANDES === */
     .story-section, .gallery-section, .message-section, .music-section {
         padding: 40px 20px;
         padding-bottom: 60px;
@@ -884,16 +884,16 @@ body {
     
     .music-cover {
         width: 100%;
-        height: 250px; /* Vuelve a la altura grande */
+        height: 250px; 
     }
     
     .music-info {
         text-align: center;
-        padding: 30px 20px; /* Vuelven los márgenes con aire */
+        padding: 30px 20px; 
     }
 
     .music-info h3 {
-        font-size: 3.5em; /* Título vuelve al tamaño grande */
+        font-size: 3.5em; 
     }
 
     .music-info p {
@@ -922,4 +922,4 @@ body {
         height: 16px;
         border-width: 3px;
     }
-}
+   }
