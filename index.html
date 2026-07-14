@@ -3,188 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para Melissa</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Fuentes elegantes -->
+    <title>Tarjeta Horizontal para Melissa</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background-color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        /* Tamaño de tarjeta tipo arreglo floral (12cm ancho x 7cm alto) */
+        .tarjeta-flores {
+            width: 12cm;
+            height: 7cm;
+            /* Aquí busca la imagen que debes guardar en la misma carpeta */
+            background-image: url('flores.png'); 
+            background-size: cover;
+            background-position: center left;
+            border: 1px solid #ccc;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            display: flex;
+            justify-content: flex-end; 
+            align-items: center;
+            padding: 0.5cm;
+            position: relative;
+        }
+        
+        /* Cajita elegante semitransparente para que el QR y el texto se lean perfecto */
+        .contenido-derecha {
+            background-color: rgba(250, 244, 245, 0.92);
+            border: 1px solid #800020;
+            border-radius: 6px;
+            padding: 0.4cm;
+            width: 4.8cm; 
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .para {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.2em;
+            color: #800020;
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+
+        .qr-img {
+            width: 2.8cm;
+            height: 2.8cm;
+            margin: 0 auto;
+            display: block;
+            border-radius: 4px;
+        }
+
+        .instruccion {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.9em;
+            color: #333;
+            margin-top: 5px;
+            font-style: italic;
+            line-height: 1.2;
+            font-weight: bold;
+        }
+
+        .firma {
+            font-family: 'Great Vibes', cursive;
+            font-size: 1.6em;
+            color: #800020;
+            margin-top: 2px;
+        }
+
+        /* Asegura que al imprimir se vean los fondos y la foto */
+        @media print {
+            body { background-color: white; align-items: flex-start; justify-content: flex-start; }
+            .tarjeta-flores { 
+                box-shadow: none; 
+                border: 1px dashed #aaa; 
+                -webkit-print-color-adjust: exact; 
+                print-color-adjust: exact; 
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <!-- MENÚ FIJO -->
-    <header class="menu" id="menu">
-        <div class="logo">Melissa</div>
-        <nav>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#historia">Historia</a></li>
-                <li><a href="#momentos">Momentos</a></li>
-                <li><a href="#cancion">Canción</a></li>
-                <li><a href="#carta">Carta</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- SECCIÓN 1: INICIO -->
-    <section id="inicio" class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1 class="main-title">Para mi gran amor</h1>
-            <p class="subtitle">"Hay historias que el corazón nunca deja de escribir..."</p>
-            <a href="#historia" class="hero-btn">Descubre tu sorpresa</a>
+    <div class="tarjeta-flores">
+        <div class="contenido-derecha">
+            <h1 class="para">Melissa...</h1>
+            <!-- Código QR exacto a tu página con color burdeo -->
+            <img class="qr-img" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://alvaro20mr-prog.github.io/Porquetu/&color=800020&bgcolor=FFFFFF" alt="QR">
+            <p class="instruccion">Escanea para tu sorpresa</p>
+            <p class="firma">Álvaro</p>
         </div>
-        <a href="#historia" class="scroll-down">▼</a>
-    </section>
+    </div>
 
-    <!-- SECCIÓN 2: HISTORIA -->
-    <section id="historia" class="story-section">
-        <div class="container">
-            <h2 class="section-title">Nuestra Historia</h2>
-            <div class="timeline">
-                
-                <!-- Año 1 -->
-                <div class="timeline-item">
-                    <div class="timeline-date">2013</div>
-                    <div class="timeline-content">
-                        <h3>Todo Comenzó</h3>
-                        <p>Te vi por primera vez en dos mil trece, sin saber lo que iba a pasar, yo era un hombre lleno de silencios, y tú un sueño difícil de alcanzar.</p>
-                    </div>
-                </div>
-
-                <!-- Año 2 -->
-                <div class="timeline-item">
-                    <div class="timeline-date">2018</div>
-                    <div class="timeline-content">
-                        <h3>La Vida Nos...</h3>
-                        <p>Aquí puedes continuar escribiendo esta parte de su historia, los momentos clave y lo que sentías en ese momento.</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN 3: MOMENTOS (GALERÍA) -->
-    <section id="momentos" class="gallery-section">
-        <div class="container">
-            
-            <!-- Fotos estilo Polaroid -->
-            <div class="polaroid-gallery">
-                <div class="polaroid-card">
-                    <img src="imagenes/foto1.jpg" alt="Recuerdo 1">
-                    <p class="polaroid-text">Nuestro primer viaje</p>
-                </div>
-                <div class="polaroid-card">
-                    <img src="imagenes/foto2.jpg" alt="Recuerdo 2">
-                    <p class="polaroid-text">Días inolvidables</p>
-                </div>
-                <div class="polaroid-card">
-                    <img src="imagenes/foto3.jpg" alt="Recuerdo 3">
-                    <p class="polaroid-text">Siempre juntos</p>
-                </div>
-            </div>
-
-            <!-- Carrusel de fotos -->
-            <div class="full-gallery">
-                <h3>Nuestros Momentos</h3>
-                <div class="carousel-wrapper">
-                    <button class="carousel-btn prev">◄</button>
-                    <div class="carousel-track">
-                        <!-- Agrega aquí las fotos de tu carrusel -->
-                        <div class="gallery-item carousel-item"><img src="imagenes/galeria1.jpg" alt="Foto"></div>
-                        <div class="gallery-item carousel-item"><img src="imagenes/galeria2.jpg" alt="Foto"></div>
-                        <div class="gallery-item carousel-item"><img src="imagenes/galeria3.jpg" alt="Foto"></div>
-                        <div class="gallery-item carousel-item"><img src="imagenes/galeria4.jpg" alt="Foto"></div>
-                    </div>
-                    <button class="carousel-btn next">►</button>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- SECCIÓN 4: CANCIÓN (CON BOTÓN DE LETRA) -->
-    <section id="cancion" class="music-section">
-        <div class="container">
-            <h2 class="section-title">Tu Canción</h2>
-            
-            <div class="music-card">
-                <img src="imagenes/portada_cancion.png" alt="Portada de la canción" class="music-cover">
-                <div class="music-info">
-                    <h3>Porque Tú</h3>
-                    <p>"Te convertiste en mi lugar en el mundo"</p>
-                    
-                    <!-- Reproductor -->
-                    <audio id="audioPlayer" controls>
-                        <source src="Musica/cancion.mp3" type="audio/mpeg">
-                        Tu navegador no soporta el reproductor de audio.
-                    </audio>
-
-                    <!-- Botón y letra de la canción integrados aquí -->
-                    <div class="lyrics-container">
-                        <details>
-                            <summary class="lyrics-btn">Ver letra de la canción <span>♥</span></summary>
-                            <div class="lyrics-content">
-                                <p>Aquí puedes pegar la primera estrofa de la canción...</p>
-                                <br>
-                                <p>Aquí va el coro...</p>
-                                <br>
-                                <p>Porque tú, te convertiste en mi lugar en el mundo...</p>
-                                <br>
-                                <p>(Continúa copiando y pegando toda la letra aquí dentro)</p>
-                            </div>
-                        </details>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN 5: CARTA FINAL -->
-    <section id="carta" class="message-section">
-        <div class="container">
-            <div class="love-message">
-                <h2>Mi amada Melissa,</h2>
-                <p>Escribe aquí el texto principal de tu carta. Todo lo que quieres decirle desde el fondo de tu corazón. Esta es la parte más íntima y especial de la sorpresa.</p>
-                <p>Puedes agregar tantos párrafos como necesites usando la etiqueta p.</p>
-                <p class="signature">Por siempre tuyo,<br>Álvaro <i>♥</i></p>
-            </div>
-        </div>
-    </section>
-
-    <!-- PIE DE PÁGINA -->
-    <footer class="footer">
-        <p>Hecho con todo mi amor para ti</p>
-    </footer>
-
-    <!-- SCRIPT PARA EL MENÚ Y CARRUSEL -->
-    <script>
-        // Efecto del menú al hacer scroll
-        window.addEventListener('scroll', function() {
-            const menu = document.getElementById('menu');
-            if (window.scrollY > 50) {
-                menu.classList.add('scrolled');
-            } else {
-                menu.classList.remove('scrolled');
-            }
-        });
-
-        // Carrusel básico
-        const track = document.querySelector('.carousel-track');
-        const prevButton = document.querySelector('.carousel-btn.prev');
-        const nextButton = document.querySelector('.carousel-btn.next');
-
-        if(track && prevButton && nextButton) {
-            nextButton.addEventListener('click', () => {
-                track.scrollBy({ left: 300, behavior: 'smooth' });
-            });
-            prevButton.addEventListener('click', () => {
-                track.scrollBy({ left: -300, behavior: 'smooth' });
-            });
-        }
-    </script>
 </body>
-                </html>
-                        
+</html>
