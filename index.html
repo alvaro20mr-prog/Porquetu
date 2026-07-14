@@ -3,104 +3,208 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarjeta Horizontal para Melissa</title>
+    <title>Porque Tú - Para Melissa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body {
-            background-color: #e0e0e0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-        
-        /* Tamaño de tarjeta tipo arreglo floral (12cm ancho x 7cm alto) */
-        .tarjeta-flores {
-            width: 12cm;
-            height: 7cm;
-            /* Aquí busca la imagen que debes guardar en la misma carpeta */
-            background-image: url('flores.png'); 
-            background-size: cover;
-            background-position: center left;
-            border: 1px solid #ccc;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            display: flex;
-            justify-content: flex-end; 
-            align-items: center;
-            padding: 0.5cm;
-            position: relative;
-        }
-        
-        /* Cajita elegante semitransparente para que el QR y el texto se lean perfecto */
-        .contenido-derecha {
-            background-color: rgba(250, 244, 245, 0.92);
-            border: 1px solid #800020;
-            border-radius: 6px;
-            padding: 0.4cm;
-            width: 4.8cm; 
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-        }
-
-        .para {
-            font-family: 'Great Vibes', cursive;
-            font-size: 2.2em;
-            color: #800020;
-            line-height: 1;
-            margin-bottom: 5px;
-        }
-
-        .qr-img {
-            width: 2.8cm;
-            height: 2.8cm;
-            margin: 0 auto;
-            display: block;
-            border-radius: 4px;
-        }
-
-        .instruccion {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 0.9em;
-            color: #333;
-            margin-top: 5px;
-            font-style: italic;
-            line-height: 1.2;
-            font-weight: bold;
-        }
-
-        .firma {
-            font-family: 'Great Vibes', cursive;
-            font-size: 1.6em;
-            color: #800020;
-            margin-top: 2px;
-        }
-
-        /* Asegura que al imprimir se vean los fondos y la foto */
-        @media print {
-            body { background-color: white; align-items: flex-start; justify-content: flex-start; }
-            .tarjeta-flores { 
-                box-shadow: none; 
-                border: 1px dashed #aaa; 
-                -webkit-print-color-adjust: exact; 
-                print-color-adjust: exact; 
-            }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="tarjeta-flores">
-        <div class="contenido-derecha">
-            <h1 class="para">Melissa...</h1>
-            <!-- Código QR exacto a tu página con color burdeo -->
-            <img class="qr-img" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://alvaro20mr-prog.github.io/Porquetu/&color=800020&bgcolor=FFFFFF" alt="QR">
-            <p class="instruccion">Escanea para tu sorpresa</p>
-            <p class="firma">Álvaro</p>
+    <!-- 1. HEADER HERO (INICIO) -->
+    <header class="hero" id="inicio">
+        <nav class="menu">
+            <div class="logo">Acá comienza tu sorpresa...</div>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#historia">Historia</a></li>
+                <li><a href="#momentos">Momentos</a></li>
+                <li><a href="#cancion">Canción</a></li>
+                <li><a href="#carta">Carta</a></li>
+            </ul>
+        </nav>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <h1 class="main-title">Porque Tú</h1>
+            <p class="subtitle">Hay historias que el corazón<br>nunca deja de escribir...</p>
+            <a href="#historia" class="hero-btn">Comenzar</a>
+        </div>
+
+        <a href="#historia" class="scroll-down">
+            <i class="fas fa-angle-down"></i>
+        </a>
+    </header>
+
+    <!-- 2. NUESTRA HISTORIA -->
+    <section class="story-section" id="historia">
+        <div class="container">
+            <h2 class="section-title">Nuestra Historia</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2013</div>
+                    <div class="timeline-content">
+                        <h3>Todo Comenzó</h3>
+                        <p>Te vi por primera vez en dos mil trece, sin saber lo que iba a pasar, yo era un hombre lleno de silencios, y tú un sueño difícil de alcanzar..</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2018</div>
+                    <div class="timeline-content">
+                        <h3>La Vida Nos Volvió a Juntar</h3>
+                        <p>Recuerdo aquel doce de octubre, como si fuera ayer; cuando vencí todos mis miedos y te besé por primera vez..</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2023</div>
+                    <div class="timeline-content">
+                        <h3>El Mejor Regalo De La Vida</h3>
+                        <p>Lo que empezó con una mirada un día aprendió a respirar, y en unos pequeños ojos descubrimos una nueva forma de amar..</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">Hoy</div>
+                    <div class="timeline-content">
+                        <h3>Aun Hay Mas Capitulos...</h3>
+                        <p>Y aquel sueño que parecía lejano, hoy lo podemos abrazar, porque juntos construimos un hogar donde siempre quiero regresar.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. GALERÍA DE FOTOS (MOMENTOS) -->
+    <section class="gallery-section" id="momentos">
+        <div class="container">
+            <h2 class="section-title">Nuestros Momentos</h2>
+            
+            <!-- Fotos tipo Polaroid -->
+            <div class="polaroid-gallery">
+                <div class="polaroid-card">
+                    <img src="imagenes/primer_viaje.jpg" alt="Nuestro primer viaje" loading="lazy">
+                    <p class="polaroid-text">Nuestro primer viaje</p>
+                </div>
+                <div class="polaroid-card">
+                    <img src="imagenes/abrazo.jpg" alt="Abrazos sin fin" loading="lazy">
+                    <p class="polaroid-text">Abrazos sin fin</p>
+                </div>
+                <div class="polaroid-card">
+                    <img src="imagenes/aventuras.jpg" alt="Aventuras compartidas" loading="lazy">
+                    <p class="polaroid-text">Aventuras compartidas</p>
+                </div>
+                <div class="polaroid-card">
+                    <img src="imagenes/conexion.jpg" alt="Nuestra conexión" loading="lazy">
+                    <p class="polaroid-text">Nuestra conexión</p>
+                </div>
+                <div class="polaroid-card">
+                    <img src="imagenes/siempre_juntos.jpg" alt="Siempre juntos" loading="lazy">
+                    <p class="polaroid-text">Siempre juntos</p>
+                </div>
+                <div class="polaroid-card">
+                    <img src="imagenes/amor_eterno.jpg" alt="Un amor eterno" loading="lazy">
+                    <p class="polaroid-text">Un amor eterno</p>
+                </div>
+            </div>
+
+            <!-- Carrusel de fotos adicionales -->
+            <div class="full-gallery">
+                <h3>Más Momentos Especiales</h3>
+                
+                <div class="carousel-wrapper">
+                    <button class="carousel-btn prev" onclick="moveCarousel(-1)"><i class="fas fa-chevron-left"></i></button>
+                    
+                    <div class="carousel-track" id="track">
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/1.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/2.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/3.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/4.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/5.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/6.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/7.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/8.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/9.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/10.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/11.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/12.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/13.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/14.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/15.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/16.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/17.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/18.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/19.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/20.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/21.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/22.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/23.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/24.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/25.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/26.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/27.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/28.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/29.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/30.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                    </div>
+
+                    <button class="carousel-btn next" onclick="moveCarousel(1)"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. REPRODUCTOR DE MÚSICA (CARTA MUSICAL) -->
+    <section class="music-section" id="cancion">
+        <div class="container">
+            <h2 class="section-title">Tu Canción</h2>
+            
+            <div class="music-card">
+                <img src="imagenes/portada.png" alt="Carátula de nuestra canción" class="music-cover" loading="lazy">
+                
+                <div class="music-info">
+                    <h3>Porque Tú</h3>
+                    <p>"Te convertiste en mi lugar en el mundo"</p>
+                    
+                    <audio id="audioPlayer" controls>
+                        <source src="Musica/Porque Tú.m4a" type="audio/mp4">
+                        Tu navegador no soporta audio HTML5
+                    </audio>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. MENSAJE ESPECIAL (CARTA) -->
+    <section class="message-section" id="carta">
+        <div class="container">
+            <h2 class="section-title">Tu Carta</h2>
+            
+            <div class="love-message">
+                <h2>Amor...</h2>
+                <p>Sabes que no soy un hombre de muchas palabras, pero quise demostrarte mi amor con esta sorpresa. He puesto todo mi corazón, esfuerzo y cariño en este pequeño rincón, hecho solo para ti...</p>
+                <p class="signature">Gracias Por Caminar Esta Vida Contigo...<i class="fa-regular fa-heart"></i></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>Porque Tú <i class="fa-regular fa-heart"></i></p>
+    </footer>
+
+    <!-- MODAL PARA VER FOTOS EN GRANDE -->
+    <div id="photoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="">
         </div>
     </div>
 
+    <script src="script.js"></script>
 </body>
 </html>
