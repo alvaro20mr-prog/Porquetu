@@ -8,12 +8,69 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <!-- El ?v=2 obliga a tu celular y computadora a descargar el diseño nuevo -->
-    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .letra-btn {
+            display: block;
+            background: transparent;
+            color: #800020;
+            border: 1px solid #800020;
+            padding: 8px 25px;
+            border-radius: 30px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2em;
+            font-style: italic;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 15px auto 0;
+            width: fit-content;
+        }
+        .letra-btn:hover { background: #800020; color: white; }
+        .letra-btn span { font-size: 0.9em; margin-left: 5px; }
+
+        #modalLetraUnico {
+            display: none; /* OCULTA LA LETRA OBLIGATORIAMENTE */
+            position: fixed;
+            z-index: 99999;
+            left: 0; top: 0; width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); 
+            backdrop-filter: blur(5px);
+            align-items: center; justify-content: center;
+            opacity: 0; transition: opacity 0.4s ease;
+        }
+        #modalLetraUnico.mostrar { opacity: 1; }
+        
+        .modal-contenido-letra {
+            background-color: #FAF4F5; 
+            border: 2px solid #800020;
+            border-radius: 12px;
+            width: 90%; max-width: 500px; max-height: 80vh; 
+            position: relative;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+            display: flex; flex-direction: column;
+            animation: deslizarArriba 0.4s ease-out;
+        }
+        @keyframes deslizarArriba { from { transform: translateY(30px); } to { transform: translateY(0); } }
+        
+        .cerrar-modal-letra {
+            color: #800020; position: absolute;
+            top: 10px; right: 20px;
+            font-size: 35px; font-weight: bold; cursor: pointer; z-index: 10;
+        }
+        .letra-texto {
+            padding: 30px 20px 40px; overflow-y: auto; 
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2em; color: #444; line-height: 1.6; text-align: center;
+        }
+        .letra-texto strong { color: #800020; font-size: 0.9em; display: block; margin-top: 15px; }
+        .letra-texto::-webkit-scrollbar { width: 6px; }
+        .letra-texto::-webkit-scrollbar-thumb { background: rgba(128, 0, 32, 0.4); border-radius: 10px; }
+    </style>
 </head>
 <body>
 
-    <!-- 1. HEADER HERO (INICIO) -->
     <header class="hero" id="inicio">
         <nav class="menu">
             <div class="logo">Acá comienza tu sorpresa...</div>
@@ -39,7 +96,6 @@
         </a>
     </header>
 
-    <!-- 2. NUESTRA HISTORIA -->
     <section class="story-section" id="historia">
         <div class="container">
             <h2 class="section-title">Nuestra Historia</h2>
@@ -80,46 +136,23 @@
         </div>
     </section>
 
-    <!-- 3. GALERÍA DE FOTOS (MOMENTOS) -->
     <section class="gallery-section" id="momentos">
         <div class="container">
             <h2 class="section-title">Nuestros Momentos</h2>
             
-            <!-- Fotos tipo Polaroid -->
             <div class="polaroid-gallery">
-                <div class="polaroid-card">
-                    <img src="imagenes/primer_viaje.jpg" alt="Nuestro primer viaje" loading="lazy">
-                    <p class="polaroid-text">Nuestro primer viaje</p>
-                </div>
-                <div class="polaroid-card">
-                    <img src="imagenes/abrazo.jpg" alt="Abrazos sin fin" loading="lazy">
-                    <p class="polaroid-text">Abrazos sin fin</p>
-                </div>
-                <div class="polaroid-card">
-                    <img src="imagenes/aventuras.jpg" alt="Aventuras compartidas" loading="lazy">
-                    <p class="polaroid-text">Aventuras compartidas</p>
-                </div>
-                <div class="polaroid-card">
-                    <img src="imagenes/conexion.jpg" alt="Nuestra conexión" loading="lazy">
-                    <p class="polaroid-text">Nuestra conexión</p>
-                </div>
-                <div class="polaroid-card">
-                    <img src="imagenes/siempre_juntos.jpg" alt="Siempre juntos" loading="lazy">
-                    <p class="polaroid-text">Siempre juntos</p>
-                </div>
-                <div class="polaroid-card">
-                    <img src="imagenes/amor_eterno.jpg" alt="Un amor eterno" loading="lazy">
-                    <p class="polaroid-text">Un amor eterno</p>
-                </div>
+                <div class="polaroid-card"><img src="imagenes/primer_viaje.jpg" alt="Nuestro primer viaje" loading="lazy"><p class="polaroid-text">Nuestro primer viaje</p></div>
+                <div class="polaroid-card"><img src="imagenes/abrazo.jpg" alt="Abrazos sin fin" loading="lazy"><p class="polaroid-text">Abrazos sin fin</p></div>
+                <div class="polaroid-card"><img src="imagenes/aventuras.jpg" alt="Aventuras compartidas" loading="lazy"><p class="polaroid-text">Aventuras compartidas</p></div>
+                <div class="polaroid-card"><img src="imagenes/conexion.jpg" alt="Nuestra conexión" loading="lazy"><p class="polaroid-text">Nuestra conexión</p></div>
+                <div class="polaroid-card"><img src="imagenes/siempre_juntos.jpg" alt="Siempre juntos" loading="lazy"><p class="polaroid-text">Siempre juntos</p></div>
+                <div class="polaroid-card"><img src="imagenes/amor_eterno.jpg" alt="Un amor eterno" loading="lazy"><p class="polaroid-text">Un amor eterno</p></div>
             </div>
 
-            <!-- Carrusel de fotos adicionales -->
             <div class="full-gallery">
                 <h3>Más Momentos Especiales</h3>
-                
                 <div class="carousel-wrapper">
                     <button class="carousel-btn prev" onclick="moveCarousel(-1)"><i class="fas fa-chevron-left"></i></button>
-                    
                     <div class="carousel-track" id="track">
                         <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/1.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
                         <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/2.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
@@ -152,14 +185,12 @@
                         <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/29.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
                         <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/30.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
                     </div>
-
                     <button class="carousel-btn next" onclick="moveCarousel(1)"><i class="fas fa-chevron-right"></i></button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 4. REPRODUCTOR DE MÚSICA (CARTA MUSICAL) -->
     <section class="music-section" id="cancion">
         <div class="container">
             <h2 class="section-title">Tu Canción</h2>
@@ -176,14 +207,12 @@
                         Tu navegador no soporta audio HTML5
                     </audio>
 
-                    <!-- BOTÓN PARA ABRIR LA LETRA -->
                     <button id="btnVerLetraUnico" class="letra-btn">Leer nuestra historia <span>♥</span></button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 5. MENSAJE ESPECIAL (CARTA) -->
     <section class="message-section" id="carta">
         <div class="container">
             <h2 class="section-title">Tu Carta</h2>
@@ -196,12 +225,10 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="footer">
         <p>Porque Tú <i class="fa-regular fa-heart"></i></p>
     </footer>
 
-    <!-- MODAL PARA VER FOTOS EN GRANDE -->
     <div id="photoModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
@@ -209,9 +236,8 @@
         </div>
     </div>
 
-    <!-- VENTANA FLOTANTE DE LA LETRA (MODAL) -->
-    <div id="modalLetraUnico" class="modal-letra">
-        <div class="modal-contenido">
+    <div id="modalLetraUnico">
+        <div class="modal-contenido-letra">
             <span class="cerrar-modal-letra">&times;</span>
             <div class="letra-texto">
                 <strong>[INTRO]</strong>
@@ -300,8 +326,5 @@
         </div>
     </div>
 
-    <!-- AQUÍ SOLO LLAMAMOS AL ARCHIVO SCRIPT.JS, SIN CÓDIGO SUELTO -->
-    <script src="script.js"></script>
-</body>
-</html>
-
+    <script>
+        document.addEventListener("DOMContentLoaded", functio
