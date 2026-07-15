@@ -22,29 +22,26 @@ window.addEventListener("scroll", () => {
 // CARRUSEL
 // ===============================
 
-let posicionCarrusel=0;
+// ===============================
+// CARRUSEL
+// ===============================
 
 function moveCarousel(direccion){
 
-    const track=document.getElementById("track");
+    const track = document.getElementById("track");
 
     if(!track) return;
 
-    const tarjeta=track.querySelector(".carousel-item");
+    const tarjeta = track.querySelector(".carousel-item");
 
     if(!tarjeta) return;
 
-    const ancho=tarjeta.offsetWidth+20;
+    const ancho = tarjeta.offsetWidth + 20;
 
-    posicionCarrusel+=direccion;
-
-    const max=Math.max(0,track.children.length-4);
-
-    if(posicionCarrusel<0) posicionCarrusel=0;
-
-    if(posicionCarrusel>max) posicionCarrusel=max;
-
-    track.style.transform=`translateX(-${posicionCarrusel*ancho}px)`;
+    track.scrollBy({
+        left: direccion * ancho,
+        behavior: "smooth"
+    });
 
 }
 
