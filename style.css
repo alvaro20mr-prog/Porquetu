@@ -579,7 +579,7 @@ body {
     animation: pulse 1.5s ease-in-out infinite;
 }
 
-/* ===== MODAL ===== */
+/* ===== MODAL PARA IMÁGENES ===== */
 .modal {
     display: none;
     position: fixed;
@@ -921,3 +921,25 @@ body {
         border-width: 3px;
     }
 }
+
+/* ===== BOTÓN DE LA LETRA ===== */
+.letra-btn {
+    display: inline-block;
+    background: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 8px 25px;
+    border-radius: 30px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2em;
+    font-style: italic;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+}
+.letra-btn:hover {
+    background: var(--primary-color);
+    color: white;
+}
+.letra-btn span {
