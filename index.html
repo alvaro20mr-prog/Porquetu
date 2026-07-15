@@ -8,190 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=5">
-
-    <style>
-        /* === BOTÓN Y MODAL DE LA LETRA === */
-        .letra-btn {
-            display: block;
-            background: transparent;
-            color: #800020;
-            border: 1px solid #800020;
-            padding: 8px 25px;
-            border-radius: 30px;
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.2em;
-            font-style: italic;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin: 15px auto 0;
-            width: fit-content;
-        }
-        .letra-btn:hover { background: #800020; color: white; }
-        .letra-btn span { font-size: 0.9em; margin-left: 5px; }
-
-        #modalLetraUnico {
-            display: none; 
-            position: fixed;
-            z-index: 99999;
-            left: 0; top: 0; width: 100%; height: 100%;
-            background-color: rgba(0, 0, 0, 0.8); 
-            backdrop-filter: blur(5px);
-            align-items: center; justify-content: center;
-            opacity: 0; transition: opacity 0.4s ease;
-        }
-        #modalLetraUnico.mostrar { opacity: 1; }
-        
-        .modal-contenido-letra {
-            background-color: #FAF4F5; 
-            border: 2px solid #800020;
-            border-radius: 12px;
-            width: 90%; max-width: 500px; max-height: 80vh; 
-            position: relative;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.5);
-            display: flex; flex-direction: column;
-            animation: deslizarArriba 0.4s ease-out;
-        }
-        @keyframes deslizarArriba { from { transform: translateY(30px); } to { transform: translateY(0); } }
-        
-        .cerrar-modal-letra {
-            color: #800020; position: absolute;
-            top: 10px; right: 20px;
-            font-size: 35px; font-weight: bold; cursor: pointer; z-index: 10;
-        }
-        .letra-texto {
-            padding: 30px 20px 40px; overflow-y: auto; 
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.2em; color: #444; line-height: 1.6; text-align: center;
-        }
-        .letra-texto strong { color: #800020; font-size: 0.9em; display: block; margin-top: 15px; }
-        .letra-texto::-webkit-scrollbar { width: 6px; }
-        .letra-texto::-webkit-scrollbar-thumb { background: rgba(128, 0, 32, 0.4); border-radius: 10px; }
-
-        /* === BLINDAJE DEL CARRUSEL (FUERZA EL TAMAÑO DE LAS FOTOS) === */
-        .full-gallery {
-            margin-top: 60px;
-        }
-        .full-gallery h3 {
-            font-family: 'Great Vibes', cursive;
-            font-size: 60px;
-            text-align: center;
-            margin-bottom: 40px;
-            color: #800020;
-            text-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
-        }
-        .carousel-wrapper {
-            position: relative;
-            display: flex;
-            align-items: center;
-            max-width: 100%;
-            margin: 0 auto;
-        }
-        .carousel-track {
-            display: flex !important;
-            gap: 20px;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            scroll-behavior: smooth;
-            padding: 20px 0;
-            width: 100% !important;
-            -ms-overflow-style: none; 
-            scrollbar-width: none; 
-        }
-        .carousel-track::-webkit-scrollbar {
-            display: none; 
-        }
-        .gallery-item.carousel-item {
-            flex: 0 0 calc(33.333% - 14px) !important; 
-            min-width: calc(33.333% - 14px) !important;
-            scroll-snap-align: center;
-            height: 250px !important;
-            position: relative;
-            overflow: hidden;
-            border-radius: 8px;
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: block !important;
-        }
-        .gallery-item img {
-            width: 100% !important;
-            height: 100% !important;
-            object-fit: cover !important;
-            display: block !important;
-        }
-        .carousel-btn {
-            background: white !important;
-            color: #800020 !important;
-            border: none;
-            border-radius: 50%;
-            width: 45px;
-            height: 45px;
-            font-size: 20px;
-            cursor: pointer;
-            position: absolute;
-            z-index: 10;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .carousel-btn.prev { left: -15px; }
-        .carousel-btn.next { right: -15px; }
-
-        /* Ajustes Mobile de Emergencia para el carrusel */
-        @media (max-width: 768px) {
-            .gallery-item.carousel-item {
-                flex: 0 0 calc(50% - 10px) !important;
-                min-width: calc(50% - 10px) !important;
-            }
-            .carousel-btn.prev { left: 5px; }
-            .carousel-btn.next { right: 5px; }
-        }
-        @media (max-width: 480px) {
-            .gallery-item.carousel-item {
-                flex: 0 0 80% !important;
-                min-width: 80% !important;
-                height: 200px !important;
-            }
-        }
-
-        /* === BLINDAJE VISUALIZADOR DE FOTOS GRANDES (MODAL) === */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            z-index: 1000;
-        }
-        .modal-content {
-            position: relative;
-            max-width: 90%;
-            max-height: 90vh;
-            margin: auto;
-            top: 50%;
-            transform: translateY(-50%);
-            text-align: center;
-        }
-        .modal-content img {
-            max-width: 100%;
-            max-height: 80vh;
-            border-radius: 10px;
-        }
-        .close {
-            position: absolute;
-            top: -40px; right: 0;
-            color: white;
-            font-size: 35px;
-            cursor: pointer;
-        }
-        @media (max-width: 768px) {
-            .close {
-                top: 20px; right: 20px; font-size: 28px;
-            }
-        }
-    </style>
+    <!-- Llamamos a la versión 6 de tu CSS para evitar caché -->
+    <link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
 
@@ -220,7 +38,7 @@
         </a>
     </header>
 
-    <section class="story-section" id="historia" style="scroll-margin-top: 87px !important;">
+    <section class="story-section" id="historia">
         <div class="container">
             <h2 class="section-title">Nuestra Historia</h2>
             
@@ -260,7 +78,7 @@
         </div>
     </section>
 
-    <section class="gallery-section" id="momentos" style="scroll-margin-top: 87px !important;">
+    <section class="gallery-section" id="momentos">
         <div class="container">
             <h2 class="section-title">Nuestros Momentos</h2>
             
@@ -315,7 +133,7 @@
         </div>
     </section>
 
-    <section class="music-section" id="cancion" style="scroll-margin-top: 87px !important;">
+    <section class="music-section" id="cancion">
         <div class="container">
             <h2 class="section-title">Tu Canción</h2>
             
@@ -337,7 +155,7 @@
         </div>
     </section>
 
-    <section class="message-section" id="carta" style="scroll-margin-top: 87px !important;">
+    <section class="message-section" id="carta">
         <div class="container">
             <h2 class="section-title">Tu Carta</h2>
             
@@ -450,79 +268,8 @@
         </div>
     </div>
 
-    <script>
-        window.addEventListener('scroll', function() {
-            const menu = document.querySelector('.menu');
-            if (menu) {
-                if (window.scrollY > 50) {
-                    menu.classList.add('scrolled');
-                } else {
-                    menu.classList.remove('scrolled');
-                }
-            }
-        });
-
-        let posicionCarrusel = 0;
-        function moveCarousel(direccion) {
-            const track = document.getElementById('track');
-            if (!track) return;
-            const tarjeta = track.querySelector(".carousel-item");
-            if (!tarjeta) return;
-            const ancho = tarjeta.offsetWidth + 20; 
-            posicionCarrusel += direccion;
-            let fotosVisibles = 3;
-            if (window.innerWidth <= 768) fotosVisibles = 2;
-            if (window.innerWidth <= 480) fotosVisibles = 1;
-            const max = Math.max(0, track.children.length - fotosVisibles);
-            if (posicionCarrusel < 0) posicionCarrusel = 0;
-            if (posicionCarrusel > max) posicionCarrusel = max;
-            track.style.transform = `translateX(-${posicionCarrusel * ancho}px)`;
-        }
-
-        function openModal(element) {
-            const modal = document.getElementById("photoModal");
-            const modalImg = document.getElementById("modalImage");
-            const img = element.querySelector("img");
-            if (modal && modalImg && img) {
-                modal.style.display = "block";
-                modalImg.src = img.src;
-            }
-        }
-
-        function closeModal() {
-            const modal = document.getElementById("photoModal");
-            if (modal) {
-                modal.style.display = "none";
-            }
-        }
-
-        function abrirLetra() {
-            const modal = document.getElementById("modalLetraUnico");
-            if (modal) {
-                modal.style.display = "flex";
-                setTimeout(function() { modal.classList.add("mostrar"); }, 10);
-            }
-        }
-
-        function cerrarLetra() {
-            const modal = document.getElementById("modalLetraUnico");
-            if (modal) {
-                modal.classList.remove("mostrar");
-                setTimeout(function() { modal.style.display = "none"; }, 400);
-            }
-        }
-
-        window.onclick = function(event) {
-            const photoModal = document.getElementById("photoModal");
-            const modalLetra = document.getElementById("modalLetraUnico");
-            if (event.target == photoModal) {
-                photoModal.style.display = "none";
-            }
-            if (event.target == modalLetra) {
-                modalLetra.classList.remove("mostrar");
-                setTimeout(function() { modalLetra.style.display = "none"; }, 400);
-            }
-        }
-    </script>
+    <!-- Llamamos a la versión 6 de tu script -->
+    <script src="script.js?v=6"></script>
 </body>
 </html>
+
