@@ -22,7 +22,7 @@ html {
 
 /* === MARGEN PARA PC Y CELULAR (AJUSTADO A 87px) === */
 section, header {
-    scroll-margin-top: 87px !important; 
+    scroll-margin-top: 85px !important; 
 }
 
 body {
