@@ -114,7 +114,6 @@ body {
     padding: 20px;
 }
 
-/* === TÍTULOS CON RESPLANDOR BLANCO PARA LEERSE EN MADERA === */
 .main-title, .section-title, .timeline-date, .full-gallery h3 {
     color: var(--primary-color);
     font-weight: 400; 
@@ -942,4 +941,89 @@ body {
 .letra-btn:hover {
     background: var(--primary-color);
     color: white;
+}
+
+.letra-btn span {
+    font-size: 0.9em;
+    margin-left: 5px;
+}
+
+#modalLetraUnico {
+    display: none; 
+    position: fixed;
+    z-index: 99999;
+    left: 0; 
+    top: 0; 
+    width: 100%; 
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); 
+    backdrop-filter: blur(5px);
+    align-items: center; 
+    justify-content: center;
+    opacity: 0; 
+    transition: opacity 0.4s ease;
+}
+
+#modalLetraUnico.mostrar {
+    opacity: 1;
+}
+
+.modal-contenido-letra {
+    background-color: #FAF4F5; 
+    border: 2px solid var(--primary-color);
+    border-radius: 12px;
+    width: 90%; 
+    max-width: 500px; 
+    max-height: 80vh; 
+    position: relative;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+    display: flex; 
+    flex-direction: column;
+    animation: deslizarArriba 0.4s ease-out;
+}
+
+@keyframes deslizarArriba { 
+    from { transform: translateY(30px); } 
+    to { transform: translateY(0); } 
+}
+
+.cerrar-modal-letra {
+    color: var(--primary-color); 
+    position: absolute;
+    top: 10px; 
+    right: 20px;
+    font-size: 35px; 
+    font-weight: bold; 
+    cursor: pointer; 
+    z-index: 10;
+}
+
+.cerrar-modal-letra:hover {
+    color: var(--secondary-color);
+}
+
+.letra-texto {
+    padding: 30px 20px 40px; 
+    overflow-y: auto; 
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2em; 
+    color: #444; 
+    line-height: 1.6; 
+    text-align: center;
+}
+
+.letra-texto strong {
+    color: var(--primary-color); 
+    font-size: 0.9em; 
+    display: block; 
+    margin-top: 15px;
+}
+
+.letra-texto::-webkit-scrollbar {
+    width: 6px;
+}
+
+.letra-texto::-webkit-scrollbar-thumb {
+    background: rgba(128, 0, 32, 0.4); 
+    border-radius: 10px;
 }
