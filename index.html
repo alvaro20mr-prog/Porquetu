@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
+    <!-- ESTILOS INCRUSTADOS A PRUEBA DE FALLOS SOLO PARA LA LETRA -->
     <style>
         .letra-btn {
             display: block;
@@ -31,7 +32,7 @@
         .letra-btn span { font-size: 0.9em; margin-left: 5px; }
 
         #modalLetraUnico {
-            display: none; /* OCULTA LA LETRA OBLIGATORIAMENTE */
+            display: none; 
             position: fixed;
             z-index: 99999;
             left: 0; top: 0; width: 100%; height: 100%;
@@ -71,6 +72,7 @@
 </head>
 <body>
 
+    <!-- 1. HEADER HERO (INICIO) -->
     <header class="hero" id="inicio">
         <nav class="menu">
             <div class="logo">Acá comienza tu sorpresa...</div>
@@ -96,6 +98,7 @@
         </a>
     </header>
 
+    <!-- 2. NUESTRA HISTORIA -->
     <section class="story-section" id="historia">
         <div class="container">
             <h2 class="section-title">Nuestra Historia</h2>
@@ -136,6 +139,7 @@
         </div>
     </section>
 
+    <!-- 3. GALERÍA DE FOTOS (MOMENTOS) -->
     <section class="gallery-section" id="momentos">
         <div class="container">
             <h2 class="section-title">Nuestros Momentos</h2>
@@ -191,7 +195,9 @@
         </div>
     </section>
 
-    <section class="music-section" id="cancion">
+    <!-- 4. REPRODUCTOR DE MÚSICA (CARTA MUSICAL) -->
+    <!-- SOLUCIÓN DEL FRENADO: Agregamos el scroll-margin-top manual aquí (70px compensa la línea blanca) -->
+    <section class="music-section" id="cancion" style="scroll-margin-top: 70px;">
         <div class="container">
             <h2 class="section-title">Tu Canción</h2>
             
@@ -207,12 +213,14 @@
                         Tu navegador no soporta audio HTML5
                     </audio>
 
-                    <button id="btnVerLetraUnico" class="letra-btn">Leer nuestra historia <span>♥</span></button>
+                    <!-- BOTÓN BLINDADO CON LA FUNCIÓN DIRECTA -->
+                    <button type="button" class="letra-btn" onclick="abrirLetra()">Leer nuestra historia <span>♥</span></button>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- 5. MENSAJE ESPECIAL (CARTA) -->
     <section class="message-section" id="carta">
         <div class="container">
             <h2 class="section-title">Tu Carta</h2>
@@ -225,10 +233,12 @@
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer class="footer">
         <p>Porque Tú <i class="fa-regular fa-heart"></i></p>
     </footer>
 
+    <!-- MODAL PARA VER FOTOS EN GRANDE -->
     <div id="photoModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
@@ -236,9 +246,10 @@
         </div>
     </div>
 
-    <div id="modalLetraUnico">
+    <!-- VENTANA FLOTANTE DE LA LETRA (MODAL BLINDADO) -->
+    <div id="modalLetraUnico" onclick="if(event.target === this) cerrarLetra()">
         <div class="modal-contenido-letra">
-            <span class="cerrar-modal-letra">&times;</span>
+            <span class="cerrar-modal-letra" onclick="cerrarLetra()">&times;</span>
             <div class="letra-texto">
                 <strong>[INTRO]</strong>
                 <p>Esta es nuestra historia...</p>
@@ -308,23 +319,4 @@
                 <p>en la calma cuando todo era confuso,</p>
                 <p>en la mano que jamás me soltó.</p>
                 <p>Porque tú...</p>
-                <p>viste algo bueno entre mis defectos,</p>
-                <p>te quedaste en mis peores momentos,</p>
-                <p>y sacaste lo mejor de mí.</p>
-                <p>Y si volviera a empezar...</p>
-                <p>volvería a elegirte a ti.</p>
-                <br>
-                <p>Porque tú...</p>
-                <p>Porque tú...</p>
-                <p>Porque tú...</p>
-                <br>
-                <strong>[OUTRO]</strong>
-                <p>Melissa...</p>
-                <p>Gracias por caminar esta vida conmigo...</p>
-                <p>Te amo.</p>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", functio
+                <p>viste algo bueno entre m
