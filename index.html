@@ -8,10 +8,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=4">
+    <link rel="stylesheet" href="style.css?v=5">
 
-    <!-- Estilos de emergencia para la letra -->
     <style>
+        /* === BOTÓN Y MODAL DE LA LETRA === */
         .letra-btn {
             display: block;
             background: transparent;
@@ -68,11 +68,133 @@
         .letra-texto strong { color: #800020; font-size: 0.9em; display: block; margin-top: 15px; }
         .letra-texto::-webkit-scrollbar { width: 6px; }
         .letra-texto::-webkit-scrollbar-thumb { background: rgba(128, 0, 32, 0.4); border-radius: 10px; }
+
+        /* === BLINDAJE DEL CARRUSEL (FUERZA EL TAMAÑO DE LAS FOTOS) === */
+        .full-gallery {
+            margin-top: 60px;
+        }
+        .full-gallery h3 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 60px;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #800020;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
+        }
+        .carousel-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+        .carousel-track {
+            display: flex !important;
+            gap: 20px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            padding: 20px 0;
+            width: 100% !important;
+            -ms-overflow-style: none; 
+            scrollbar-width: none; 
+        }
+        .carousel-track::-webkit-scrollbar {
+            display: none; 
+        }
+        .gallery-item.carousel-item {
+            flex: 0 0 calc(33.333% - 14px) !important; 
+            min-width: calc(33.333% - 14px) !important;
+            scroll-snap-align: center;
+            height: 250px !important;
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: block !important;
+        }
+        .gallery-item img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            display: block !important;
+        }
+        .carousel-btn {
+            background: white !important;
+            color: #800020 !important;
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            font-size: 20px;
+            cursor: pointer;
+            position: absolute;
+            z-index: 10;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .carousel-btn.prev { left: -15px; }
+        .carousel-btn.next { right: -15px; }
+
+        /* Ajustes Mobile de Emergencia para el carrusel */
+        @media (max-width: 768px) {
+            .gallery-item.carousel-item {
+                flex: 0 0 calc(50% - 10px) !important;
+                min-width: calc(50% - 10px) !important;
+            }
+            .carousel-btn.prev { left: 5px; }
+            .carousel-btn.next { right: 5px; }
+        }
+        @media (max-width: 480px) {
+            .gallery-item.carousel-item {
+                flex: 0 0 80% !important;
+                min-width: 80% !important;
+                height: 200px !important;
+            }
+        }
+
+        /* === BLINDAJE VISUALIZADOR DE FOTOS GRANDES (MODAL) === */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+        }
+        .modal-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90vh;
+            margin: auto;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+        }
+        .modal-content img {
+            max-width: 100%;
+            max-height: 80vh;
+            border-radius: 10px;
+        }
+        .close {
+            position: absolute;
+            top: -40px; right: 0;
+            color: white;
+            font-size: 35px;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .close {
+                top: 20px; right: 20px; font-size: 28px;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <!-- 1. HEADER HERO (INICIO) -->
     <header class="hero" id="inicio">
         <nav class="menu">
             <div class="logo">Acá comienza tu sorpresa...</div>
@@ -98,7 +220,6 @@
         </a>
     </header>
 
-    <!-- 2. NUESTRA HISTORIA -->
     <section class="story-section" id="historia" style="scroll-margin-top: 87px !important;">
         <div class="container">
             <h2 class="section-title">Nuestra Historia</h2>
@@ -139,7 +260,6 @@
         </div>
     </section>
 
-    <!-- 3. GALERÍA DE FOTOS (MOMENTOS) -->
     <section class="gallery-section" id="momentos" style="scroll-margin-top: 87px !important;">
         <div class="container">
             <h2 class="section-title">Nuestros Momentos</h2>
@@ -195,7 +315,6 @@
         </div>
     </section>
 
-    <!-- 4. REPRODUCTOR DE MÚSICA (CARTA MUSICAL) -->
     <section class="music-section" id="cancion" style="scroll-margin-top: 87px !important;">
         <div class="container">
             <h2 class="section-title">Tu Canción</h2>
@@ -212,14 +331,12 @@
                         Tu navegador no soporta audio HTML5
                     </audio>
 
-                    <!-- BOTÓN PARA ABRIR LA LETRA -->
                     <button type="button" class="letra-btn" onclick="abrirLetra()">Leer nuestra historia <span>♥</span></button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 5. MENSAJE ESPECIAL (CARTA) -->
     <section class="message-section" id="carta" style="scroll-margin-top: 87px !important;">
         <div class="container">
             <h2 class="section-title">Tu Carta</h2>
@@ -232,12 +349,10 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="footer">
         <p>Porque Tú <i class="fa-regular fa-heart"></i></p>
     </footer>
 
-    <!-- MODAL PARA VER FOTOS EN GRANDE -->
     <div id="photoModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
@@ -245,7 +360,6 @@
         </div>
     </div>
 
-    <!-- VENTANA FLOTANTE DE LA LETRA (MODAL BLINDADO) -->
     <div id="modalLetraUnico" onclick="if(event.target === this) cerrarLetra()">
         <div class="modal-contenido-letra">
             <span class="cerrar-modal-letra" onclick="cerrarLetra()">&times;</span>
@@ -332,14 +446,10 @@
                 <p>Melissa...</p>
                 <p>Gracias por caminar esta vida conmigo...</p>
                 <p>Te amo.</p>
-        </div>
+            </div>
         </div>
     </div>
 
-    <!-- ==========================================
-         SCRIPT MAESTRO INCRUSTADO AL FINAL
-         (No borres esto ni uses script.js)
-         ========================================== -->
     <script>
         window.addEventListener('scroll', function() {
             const menu = document.querySelector('.menu');
