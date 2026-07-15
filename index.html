@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
-    <!-- ESTILOS INCRUSTADOS A PRUEBA DE FALLOS SOLO PARA LA LETRA -->
     <style>
         .letra-btn {
             display: block;
@@ -72,7 +71,6 @@
 </head>
 <body>
 
-    <!-- 1. HEADER HERO (INICIO) -->
     <header class="hero" id="inicio">
         <nav class="menu">
             <div class="logo">Acá comienza tu sorpresa...</div>
@@ -98,8 +96,6 @@
         </a>
     </header>
 
-    <!-- 2. NUESTRA HISTORIA -->
-           <!-- SOLUCIÓN DEL FRENADO: Agregamos el scroll-margin-top manual aquí (87px compensa la línea blanca) -->
     <section class="story-section" id="historia" style="scroll-margin-top: 87px;">
         <div class="container">
             <h2 class="section-title">Nuestra Historia</h2>
@@ -140,8 +136,6 @@
         </div>
     </section>
 
-    <!-- 3. GALERÍA DE FOTOS (MOMENTOS) -->
-     <!-- SOLUCIÓN DEL FRENADO: Agregamos el scroll-margin-top manual aquí (87px compensa la línea blanca) -->
     <section class="gallery-section" id="momentos" style="scroll-margin-top: 87px;">
         <div class="container">
             <h2 class="section-title">Nuestros Momentos</h2>
@@ -197,8 +191,6 @@
         </div>
     </section>
 
-    <!-- 4. REPRODUCTOR DE MÚSICA (CARTA MUSICAL) -->
-    <!-- SOLUCIÓN DEL FRENADO: Agregamos el scroll-margin-top manual aquí (87px compensa la línea blanca) -->
     <section class="music-section" id="cancion" style="scroll-margin-top: 87px;">
         <div class="container">
             <h2 class="section-title">Tu Canción</h2>
@@ -215,15 +207,12 @@
                         Tu navegador no soporta audio HTML5
                     </audio>
 
-                    <!-- BOTÓN BLINDADO CON LA FUNCIÓN DIRECTA -->
                     <button type="button" class="letra-btn" onclick="abrirLetra()">Leer nuestra historia <span>♥</span></button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 5. MENSAJE ESPECIAL (CARTA) -->
-     <!-- SOLUCIÓN DEL FRENADO: Agregamos el scroll-margin-top manual aquí (87px compensa la línea blanca) -->
     <section class="message-section" id="carta" style="scroll-margin-top: 87px;">
         <div class="container">
             <h2 class="section-title">Tu Carta</h2>
@@ -236,12 +225,10 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="footer">
         <p>Porque Tú <i class="fa-regular fa-heart"></i></p>
     </footer>
 
-    <!-- MODAL PARA VER FOTOS EN GRANDE -->
     <div id="photoModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
@@ -249,8 +236,7 @@
         </div>
     </div>
 
-    <!-- VENTANA FLOTANTE DE LA LETRA (MODAL BLINDADO) -->
-    <div id="modalLetraUnico" onclick="if(event.target === this) cerrarLetra()">
+    <div id="modalLetraUnico">
         <div class="modal-contenido-letra">
             <span class="cerrar-modal-letra" onclick="cerrarLetra()">&times;</span>
             <div class="letra-texto">
@@ -322,4 +308,17 @@
                 <p>en la calma cuando todo era confuso,</p>
                 <p>en la mano que jamás me soltó.</p>
                 <p>Porque tú...</p>
-                <p>viste algo bueno entre m
+                <p>viste algo bueno entre mis defectos,</p>
+                <p>te quedaste en mis peores momentos,</p>
+                <p>y sacaste lo mejor de mí.</p>
+                <p>Y si volviera a empezar...</p>
+                <p>volvería a elegirte a ti.</p>
+                <br>
+                <p>Porque tú...</p>
+                <p>Porque tú...</p>
+                <p>Porque tú...</p>
+                <br>
+                <strong>[OUTRO]</strong>
+                <p>Melissa...</p>
+                <p>Gracias por caminar esta vida conmigo...</p>
+                <p
