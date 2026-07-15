@@ -680,7 +680,6 @@ body {
 }
 
 @media (max-width: 768px) {
-    /* Ajuste para tablets */
     section, header { scroll-margin-top: 95px; }
 
     .logo { font-size: 28px; }
@@ -751,7 +750,6 @@ body {
 }
 
 @media (max-width: 480px) {
-    /* === EL FRENO PERFECTO AJUSTADO: 95px compensa de forma milimétrica el menú en celulares === */
     section, header { scroll-margin-top: 95px; } 
 
     .main-title { 
@@ -924,7 +922,7 @@ body {
 
 /* ===== BOTÓN DE LA LETRA ===== */
 .letra-btn {
-    display: inline-block;
+    display: block;
     background: transparent;
     color: var(--primary-color);
     border: 1px solid var(--primary-color);
@@ -936,10 +934,17 @@ body {
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-top: 15px;
+    margin: 15px auto 0;
+    width: fit-content;
 }
 .letra-btn:hover {
     background: var(--primary-color);
     color: white;
 }
 .letra-btn span {
+    font-size: 0.9em;
+    margin-left: 5px;
+}
+
+/* ===== VENTANA FLOTANTE (MODAL) PARA LETRA ===== */
+.modal-let
