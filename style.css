@@ -920,7 +920,7 @@ body {
     }
 }
 
-/* ===== BOTÓN DE LA LETRA ===== */
+/* ===== BOTÓN Y MODAL DE LA LETRA DE LA CANCIÓN ===== */
 .letra-btn {
     display: block;
     background: transparent;
@@ -937,14 +937,17 @@ body {
     margin: 15px auto 0;
     width: fit-content;
 }
+
 .letra-btn:hover {
     background: var(--primary-color);
     color: white;
 }
+
 .letra-btn span {
     font-size: 0.9em;
     margin-left: 5px;
 }
 
-/* ===== VENTANA FLOTANTE (MODAL) PARA LETRA ===== */
-.modal-let
+#modalLetraUnico {
+    display: none; 
+ 
