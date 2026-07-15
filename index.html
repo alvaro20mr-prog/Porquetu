@@ -4,271 +4,471 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Porque Tú - Para Melissa</title>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <header class="hero" id="inicio">
-        <nav class="menu">
-            <div class="logo">Acá comienza tu sorpresa...</div>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#historia">Historia</a></li>
-                <li><a href="#momentos">Momentos</a></li>
-                <li><a href="#cancion">Canción</a></li>
-                <li><a href="#carta">Carta</a></li>
-            </ul>
-        </nav>
+<header class="hero" id="inicio">
 
-        <div class="hero-overlay"></div>
+    <nav class="menu">
 
-        <div class="hero-content">
-            <h1 class="main-title">Porque Tú</h1>
-            <p class="subtitle">Hay historias que el corazón<br>nunca deja de escribir...</p>
-            <a href="#historia" class="hero-btn">Comenzar</a>
+        <div class="logo">
+            Acá comienza tu sorpresa...
         </div>
 
-        <a href="#historia" class="scroll-down">
-            <i class="fas fa-angle-down"></i>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#historia">Historia</a></li>
+            <li><a href="#momentos">Momentos</a></li>
+            <li><a href="#cancion">Canción</a></li>
+            <li><a href="#carta">Carta</a></li>
+        </ul>
+
+    </nav>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+        <h1 class="main-title">
+            Porque Tú
+        </h1>
+
+        <p class="subtitle">
+            Hay historias que el corazón<br>
+            nunca deja de escribir...
+        </p>
+
+        <a href="#historia" class="hero-btn">
+            Comenzar
         </a>
-    </header>
 
-    <section class="story-section" id="historia" style="scroll-margin-top: 87px;">
-        <div class="container">
-            <h2 class="section-title">Nuestra Historia</h2>
-            
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">2013</div>
-                    <div class="timeline-content">
-                        <h3>Todo Comenzó</h3>
-                        <p>Te vi por primera vez en dos mil trece, sin saber lo que iba a pasar, yo era un hombre lleno de silencios, y tú un sueño difícil de alcanzar..</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-date">2018</div>
-                    <div class="timeline-content">
-                        <h3>La Vida Nos Volvió a Juntar</h3>
-                        <p>Recuerdo aquel doce de octubre, como si fuera ayer; cuando vencí todos mis miedos y te besé por primera vez..</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-date">2023</div>
-                    <div class="timeline-content">
-                        <h3>El Mejor Regalo De La Vida</h3>
-                        <p>Lo que empezó con una mirada un día aprendió a respirar, y en unos pequeños ojos descubrimos una nueva forma de amar..</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-date">Hoy</div>
-                    <div class="timeline-content">
-                        <h3>Aun Hay Mas Capitulos...</h3>
-                        <p>Y aquel sueño que parecía lejano, hoy lo podemos abrazar, porque juntos construimos un hogar donde siempre quiero regresar.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-   <section class="gallery-section" id="momentos" style="scroll-margin-top: 87px;">
-        <div class="container">
-            <h2 class="section-title">Nuestros Momentos</h2>
-            
-            <div class="polaroid-gallery">
-                <div class="polaroid-card"><img src="imagenes/primer_viaje.jpg" alt="Nuestro primer viaje"><p class="polaroid-text">Nuestro primer viaje</p></div>
-                <div class="polaroid-card"><img src="imagenes/abrazo.jpg" alt="Abrazos sin fin"><p class="polaroid-text">Abrazos sin fin</p></div>
-                <div class="polaroid-card"><img src="imagenes/aventuras.jpg" alt="Aventuras compartidas"><p class="polaroid-text">Aventuras compartidas</p></div>
-                <div class="polaroid-card"><img src="imagenes/conexion.jpg" alt="Nuestra conexión"><p class="polaroid-text">Nuestra conexión</p></div>
-                <div class="polaroid-card"><img src="imagenes/siempre_juntos.jpg" alt="Siempre juntos"><p class="polaroid-text">Siempre juntos</p></div>
-                <div class="polaroid-card"><img src="imagenes/amor_eterno.jpg" alt="Un amor eterno"><p class="polaroid-text">Un amor eterno</p></div>
-            </div>
-
-            <div class="full-gallery">
-                <h3>Más Momentos Especiales</h3>
-                <div class="carousel-wrapper">
-                    <button class="carousel-btn prev" onclick="moveCarousel(-1)"><i class="fas fa-chevron-left"></i></button>
-                    <div class="carousel-track" id="track">
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/1.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/2.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/3.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/4.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/5.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/6.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/7.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/8.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/9.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/10.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/11.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/12.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/13.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/14.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/15.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/16.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/17.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/18.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/19.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/20.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/21.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/22.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/23.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/24.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/25.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/26.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/27.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/28.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/29.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/30.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                    </div>
-                    <button class="carousel-btn next" onclick="moveCarousel(1)"><i class="fas fa-chevron-right"></i></button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="music-section" id="cancion" style="scroll-margin-top: 87px;">
-        <div class="container">
-            <h2 class="section-title">Tu Canción</h2>
-            
-            <div class="music-card">
-                <img src="imagenes/portada.png" alt="Carátula de nuestra canción" class="music-cover" loading="lazy">
-                
-                <div class="music-info">
-                    <h3>Porque Tú</h3>
-                    <p>"Te convertiste en mi lugar en el mundo"</p>
-                    
-                    <audio id="audioPlayer" controls>
-                        <source src="Musica/Porque Tú.m4a" type="audio/mp4">
-                        Tu navegador no soporta audio HTML5
-                    </audio>
-
-                    <button type="button" class="letra-btn" onclick="abrirLetra()">Leer nuestra historia <span>♥</span></button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="message-section" id="carta" style="scroll-margin-top: 87px;">
-        <div class="container">
-            <h2 class="section-title">Tu Carta</h2>
-            
-            <div class="love-message">
-                <h2>Amor...</h2>
-                <p>Sabes que no soy un hombre de muchas palabras, pero quise demostrarte mi amor con esta sorpresa. He puesto todo mi corazón, esfuerzo y cariño en este pequeño rincón, hecho solo para ti...</p>
-                <p class="signature">Gracias Por Caminar Esta Vida Contigo...<i class="fa-regular fa-heart"></i></p>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <p>Porque Tú <i class="fa-regular fa-heart"></i></p>
-    </footer>
-
-    <div id="photoModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <img id="modalImage" src="" alt="">
-        </div>
     </div>
 
-    <div id="modalLetraUnico">
-        <div class="modal-contenido-letra">
-            <span class="cerrar-modal-letra" onclick="cerrarLetra()">&times;</span>
-            <div class="letra-texto">
-                <strong>[INTRO]</strong>
-                <p>Esta es nuestra historia...</p>
-                <p>Escucha...</p>
-                <br>
-                <strong>[VERSO 1]</strong>
-                <p>Te vi por primera vez en dos mil trece,</p>
-                <p>sin saber lo que iba a pasar,</p>
-                <p>yo era un hombre lleno de silencios,</p>
-                <p>y tú un sueño difícil de alcanzar.</p>
-                <p>Pasó el tiempo, cambiaron los caminos,</p>
-                <p>pero la vida nos volvió a juntar,</p>
-                <p>y entre sonrisas y conversaciones</p>
-                <p>nuestro destino empezó a cambiar.</p>
-                <br>
-                <strong>[PRE-CORO]</strong>
-                <p>Recuerdo aquel doce de octubre...</p>
-                <p>como si fuera ayer...</p>
-                <p>cuando vencí todos mis miedos...</p>
-                <p>y te besé por primera vez.</p>
-                <br>
-                <strong>[CORO]</strong>
-                <p>Porque tú...</p>
-                <p>te convertiste en mi lugar en el mundo,</p>
-                <p>en la calma cuando todo era confuso,</p>
-                <p>en la mano que jamás me soltó.</p>
-                <p>Porque tú...</p>
-                <p>viste algo bueno entre mis defectos,</p>
-                <p>te quedaste en mis peores momentos,</p>
-                <p>y sacaste lo mejor de mí.</p>
-                <p>Y si volviera a empezar...</p>
-                <p>volvería a elegirte a ti.</p>
-                <br>
-                <strong>[VERSO 2]</strong>
-                <p>No fui perfecto, eso tú lo sabes,</p>
-                <p>más de una vez me viste caer,</p>
-                <p>pero siempre encontraste el camino</p>
-                <p>para ayudarme a volver a creer.</p>
-                <p>Cuando yo veía tormentas,</p>
-                <p>tú encontrabas un nuevo amanecer,</p>
-                <p>y sin darte cuenta, poco a poco,</p>
-                <p>me enseñaste a renacer.</p>
-                <br>
-                <strong>[PRE-PUENTE]</strong>
-                <p>Y pasaron los años...</p>
-                <p>y el amor siguió creciendo...</p>
-                <p>hasta cambiar nuestras vidas...</p>
-                <p>para siempre.</p>
-                <br>
-                <strong>[PUENTE]</strong>
-                <p>Lo que empezó con una mirada</p>
-                <p>un día aprendió a respirar,</p>
-                <p>y en unos pequeños ojos</p>
-                <p>descubrimos una nueva forma de amar.</p>
-                <p>Entre desvelos y aprendizajes,</p>
-                <p>entre risas y alguna preocupación,</p>
-                <p>con Julián fuimos escribiendo</p>
-                <p>la historia más bonita de los dos.</p>
-                <p>Y aquel sueño que parecía lejano,</p>
-                <p>hoy lo podemos abrazar,</p>
-                <p>porque juntos construimos un hogar</p>
-                <p>donde siempre quiero regresar.</p>
-                <br>
-                <strong>[CORO FINAL]</strong>
-                <p>Porque tú...</p>
-                <p>te convertiste en mi lugar en el mundo,</p>
-                <p>en la calma cuando todo era confuso,</p>
-                <p>en la mano que jamás me soltó.</p>
-                <p>Porque tú...</p>
-                <p>viste algo bueno entre mis defectos,</p>
-                <p>te quedaste en mis peores momentos,</p>
-                <p>y sacaste lo mejor de mí.</p>
-                <p>Y si volviera a empezar...</p>
-                <p>volvería a elegirte a ti.</p>
-                <br>
-                <p>Porque tú...</p>
-                <p>Porque tú...</p>
-                <p>Porque tú...</p>
-                <br>
-                <strong>[OUTRO]</strong>
-                <p>Melissa...</p>
-                <p>Gracias por caminar esta vida conmigo...</p>
-                <p>Te amo.</p>
+    <a href="#historia" class="scroll-down">
+        <i class="fas fa-angle-down"></i>
+    </a>
+
+</header>
+
+<section class="story-section" id="historia">
+
+<div class="container">
+
+<h2 class="section-title">
+Nuestra Historia
+</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+
+<div class="timeline-date">
+2013
+</div>
+
+<div class="timeline-content">
+
+<h3>Todo Comenzó</h3>
+
+<p>
+Te vi por primera vez en dos mil trece,
+sin saber lo que iba a pasar,
+yo era un hombre lleno de silencios,
+y tú un sueño difícil de alcanzar.
+</p>
+
+</div>
+</div>
+
+<div class="timeline-item">
+
+<div class="timeline-date">
+2018
+</div>
+
+<div class="timeline-content">
+
+<h3>La Vida Nos Volvió a Juntar</h3>
+
+<p>
+Recuerdo aquel doce de octubre,
+como si fuera ayer,
+cuando vencí todos mis miedos
+y te besé por primera vez.
+</p>
+
+</div>
+</div>
+
+<div class="timeline-item">
+
+<div class="timeline-date">
+2023
+</div>
+
+<div class="timeline-content">
+
+<h3>El Mejor Regalo De La Vida</h3>
+
+<p>
+Lo que empezó con una mirada
+un día aprendió a respirar,
+y en unos pequeños ojos
+descubrimos una nueva forma de amar.
+</p>
+
+</div>
+</div>
+
+<div class="timeline-item">
+
+<div class="timeline-date">
+Hoy
+</div>
+
+<div class="timeline-content">
+
+<h3>Aún Hay Más Capítulos...</h3>
+
+<p>
+Y aquel sueño que parecía lejano,
+hoy lo podemos abrazar,
+porque juntos construimos un hogar
+donde siempre quiero regresar.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="gallery-section" id="momentos">
+
+<div class="container">
+
+<h2 class="section-title">
+Nuestros Momentos
+</h2>
+
+<div class="polaroid-gallery">
+
+<div class="polaroid-card">
+<img src="imagenes/primer_viaje.jpg" alt="">
+<p class="polaroid-text">Nuestro primer viaje</p>
+</div>
+
+<div class="polaroid-card">
+<img src="imagenes/abrazo.jpg" alt="">
+<p class="polaroid-text">Abrazos sin fin</p>
+</div>
+
+<div class="polaroid-card">
+<img src="imagenes/aventuras.jpg" alt="">
+<p class="polaroid-text">Aventuras compartidas</p>
+</div>
+
+<div class="polaroid-card">
+<img src="imagenes/conexion.jpg" alt="">
+<p class="polaroid-text">Nuestra conexión</p>
+</div>
+
+<div class="polaroid-card">
+<img src="imagenes/siempre_juntos.jpg" alt="">
+<p class="polaroid-text">Siempre juntos</p>
+</div>
+
+<div class="polaroid-card">
+<img src="imagenes/amor_eterno.jpg" alt="">
+<p class="polaroid-text">Un amor eterno</p>
+</div>
+
+</div>
+<div class="full-gallery">
+
+    <h3>Más Momentos Especiales</h3>
+
+    <div class="carousel-wrapper">
+
+        <button class="carousel-btn prev" onclick="moveCarousel(-1)">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <div class="carousel-track" id="track">
+
+            <div class="gallery-item carousel-item" onclick="openModal(this)">
+                <img src="imagenes/1.jpg" alt="">
+                <div class="overlay"><i class="fas fa-search-plus"></i></div>
             </div>
+
+            <div class="gallery-item carousel-item" onclick="openModal(this)">
+                <img src="imagenes/2.jpg" alt="">
+                <div class="overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <div class="gallery-item carousel-item" onclick="openModal(this)">
+                <img src="imagenes/3.jpg" alt="">
+                <div class="overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <div class="gallery-item carousel-item" onclick="openModal(this)">
+                <img src="imagenes/4.jpg" alt="">
+                <div class="overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <div class="gallery-item carousel-item" onclick="openModal(this)">
+                <img src="imagenes/5.jpg" alt="">
+                <div class="overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <div class="gallery-item carousel-item" onclick="openModal(this)">
+                <img src="imagenes/6.jpg" alt="">
+                <div class="overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <div class="gallery-item carousel-item" onclick="openModal(this)">
+                <img src="imagenes/7.jpg" alt="">
+                <div class="overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <div class="gallery-item carousel-item" onclick="openModal(this)">
+                <img src="imagenes/8.jpg" alt="">
+                <div class="overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <div class="gallery-item carousel-item" onclick="openModal(this)">
+                <img src="imagenes/9.jpg" alt="">
+                <div class="overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <div class="gallery-item carousel-item" onclick="openModal(this)">
+                <img src="imagenes/10.jpg" alt="">
+                <div class="overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <div class="gallery-item carousel-item" onclick="openModal(this)">
+                <img src="imagenes/11.jpg" alt="">
+                <div class="overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <div class="gallery-item carousel-item" onclick="openModal(this)">
+                <img src="imagenes/12.jpg" alt="">
+                <div class="overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <div class="gallery-item carousel-item" onclick="openModal(this)">
+                <img src="imagenes/13.jpg" alt="">
+                <div class="overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <div class="gallery-item carousel-item" onclick="openModal(this)">
+                <img src="imagenes/14.jpg" alt="">
+                <div class="overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <div class="gallery-item carousel-item" onclick="openModal(this)">
+                <img src="imagenes/15.jpg" alt="">
+                <div class="overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <div class="gallery-item carousel-item" onclick="openModal(this)">
+                <img src="imagenes/16.jpg" alt="">
+                <div class="overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <div class="gallery-item carousel-item" onclick="openModal(this)">
+                <img src="imagenes/17.jpg" alt="">
+                <div class="overlay"><
+                                         
+<section class="music-section" id="cancion">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Tu Canción
+        </h2>
+
+        <div class="music-card">
+
+            <img src="imagenes/portada.png"
+                 class="music-cover"
+                 alt="Portada">
+
+            <div class="music-info">
+
+                <h3>Porque Tú</h3>
+
+                <p>
+                    "Te convertiste en mi lugar en el mundo"
+                </p>
+
+                <audio id="audioPlayer" controls>
+                    <source src="Musica/Porque Tú.m4a" type="audio/mp4">
+                    Tu navegador no soporta audio HTML5.
+                </audio>
+
+                <button
+                    id="btnVerLetraUnico"
+                    class="letra-btn">
+                    Leer nuestra historia
+                    <span>♥</span>
+                </button>
+
+            </div>
+
         </div>
+
     </div>
 
-    <script src="script.js"></script>
+</section>
+
+<section class="message-section" id="carta">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Tu Carta
+        </h2>
+
+        <div class="love-message">
+
+            <h2>Amor...</h2>
+
+            <p>
+                Sabes que no soy un hombre de muchas palabras,
+                pero quise demostrarte mi amor con esta sorpresa.
+                He puesto todo mi corazón, esfuerzo y cariño
+                en este pequeño rincón hecho solamente para ti.
+            </p>
+
+            <p class="signature">
+                Gracias por caminar esta vida conmigo...
+                <i class="fa-regular fa-heart"></i>
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer class="footer">
+
+    <p>
+        Porque Tú
+        <i class="fa-regular fa-heart"></i>
+    </p>
+
+</footer>
+
+<!-- =========================
+     MODAL FOTO
+========================== -->
+
+<div id="photoModal" class="modal">
+
+    <div class="modal-content">
+
+        <span class="close" onclick="closeModal()">
+            &times;
+        </span>
+
+        <img
+            id="modalImage"
+            src=""
+            alt="">
+
+    </div>
+
+</div>
+
+<!-- =========================
+     MODAL LETRA
+========================== -->
+
+<div id="modalLetraUnico">
+
+    <div class="modal-contenido-letra">
+
+        <span class="cerrar-modal-letra">
+            &times;
+        </span>
+
+        <div class="letra-texto">
+
+            <strong>[INTRO]</strong>
+
+            <p>Esta es nuestra historia...</p>
+            <p>Escucha...</p>
+
+            <br>
+
+            <strong>[VERSO 1]</strong>
+
+            <p>Te vi por primera vez en dos mil trece,</p>
+            <p>sin saber lo que iba a pasar,</p>
+            <p>yo era un hombre lleno de silencios,</p>
+            <p>y tú un sueño difícil de alcanzar.</p>
+
+            <p>Pasó el tiempo, cambiaron los caminos,</p>
+            <p>pero la vida nos volvió a juntar,</p>
+            <p>y entre sonrisas y conversaciones</p>
+            <p>nuestro destino empezó a cambiar.</p>
+
+            <br>
+
+            <strong>[PRE-CORO]</strong>
+
+            <p>Recuerdo aquel doce de octubre...</p>
+            <p>como si fuera ayer...</p>
+            <p>cuando vencí todos mis miedos...</p>
+            <p>y te besé por primera vez.</p>
+
+            <br>
+
+            <strong>[CORO]</strong>
+
+            <p>Porque tú...</p>
+            <p>te convertiste en mi lugar en el mundo,</p>
+            <p>en la calma cuando todo era confuso,</p>
+            <p>en la mano que jamás me soltó.</p>
+
+            <p>Porque tú...</p>
+
+            <p>viste algo bueno entre mis defectos,</p>
+            <p>te quedaste en mis peores momentos,</p>
+            <p>y sacaste lo mejor de mí.</p>
+
+            <p>Y si volviera a empezar...</p>
+            <p>volvería a elegirte a ti.</p>
+
+            <br>
+
+            <strong>[VERSO 2]</strong>
+
+            <p>No fui perfecto, eso tú lo sabes.</p>
+            <p>Más de una vez me viste caer.</p>
+
+            <p>Pero siempre encontraste el camino</p>
+            <p>para ayudarme a volver a creer.</p>
+
+            <p>Cuando yo veía torment
+                
+<script src="script.js"></script>
 
 </body>
 </html>
-
