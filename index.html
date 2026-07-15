@@ -176,7 +176,7 @@
                     </audio>
 
                     <!-- BOTÓN PARA ABRIR LA LETRA -->
-                    <button id="btnAbrirLetra" class="letra-btn">Leer nuestra historia <span>♥</span></button>
+                    <button id="btnVerLetraUnico" class="letra-btn">Leer nuestra historia <span>♥</span></button>
                 </div>
             </div>
         </div>
@@ -209,7 +209,7 @@
     </div>
 
     <!-- VENTANA FLOTANTE DE LA LETRA (MODAL) -->
-    <div id="modalLetra" class="modal-letra">
+    <div id="modalLetraUnico" class="modal-letra">
         <div class="modal-contenido">
             <span class="cerrar-modal-letra">&times;</span>
             <div class="letra-texto">
@@ -299,23 +299,28 @@
         </div>
     </div>
 
-    <!-- Script para que el modal de la letra funcione sin tocar script.js -->
+    <!-- Script para el modal de la letra -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            const modalLetra = document.getElementById("modalLetra");
-            const btnAbrirLetra = document.getElementById("btnAbrirLetra");
-            const spanCerrarModal = document.querySelector(".cerrar-modal-letra");
+            const modalLetra = document.getElementById("modalLetraUnico");
+            const btnVerLetra = document.getElementById("btnVerLetraUnico");
+            const btnCerrarLetra = document.querySelector(".cerrar-modal-letra");
 
-            if(btnAbrirLetra && modalLetra && spanCerrarModal) {
-                btnAbrirLetra.onclick = function() {
-                    modalLetra.classList.add("mostrar");
-                }
-                spanCerrarModal.onclick = function() {
+            if(btnVerLetra && modalLetra && btnCerrarLetra) {
+                btnVerLetra.addEventListener("click", function() {
+                    modalLetra.style.display = "flex";
+                    setTimeout(() => { modalLetra.classList.add("mostrar"); }, 10);
+                });
+
+                btnCerrarLetra.addEventListener("click", function() {
                     modalLetra.classList.remove("mostrar");
-                }
+                    setTimeout(() => { modalLetra.style.display = "none"; }, 400);
+                });
+
                 window.addEventListener("click", function(event) {
                     if (event.target == modalLetra) {
                         modalLetra.classList.remove("mostrar");
+                        setTimeout(() => { modalLetra.style.display = "none"; }, 400);
                     }
                 });
             }
