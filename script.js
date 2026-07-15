@@ -3,46 +3,29 @@
 // ===============================
 
 window.addEventListener("scroll", () => {
-
     const menu = document.querySelector(".menu");
-
-    if(window.scrollY>50){
-
+    if(window.scrollY > 50){
         menu.classList.add("scrolled");
-
-    }else{
-
+    } else {
         menu.classList.remove("scrolled");
-
     }
-
 });
 
 // ===============================
 // CARRUSEL
 // ===============================
 
-// ===============================
-// CARRUSEL
-// ===============================
-
 function moveCarousel(direccion){
-
     const track = document.getElementById("track");
-
     if(!track) return;
-
     const tarjeta = track.querySelector(".carousel-item");
-
     if(!tarjeta) return;
-
     const ancho = tarjeta.offsetWidth + 20;
 
     track.scrollBy({
         left: direccion * ancho,
         behavior: "smooth"
     });
-
 }
 
 // ===============================
@@ -50,21 +33,14 @@ function moveCarousel(direccion){
 // ===============================
 
 function openModal(element){
-
-    const modal=document.getElementById("photoModal");
-
-    const modalImg=document.getElementById("modalImage");
-
-    modal.style.display="block";
-
-    modalImg.src=element.querySelector("img").src;
-
+    const modal = document.getElementById("photoModal");
+    const modalImg = document.getElementById("modalImage");
+    modal.style.display = "block";
+    modalImg.src = element.querySelector("img").src;
 }
 
 function closeModal(){
-
-    document.getElementById("photoModal").style.display="none";
-
+    document.getElementById("photoModal").style.display = "none";
 }
 
 // ===============================
@@ -72,139 +48,88 @@ function closeModal(){
 // ===============================
 
 function abrirLetra(){
-
-    const modal=document.getElementById("modalLetraUnico");
-
+    const modal = document.getElementById("modalLetraUnico");
     if(!modal) return;
-
-    modal.style.display="flex";
-
+    modal.style.display = "flex";
     setTimeout(()=>{
-
         modal.classList.add("mostrar");
-
-    },10);
-
+    }, 10);
 }
 
 function cerrarLetra(){
-
-    const modal=document.getElementById("modalLetraUnico");
-
+    const modal = document.getElementById("modalLetraUnico");
     if(!modal) return;
-
     modal.classList.remove("mostrar");
-
     setTimeout(()=>{
-
-        modal.style.display="none";
-
-    },400);
-
+        modal.style.display = "none";
+    }, 400);
 }
 
 // ===============================
 // CERRAR MODALES HACIENDO CLICK AFUERA
 // ===============================
 
-window.addEventListener("click",(e)=>{
-
-    const photo=document.getElementById("photoModal");
-
-    const letra=document.getElementById("modalLetraUnico");
-
-    if(e.target===photo){
-
+window.addEventListener("click", (e) => {
+    const photo = document.getElementById("photoModal");
+    const letra = document.getElementById("modalLetraUnico");
+    
+    if(e.target === photo){
         closeModal();
-
     }
-
-    if(e.target===letra){
-
+    if(e.target === letra){
         cerrarLetra();
-
     }
-
 });
 
 // ===============================
 // SCROLL SUAVE DEL MENÚ
 // ===============================
 
-document.querySelectorAll('a[href^="#"]').forEach(enlace=>{
-
-    enlace.addEventListener("click",function(e){
-
+document.querySelectorAll('a[href^="#"]').forEach(enlace => {
+    enlace.addEventListener("click", function(e){
         e.preventDefault();
-
-        const destino=document.querySelector(this.getAttribute("href"));
-
+        const destino = document.querySelector(this.getAttribute("href"));
         if(destino){
-
             destino.scrollIntoView({
-
-                behavior:"smooth",
-                block:"start"
-
+                behavior: "smooth",
+                block: "start"
             });
-
         }
-
     });
-
 });
-
 
 // ===============================
 // FLECHA HERO
 // ===============================
 
-const flecha=document.querySelector(".scroll-down");
-
+const flecha = document.querySelector(".scroll-down");
 if(flecha){
-
-    flecha.addEventListener("click",(e)=>{
-
+    flecha.addEventListener("click", (e) => {
         e.preventDefault();
-
         document.querySelector("#historia").scrollIntoView({
-
-            behavior:"smooth"
-
+            behavior: "smooth"
         });
-
     });
-
 }
-
 
 // ===============================
 // CERRAR CON ESC
 // ===============================
 
-document.addEventListener("keydown",(e)=>{
-
-    if(e.key==="Escape"){
-
+document.addEventListener("keydown", (e) => {
+    if(e.key === "Escape"){
         closeModal();
-
         cerrarLetra();
-
     }
-
 });
-
 
 // ===============================
 // PREVENIR ERROR SI NO EXISTE AUDIO
 // ===============================
 
-const audio=document.getElementById("audioPlayer");
-
+const audio = document.getElementById("audioPlayer");
 if(audio){
-
-    audio.volume=0.8;
-
+    audio.volume = 0.8;
 }
 
-console.log("✔ script.js cargado correctamente");
+console.log("✔ script.js cargado correctamente y sincronizado");
