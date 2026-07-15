@@ -8,69 +8,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-
-    <style>
-        .letra-btn {
-            display: block;
-            background: transparent;
-            color: #800020;
-            border: 1px solid #800020;
-            padding: 8px 25px;
-            border-radius: 30px;
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.2em;
-            font-style: italic;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin: 15px auto 0;
-            width: fit-content;
-        }
-        .letra-btn:hover { background: #800020; color: white; }
-        .letra-btn span { font-size: 0.9em; margin-left: 5px; }
-
-        #modalLetraUnico {
-            display: none; 
-            position: fixed;
-            z-index: 99999;
-            left: 0; top: 0; width: 100%; height: 100%;
-            background-color: rgba(0, 0, 0, 0.8); 
-            backdrop-filter: blur(5px);
-            align-items: center; justify-content: center;
-            opacity: 0; transition: opacity 0.4s ease;
-        }
-        #modalLetraUnico.mostrar { opacity: 1; }
-        
-        .modal-contenido-letra {
-            background-color: #FAF4F5; 
-            border: 2px solid #800020;
-            border-radius: 12px;
-            width: 90%; max-width: 500px; max-height: 80vh; 
-            position: relative;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.5);
-            display: flex; flex-direction: column;
-            animation: deslizarArriba 0.4s ease-out;
-        }
-        @keyframes deslizarArriba { from { transform: translateY(30px); } to { transform: translateY(0); } }
-        
-        .cerrar-modal-letra {
-            color: #800020; position: absolute;
-            top: 10px; right: 20px;
-            font-size: 35px; font-weight: bold; cursor: pointer; z-index: 10;
-        }
-        .letra-texto {
-            padding: 30px 20px 40px; overflow-y: auto; 
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.2em; color: #444; line-height: 1.6; text-align: center;
-        }
-        .letra-texto strong { color: #800020; font-size: 0.9em; display: block; margin-top: 15px; }
-        .letra-texto::-webkit-scrollbar { width: 6px; }
-        .letra-texto::-webkit-scrollbar-thumb { background: rgba(128, 0, 32, 0.4); border-radius: 10px; }
-    </style>
+    <!-- El ?v=3 obliga a cargar tu CSS nuevo -->
+    <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
 
+    <!-- 1. HEADER HERO (INICIO) -->
     <header class="hero" id="inicio">
         <nav class="menu">
             <div class="logo">Acá comienza tu sorpresa...</div>
@@ -96,7 +39,8 @@
         </a>
     </header>
 
-    <section class="story-section" id="historia" style="scroll-margin-top: 87px;">
+    <!-- 2. NUESTRA HISTORIA -->
+    <section class="story-section" id="historia" style="scroll-margin-top: 87px !important;">
         <div class="container">
             <h2 class="section-title">Nuestra Historia</h2>
             
@@ -136,17 +80,18 @@
         </div>
     </section>
 
-    <section class="gallery-section" id="momentos" style="scroll-margin-top: 87px;">
+    <!-- 3. GALERÍA DE FOTOS (MOMENTOS) -->
+    <section class="gallery-section" id="momentos" style="scroll-margin-top: 87px !important;">
         <div class="container">
             <h2 class="section-title">Nuestros Momentos</h2>
             
             <div class="polaroid-gallery">
-                <div class="polaroid-card"><img src="imagenes/primer_viaje.jpg" alt="Nuestro primer viaje" loading="lazy"><p class="polaroid-text">Nuestro primer viaje</p></div>
-                <div class="polaroid-card"><img src="imagenes/abrazo.jpg" alt="Abrazos sin fin" loading="lazy"><p class="polaroid-text">Abrazos sin fin</p></div>
-                <div class="polaroid-card"><img src="imagenes/aventuras.jpg" alt="Aventuras compartidas" loading="lazy"><p class="polaroid-text">Aventuras compartidas</p></div>
-                <div class="polaroid-card"><img src="imagenes/conexion.jpg" alt="Nuestra conexión" loading="lazy"><p class="polaroid-text">Nuestra conexión</p></div>
-                <div class="polaroid-card"><img src="imagenes/siempre_juntos.jpg" alt="Siempre juntos" loading="lazy"><p class="polaroid-text">Siempre juntos</p></div>
-                <div class="polaroid-card"><img src="imagenes/amor_eterno.jpg" alt="Un amor eterno" loading="lazy"><p class="polaroid-text">Un amor eterno</p></div>
+                <div class="polaroid-card"><img src="imagenes/primer_viaje.jpg" alt="Nuestro primer viaje"><p class="polaroid-text">Nuestro primer viaje</p></div>
+                <div class="polaroid-card"><img src="imagenes/abrazo.jpg" alt="Abrazos sin fin"><p class="polaroid-text">Abrazos sin fin</p></div>
+                <div class="polaroid-card"><img src="imagenes/aventuras.jpg" alt="Aventuras compartidas"><p class="polaroid-text">Aventuras compartidas</p></div>
+                <div class="polaroid-card"><img src="imagenes/conexion.jpg" alt="Nuestra conexión"><p class="polaroid-text">Nuestra conexión</p></div>
+                <div class="polaroid-card"><img src="imagenes/siempre_juntos.jpg" alt="Siempre juntos"><p class="polaroid-text">Siempre juntos</p></div>
+                <div class="polaroid-card"><img src="imagenes/amor_eterno.jpg" alt="Un amor eterno"><p class="polaroid-text">Un amor eterno</p></div>
             </div>
 
             <div class="full-gallery">
@@ -154,36 +99,36 @@
                 <div class="carousel-wrapper">
                     <button class="carousel-btn prev" onclick="moveCarousel(-1)"><i class="fas fa-chevron-left"></i></button>
                     <div class="carousel-track" id="track">
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/1.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/2.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/3.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/4.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/5.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/6.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/7.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/8.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/9.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/10.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/11.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/12.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/13.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/14.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/15.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/16.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/17.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/18.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/19.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/20.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/21.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/22.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/23.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/24.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/25.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/26.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/27.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/28.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/29.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
-                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/30.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/1.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/2.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/3.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/4.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/5.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/6.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/7.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/8.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/9.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/10.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/11.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/12.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/13.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/14.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/15.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/16.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/17.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/18.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/19.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/20.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/21.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/22.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/23.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/24.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/25.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/26.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/27.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/28.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/29.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/30.jpg" alt="Momento"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
                     </div>
                     <button class="carousel-btn next" onclick="moveCarousel(1)"><i class="fas fa-chevron-right"></i></button>
                 </div>
@@ -191,12 +136,13 @@
         </div>
     </section>
 
-    <section class="music-section" id="cancion" style="scroll-margin-top: 87px;">
+    <!-- 4. REPRODUCTOR DE MÚSICA (CARTA MUSICAL) -->
+    <section class="music-section" id="cancion" style="scroll-margin-top: 87px !important;">
         <div class="container">
             <h2 class="section-title">Tu Canción</h2>
             
             <div class="music-card">
-                <img src="imagenes/portada.png" alt="Carátula de nuestra canción" class="music-cover" loading="lazy">
+                <img src="imagenes/portada.png" alt="Carátula de nuestra canción" class="music-cover">
                 
                 <div class="music-info">
                     <h3>Porque Tú</h3>
@@ -207,13 +153,15 @@
                         Tu navegador no soporta audio HTML5
                     </audio>
 
+                    <!-- BOTÓN PARA ABRIR LA LETRA -->
                     <button type="button" class="letra-btn" onclick="abrirLetra()">Leer nuestra historia <span>♥</span></button>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="message-section" id="carta" style="scroll-margin-top: 87px;">
+    <!-- 5. MENSAJE ESPECIAL (CARTA) -->
+    <section class="message-section" id="carta" style="scroll-margin-top: 87px !important;">
         <div class="container">
             <h2 class="section-title">Tu Carta</h2>
             
@@ -225,10 +173,12 @@
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer class="footer">
         <p>Porque Tú <i class="fa-regular fa-heart"></i></p>
     </footer>
 
+    <!-- MODAL PARA VER FOTOS EN GRANDE -->
     <div id="photoModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
@@ -236,7 +186,8 @@
         </div>
     </div>
 
-    <div id="modalLetraUnico">
+    <!-- VENTANA FLOTANTE DE LA LETRA (MODAL BLINDADO) -->
+    <div id="modalLetraUnico" onclick="if(event.target === this) cerrarLetra()">
         <div class="modal-contenido-letra">
             <span class="cerrar-modal-letra" onclick="cerrarLetra()">&times;</span>
             <div class="letra-texto">
@@ -321,3 +272,68 @@
                 <strong>[OUTRO]</strong>
                 <p>Melissa...</p>
                 <p>Gracias por caminar esta vida conmigo...</p>
+                <p>Te amo.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         SCRIPT MAESTRO INCRUSTADO AL FINAL
+         (No borres esto ni uses script.js)
+         ========================================== -->
+    <script>
+        window.addEventListener('scroll', function() {
+            const menu = document.querySelector('.menu');
+            if (menu) {
+                if (window.scrollY > 50) {
+                    menu.classList.add('scrolled');
+                } else {
+                    menu.classList.remove('scrolled');
+                }
+            }
+        });
+
+        let posicionCarrusel = 0;
+        function moveCarousel(direccion) {
+            const track = document.getElementById('track');
+            if (!track) return;
+            const tarjeta = track.querySelector(".carousel-item");
+            if (!tarjeta) return;
+            const ancho = tarjeta.offsetWidth + 20; 
+            posicionCarrusel += direccion;
+            let fotosVisibles = 3;
+            if (window.innerWidth <= 768) fotosVisibles = 2;
+            if (window.innerWidth <= 480) fotosVisibles = 1;
+            const max = Math.max(0, track.children.length - fotosVisibles);
+            if (posicionCarrusel < 0) posicionCarrusel = 0;
+            if (posicionCarrusel > max) posicionCarrusel = max;
+            track.style.transform = `translateX(-${posicionCarrusel * ancho}px)`;
+        }
+
+        function openModal(element) {
+            const modal = document.getElementById("photoModal");
+            const modalImg = document.getElementById("modalImage");
+            const img = element.querySelector("img");
+            if (modal && modalImg && img) {
+                modal.style.display = "block";
+                modalImg.src = img.src;
+            }
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("photoModal");
+            if (modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        function abrirLetra() {
+            const modal = document.getElementById("modalLetraUnico");
+            if (modal) {
+                modal.style.display = "flex";
+                setTimeout(function() { modal.classList.add("mostrar"); }, 10);
+            }
+        }
+
+        function cerrarLetra() {
+       
