@@ -20,9 +20,9 @@ html {
     scroll-behavior: smooth;
 }
 
-/* === MARGEN PARA PC Y CELULAR (AJUSTADO A 87px) === */
+/* === MARGEN PARA PC === */
 section, header {
-    scroll-margin-top: 87px !important; 
+    scroll-margin-top: 100px; 
 }
 
 body {
@@ -362,10 +362,11 @@ body {
 }
 
 .carousel-track {
-    display: flex;
-    gap: 20px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    display:flex;
+    gap:20px;
+    overflow-x:auto;
+    overflow-y:hidden;
+    scroll-snap-type:x mandatory;
     scroll-behavior: smooth;
     padding: 20px 0;
     -ms-overflow-style: none; 
@@ -750,8 +751,7 @@ body {
 }
 
 @media (max-width: 480px) {
-    /* === MARGEN PARA CELULARES (AJUSTADO A 87px) === */
-    section, header { scroll-margin-top: 87px !important; } 
+    section, header { scroll-margin-top: 95px; } 
 
     .main-title { 
         font-size: 4.5em; 
@@ -921,7 +921,7 @@ body {
     }
 }
 
-/* ===== BOTÓN Y MODAL DE LA LETRA DE LA CANCIÓN ===== */
+/* ===== BOTÓN DE LA LETRA ===== */
 .letra-btn {
     display: block;
     background: transparent;
@@ -938,8 +938,13 @@ body {
     margin: 15px auto 0;
     width: fit-content;
 }
-
 .letra-btn:hover {
     background: var(--primary-color);
     color: white;
 }
+.letra-btn span {
+    font-size: 0.9em;
+    margin-left: 5px;
+}
+
+/* ===== VENTANA FLOTANTE (MODAL) PARA LETRA 
