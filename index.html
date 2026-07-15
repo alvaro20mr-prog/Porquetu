@@ -1,945 +1,324 @@
-/* =====================================================
-   ESTILOS PRINCIPALES - Página Romántica Para Melissa
-   ===================================================== */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    --primary-color: #800020;
-    --secondary-color: #C41E3A;
-    --background-color: #FAF4F5;
-    --text-color: #333;
-    --light-bg: #FFF8F3;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-/* === MARGEN PARA PC Y CELULAR (AJUSTADO A 87px) === */
-section, header {
-    scroll-margin-top: 87px !important; 
-}
-
-body {
-    font-family: 'Georgia', 'Palatino', serif;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-}
-
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* ===== HERO (PORTADA) ===== */
-
-.hero {
-    height: 100vh;
-    background: url("imagenes/Fondo_inicio.png") center center no-repeat;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(rgba(0,0,0,.20),rgba(0,0,0,.45));
-}
-
-/* === MENÚ BASE === */
-.menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 22px 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000;
-    background: rgba(0,0,0,.15);
-    backdrop-filter: blur(12px);
-    transition: all 0.3s ease-out; 
-    will-change: background, padding; 
-}
-
-.menu.scrolled {
-    background: rgba(0, 0, 0, 0.85); 
-    padding: 15px 8%; 
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3); 
-}
-
-.menu ul {
-    display: flex;
-    gap: 35px;
-    list-style: none;
-}
-
-.menu a {
-    color: white;
-    text-decoration: none;
-    font-size: 15px;
-    letter-spacing: 1px;
-    transition: .3s;
-}
-
-.menu a:hover {
-    color: #f8d8b8;
-}
-
-.logo {
-    font-family: 'Great Vibes', cursive;
-    font-size: 34px;
-    color: white;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 5;
-    text-align: center;
-    color: white;
-    max-width: 900px;
-    padding: 20px;
-}
-
-/* === TÍTULOS CON RESPLANDOR BLANCO PARA LEERSE EN MADERA === */
-.main-title, .section-title, .timeline-date, .full-gallery h3 {
-    color: var(--primary-color);
-    font-weight: 400; 
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.9), 0 0 30px rgba(255, 255, 255, 0.8);
-}
-
-.main-title {
-    font-family: 'Great Vibes', cursive;
-    font-size: 130px;
-    margin-bottom: 20px;
-    animation: none;
-}
-
-.subtitle {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 40px;
-    font-style: italic;
-    line-height: 1.5;
-    margin-bottom: 45px;
-    color: white;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.5); 
-}
-
-.hero-btn {
-    display: inline-block;
-    padding: 18px 48px;
-    background: white;
-    color: var(--primary-color);
-    border-radius: 40px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    will-change: transform;
-}
-
-.hero-btn:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 15px 35px rgba(0,0,0,.25);
-}
-
-.scroll-down {
-    position: absolute;
-    bottom: 35px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 34px;
-    color: white;
-    text-decoration: none;
-    animation: subeBaja 2s infinite;
-    cursor: pointer;
-    will-change: transform;
-    z-index: 20;
-}
-
-@keyframes subeBaja {
-    0%, 100% { transform: translate(-50%,0); }
-    50% { transform: translate(-50%,10px); }
-}
-
-@keyframes subeBajaMobile {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(10px); }
-}
-
-/* ===== STORY SECTION ===== */
-.story-section {
-    padding: 90px 20px;
-    background: url("imagenes/fondo2.jpg") center top fixed no-repeat;
-    background-size: cover;
-}
-
-.section-title {
-    font-family: 'Great Vibes', cursive;
-    font-size: 74px;
-    text-align: center;
-    margin-bottom: 70px;
-}
-
-.section-title::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 3px;
-    background: linear-gradient(to right, transparent, var(--primary-color), transparent); 
-    margin: 20px auto 0;
-}
-
-.timeline {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 40px;
-    position: relative;
-    padding: 40px 0;
-}
-
-.timeline::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 0;
-    bottom: 0;
-    width: 3px;
-    background: linear-gradient(to bottom, rgba(128,0,32,0), var(--primary-color), rgba(128,0,32,0));
-    transform: translateX(-50%);
-}
-
-.timeline-item {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    align-items: center;
-}
-
-.timeline-item:nth-child(even) {
-    grid-template-columns: 1fr 1fr;
-}
-
-.timeline-item:nth-child(even) .timeline-date { order: 2; }
-.timeline-item:nth-child(even) .timeline-content {
-    order: 1;
-    text-align: right;
-}
-
-.timeline-date {
-    font-family: 'Great Vibes', cursive;
-    font-size: 62px;
-    text-align: center;
-    position: relative;
-    z-index: 2;
-}
-
-.timeline-date::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 20px;
-    height: 20px;
-    background: white;
-    border: 4px solid var(--primary-color);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: 0 0 10px rgba(255,255,255,0.8); 
-}
-
-.timeline-content {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    will-change: transform; 
-    -webkit-backface-visibility: hidden; 
-}
-
-.timeline-content:hover {
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-    transform: translateY(-5px);
-}
-
-.timeline-content h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 34px;
-    font-weight: 600;
-    color: var(--primary-color);
-    margin-bottom: 15px;
-}
-
-.timeline-content p {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 24px;
-    line-height: 1.9;
-    font-style: italic;
-    color: #555;
-}
-
-/* ===== GALERÍA SECTION ===== */
-.gallery-section {
-    padding: 80px 20px;
-    background: url("imagenes/fondo4.jpg") center center fixed no-repeat;
-    background-size: cover;
-}
-
-.polaroid-gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 35px;
-    margin-bottom: 80px;
-    max-width: 950px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.polaroid-card {
-    background: white;
-    padding: 15px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); 
-    transform: rotate(-3deg);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    will-change: transform; 
-    -webkit-backface-visibility: hidden;
-}
-
-.polaroid-card:nth-child(2n) { transform: rotate(3deg); }
-.polaroid-card:hover {
-    transform: rotate(0) scale(1.05);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
-}
-
-.polaroid-card img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    margin-bottom: 15px;
-    display: block;
-}
-
-.polaroid-text {
-    text-align: center;
-    color: var(--primary-color);
-    font-size: 0.95em;
-    font-style: italic;
-    font-weight: bold;
-}
-
-/* ===== CARRUSEL DE FOTOS ===== */
-.full-gallery {
-    margin-top: 60px;
-}
-
-.full-gallery h3 {
-    font-family: 'Great Vibes', cursive;
-    font-size: 60px;
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.carousel-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-    max-width: 100%;
-    margin: 0 auto;
-}
-
-.carousel-track {
-    display: flex;
-    gap: 20px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    padding: 20px 0;
-    -ms-overflow-style: none; 
-    scrollbar-width: none; 
-    will-change: scroll-position; 
-}
-
-.carousel-track::-webkit-scrollbar {
-    display: none; 
-}
-
-.gallery-item.carousel-item {
-    flex: 0 0 calc(33.333% - 14px); 
-    scroll-snap-align: center;
-    height: 250px;
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    will-change: transform; 
-    -webkit-backface-visibility: hidden;
-}
-
-.gallery-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: filter 0.3s ease;
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(128, 0, 32, 0.7);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.overlay i {
-    color: white;
-    font-size: 2.5em;
-}
-
-.gallery-item:hover .overlay { opacity: 1; }
-.gallery-item:hover img { filter: brightness(0.5); }
-
-.carousel-btn {
-    background: white;
-    color: var(--primary-color);
-    border: none;
-    border-radius: 50%;
-    width: 45px;
-    height: 45px;
-    font-size: 20px;
-    cursor: pointer;
-    position: absolute;
-    z-index: 10;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    transition: transform 0.3s ease, background 0.3s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.carousel-btn:hover {
-    background: var(--light-bg);
-    transform: scale(1.1);
-}
-
-.carousel-btn.prev { left: -15px; }
-.carousel-btn.next { right: -15px; }
-
-/* ===== MUSIC SECTION ===== */
-.music-section {
-    background: url("imagenes/Fondo_musica.jpg") center center fixed no-repeat;
-    background-size: cover;
-    padding: 100px 20px;
-    text-align: center;
-    position: relative;
-}
-
-.music-card {
-    display: flex;
-    max-width: 800px;
-    margin: 0 auto;
-    background: rgba(255, 255, 255, 0.95); 
-    border-radius: 15px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    text-align: left;
-    animation: slideUp 0.8s ease-out;
-}
-
-.music-cover {
-    width: 300px;
-    object-fit: cover;
-}
-
-.music-info {
-    padding: 40px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.music-info h3 {
-    color: var(--primary-color);
-    font-family: 'Great Vibes', cursive;
-    font-size: 3.5em;
-    margin-bottom: 15px;
-    font-weight: 400;
-}
-
-.music-info p {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.5em;
-    color: #555;
-    font-style: italic;
-    margin-bottom: 25px;
-}
-
-#audioPlayer {
-    width: 100%;
-    outline: none;
-}
-
-/* ===== MESSAGE SECTION (CARTA) ===== */
-.message-section {
-    background: url("imagenes/fondo3.jpg") center center fixed no-repeat;
-    background-size: cover;
-    padding: 100px 20px;
-    position: relative;
-}
-
-.love-message {
-    max-width: 800px;
-    margin: 0 auto;
-    background: linear-gradient(135deg, #FFF8F3 0%, #FDF6F0 100%); 
-    padding: 80px 60px 60px;
-    border-radius: 4px; 
-    box-shadow: 
-        0 20px 50px rgba(0, 0, 0, 0.5), 
-        inset 0 0 0 1px rgba(128, 0, 32, 0.2),
-        inset 0 0 0 8px rgba(255, 255, 255, 0.6),
-        inset 0 0 0 9px rgba(128, 0, 32, 0.15); 
-    text-align: center;
-    position: relative;
-    animation: fadeInUp 1s ease-out;
-    will-change: transform, opacity; 
-}
-
-.love-message::before {
-    content: '❦'; 
-    font-size: 40px;
-    color: var(--secondary-color);
-    position: absolute;
-    top: 18px;
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0.6;
-}
-
-.love-message h2 {
-    font-family: 'Great Vibes', cursive;
-    font-size: 4.5em;
-    color: var(--primary-color); 
-    margin-top: 10px;
-    margin-bottom: 30px;
-    font-weight: 400;
-    text-shadow: none; 
-    position: relative;
-    z-index: 1;
-}
-
-.love-message p {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.7em;
-    color: #333; 
-    margin: 25px 0;
-    line-height: 1.9;
-    font-style: italic;
-    position: relative;
-    z-index: 1;
-}
-
-.signature {
-    margin-top: 50px;
-    font-size: 1.4em !important;
-    font-style: normal !important;
-    color: var(--primary-color);
-    font-weight: bold;
-}
-
-.signature i {
-    color: var(--primary-color);
-    animation: pulse 1.5s ease-in-out infinite;
-}
-
-/* ===== MODAL PARA IMÁGENES ===== */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.9);
-    z-index: 1000;
-    animation: fadeIn 0.3s ease-out;
-}
-
-.modal-content {
-    position: relative;
-    max-width: 90%;
-    max-height: 90vh;
-    margin: auto;
-    top: 50%;
-    transform: translateY(-50%);
-    text-align: center;
-}
-
-.modal-content img {
-    max-width: 100%;
-    max-height: 80vh;
-    border-radius: 10px;
-}
-
-.close {
-    position: absolute;
-    top: -40px;
-    right: 0;
-    color: white;
-    font-size: 35px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.close:hover {
-    color: var(--secondary-color);
-    transform: scale(1.2);
-}
-
-/* ===== FOOTER ===== */
-.footer {
-    background: #333;
-    color: white;
-    text-align: center;
-    padding: 30px 20px;
-    font-size: 1.1em;
-}
-
-.footer p { margin: 10px 0; }
-.footer i { color: var(--secondary-color); }
-
-/* ===== ANIMACIONES ===== */
-@keyframes slideUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.6; }
-}
-
-@keyframes flotar {
-    0% { transform: translateY(0px) rotate(-2deg); }
-    50% { transform: translateY(-8px) rotate(2deg); }
-    100% { transform: translateY(0px) rotate(-2deg); }
-}
-
-/* ===== RESPONSIVE DESIGN ===== */
-@media (max-width: 900px) {
-    .menu {
-        flex-direction: column;
-        padding: 15px;
-    }
-    .menu ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-        margin-top: 10px;
-    }
-    .menu a {
-        font-size: 16px;
-    }
-}
-
-@media (max-width: 768px) {
-    section, header { scroll-margin-top: 95px; }
-
-    .logo { font-size: 28px; }
-    .timeline-content p { font-size: 18px; }
-    .timeline::before { left: 20px; }
-
-    .timeline-item, .timeline-item:nth-child(even) {
-        grid-template-columns: 1fr !important;
-        gap: 0;
-        margin-left: 60px;
-    }
-
-    .timeline-item:nth-child(even) .timeline-date,
-    .timeline-item:nth-child(even) .timeline-content {
-        order: unset;
-        text-align: left;
-    }
-
-    .timeline-date::before { left: -37px; }
-    .timeline-date {
-        text-align: left;
-        font-size: 1.3em;
-    }
-
-    .polaroid-gallery {
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-    }
-
-    .gallery-item.carousel-item {
-        flex: 0 0 calc(50% - 10px); 
-    }
-
-    .carousel-btn.prev { left: 5px; }
-    .carousel-btn.next { right: 5px; }
-
-    .music-card {
-        flex-direction: column;
-        max-width: 400px;
-    }
-    .music-cover {
-        width: 100%;
-        height: 250px;
-    }
-    .music-info {
-        text-align: center;
-        padding: 30px 20px;
-    }
-
-    .love-message { 
-        padding: 60px 30px 40px; 
-    }
-    .love-message h2 { 
-        font-size: 3.5em; 
-    }
-    .love-message p { 
-        font-size: 1.4em; 
-    }
-
-    .close {
-        top: 20px;
-        right: 20px;
-        font-size: 28px;
-    }
-
-    .polaroid-card, .timeline-content { animation: flotar 4s ease-in-out infinite; }
-    .polaroid-card:nth-child(odd) { animation-delay: 1s; }
-}
-
-@media (max-width: 480px) {
-    /* === MARGEN PARA CELULARES (AJUSTADO A 87px) === */
-    section, header { scroll-margin-top: 87px !important; } 
-
-    .main-title { 
-        font-size: 4.5em; 
-        text-shadow: none; 
-    }
-    .subtitle { 
-        font-size: 1.2em; 
-        color: var(--text-color); 
-        text-shadow: none;
-    }
-    .section-title, 
-    .full-gallery h3, 
-    .timeline-date { 
-        font-size: 2.5em;
-        text-shadow: 0 0 15px rgba(255, 255, 255, 0.9), 0 2px 4px rgba(0,0,0,0.1);
-    }
-
-    .menu {
-        padding: 10px 5px;
-        background: rgba(0, 0, 0, 0.85) !important;
-    }
-    .logo {
-        font-size: 22px;
-        margin-bottom: 8px;
-    }
-    .menu ul {
-        flex-wrap: nowrap; 
-        gap: 8px; 
-        justify-content: space-around;
-        width: 100%;
-        margin-top: 0;
-    }
-    .menu a {
-        font-size: 12px; 
-    }
-
-    .hero-btn {
-        background: var(--primary-color);
-        color: white;
-        box-shadow: 0 5px 15px rgba(128, 0, 32, 0.3);
-    }
-
-    .hero { 
-        height: auto;
-        min-height: 100vh;
-        padding: 310px 20px 60px; 
-        background: url("imagenes/Fondo_inicio.png") center 75px no-repeat;
-        background-size: 100% auto;
-        background-color: var(--background-color);
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-    }
-
-    .hero-content {
-        margin-top: 0;
-    }
-
-    .hero-overlay {
-        display: none; 
-    }
-    
-    .scroll-down {
-        display: block; 
-        position: relative; 
-        left: auto;
-        transform: none;
-        width: 100%;
-        text-align: center;
-        margin: 30px auto 0; 
-        color: var(--primary-color);
-        animation: subeBajaMobile 2s infinite; 
-    }
-
-    .story-section {
-        background: url("imagenes/fondo2.jpg") top center no-repeat;
-        background-size: 100% auto;
-        background-color: var(--background-color);
-    }
-
-    .gallery-section {
-        background: url("imagenes/fondo4.jpg") top center no-repeat;
-        background-size: 100% auto;
-        background-color: var(--background-color);
-    }
-
-    .music-section {
-        background: url("imagenes/Fondo_musica.jpg") top center no-repeat;
-        background-size: 100% auto;
-        background-color: var(--background-color);
-    }
-
-    .message-section {
-        background: url("imagenes/fondo3.jpg") top center no-repeat;
-        background-size: 100% auto;
-        background-color: var(--background-color);
-    }
-
-    .polaroid-gallery {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-    }
-    
-    .polaroid-card img { height: 180px; }
-
-    .gallery-item.carousel-item {
-        flex: 0 0 80%; 
-        height: 200px;
-    }
-
-    .carousel-btn {
-        display: flex; 
-        width: 36px;
-        height: 36px;
-        font-size: 14px;
-        background: white;
-        color: var(--primary-color);
-    }
-
-    .carousel-btn.prev { left: 5px; }
-    .carousel-btn.next { right: 5px; }
-
-    .story-section, .gallery-section, .message-section, .music-section {
-        padding: 40px 20px;
-        padding-bottom: 60px;
-    }
-    
-    .music-cover {
-        width: 100%;
-        height: 250px; 
-    }
-    
-    .music-info {
-        text-align: center;
-        padding: 30px 20px; 
-    }
-
-    .music-info h3 {
-        font-size: 3.5em; 
-    }
-
-    .music-info p {
-        font-size: 1.5em;
-    }
-
-    .love-message { 
-        padding: 50px 20px 30px; 
-    }
-    .love-message::before {
-        font-size: 30px;
-        top: 12px;
-    }
-    .love-message h2 { 
-        font-size: 2.8em; 
-    }
-    .love-message p { 
-        font-size: 1.2em; 
-    }
-
-    .timeline-item { margin-left: 40px; }
-
-    .timeline-date::before {
-        left: -30px;
-        width: 16px;
-        height: 16px;
-        border-width: 3px;
-    }
-}
-
-/* ===== BOTÓN Y MODAL DE LA LETRA DE LA CANCIÓN ===== */
-.letra-btn {
-    display: block;
-    background: transparent;
-    color: var(--primary-color);
-    border: 1px solid var(--primary-color);
-    padding: 8px 25px;
-    border-radius: 30px;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2em;
-    font-style: italic;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin: 15px auto 0;
-    width: fit-content;
-}
-
-.letra-btn:hover {
-    background: var(--primary-color);
-    color: white;
-}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porque Tú - Para Melissa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .letra-btn {
+            display: block;
+            background: transparent;
+            color: #800020;
+            border: 1px solid #800020;
+            padding: 8px 25px;
+            border-radius: 30px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2em;
+            font-style: italic;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 15px auto 0;
+            width: fit-content;
+        }
+        .letra-btn:hover { background: #800020; color: white; }
+        .letra-btn span { font-size: 0.9em; margin-left: 5px; }
+
+        #modalLetraUnico {
+            display: none; 
+            position: fixed;
+            z-index: 99999;
+            left: 0; top: 0; width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); 
+            backdrop-filter: blur(5px);
+            align-items: center; justify-content: center;
+            opacity: 0; transition: opacity 0.4s ease;
+        }
+        #modalLetraUnico.mostrar { opacity: 1; }
+        
+        .modal-contenido-letra {
+            background-color: #FAF4F5; 
+            border: 2px solid #800020;
+            border-radius: 12px;
+            width: 90%; max-width: 500px; max-height: 80vh; 
+            position: relative;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+            display: flex; flex-direction: column;
+            animation: deslizarArriba 0.4s ease-out;
+        }
+        @keyframes deslizarArriba { from { transform: translateY(30px); } to { transform: translateY(0); } }
+        
+        .cerrar-modal-letra {
+            color: #800020; position: absolute;
+            top: 10px; right: 20px;
+            font-size: 35px; font-weight: bold; cursor: pointer; z-index: 10;
+        }
+        .letra-texto {
+            padding: 30px 20px 40px; overflow-y: auto; 
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2em; color: #444; line-height: 1.6; text-align: center;
+        }
+        .letra-texto strong { color: #800020; font-size: 0.9em; display: block; margin-top: 15px; }
+        .letra-texto::-webkit-scrollbar { width: 6px; }
+        .letra-texto::-webkit-scrollbar-thumb { background: rgba(128, 0, 32, 0.4); border-radius: 10px; }
+    </style>
+</head>
+<body>
+
+    <header class="hero" id="inicio">
+        <nav class="menu">
+            <div class="logo">Acá comienza tu sorpresa...</div>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#historia">Historia</a></li>
+                <li><a href="#momentos">Momentos</a></li>
+                <li><a href="#cancion">Canción</a></li>
+                <li><a href="#carta">Carta</a></li>
+            </ul>
+        </nav>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <h1 class="main-title">Porque Tú</h1>
+            <p class="subtitle">Hay historias que el corazón<br>nunca deja de escribir...</p>
+            <a href="#historia" class="hero-btn">Comenzar</a>
+        </div>
+
+        <a href="#historia" class="scroll-down">
+            <i class="fas fa-angle-down"></i>
+        </a>
+    </header>
+
+    <section class="story-section" id="historia" style="scroll-margin-top: 87px;">
+        <div class="container">
+            <h2 class="section-title">Nuestra Historia</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2013</div>
+                    <div class="timeline-content">
+                        <h3>Todo Comenzó</h3>
+                        <p>Te vi por primera vez en dos mil trece, sin saber lo que iba a pasar, yo era un hombre lleno de silencios, y tú un sueño difícil de alcanzar..</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2018</div>
+                    <div class="timeline-content">
+                        <h3>La Vida Nos Volvió a Juntar</h3>
+                        <p>Recuerdo aquel doce de octubre, como si fuera ayer; cuando vencí todos mis miedos y te besé por primera vez..</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2023</div>
+                    <div class="timeline-content">
+                        <h3>El Mejor Regalo De La Vida</h3>
+                        <p>Lo que empezó con una mirada un día aprendió a respirar, y en unos pequeños ojos descubrimos una nueva forma de amar..</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">Hoy</div>
+                    <div class="timeline-content">
+                        <h3>Aun Hay Mas Capitulos...</h3>
+                        <p>Y aquel sueño que parecía lejano, hoy lo podemos abrazar, porque juntos construimos un hogar donde siempre quiero regresar.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-section" id="momentos" style="scroll-margin-top: 87px;">
+        <div class="container">
+            <h2 class="section-title">Nuestros Momentos</h2>
+            
+            <div class="polaroid-gallery">
+                <div class="polaroid-card"><img src="imagenes/primer_viaje.jpg" alt="Nuestro primer viaje" loading="lazy"><p class="polaroid-text">Nuestro primer viaje</p></div>
+                <div class="polaroid-card"><img src="imagenes/abrazo.jpg" alt="Abrazos sin fin" loading="lazy"><p class="polaroid-text">Abrazos sin fin</p></div>
+                <div class="polaroid-card"><img src="imagenes/aventuras.jpg" alt="Aventuras compartidas" loading="lazy"><p class="polaroid-text">Aventuras compartidas</p></div>
+                <div class="polaroid-card"><img src="imagenes/conexion.jpg" alt="Nuestra conexión" loading="lazy"><p class="polaroid-text">Nuestra conexión</p></div>
+                <div class="polaroid-card"><img src="imagenes/siempre_juntos.jpg" alt="Siempre juntos" loading="lazy"><p class="polaroid-text">Siempre juntos</p></div>
+                <div class="polaroid-card"><img src="imagenes/amor_eterno.jpg" alt="Un amor eterno" loading="lazy"><p class="polaroid-text">Un amor eterno</p></div>
+            </div>
+
+            <div class="full-gallery">
+                <h3>Más Momentos Especiales</h3>
+                <div class="carousel-wrapper">
+                    <button class="carousel-btn prev" onclick="moveCarousel(-1)"><i class="fas fa-chevron-left"></i></button>
+                    <div class="carousel-track" id="track">
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/1.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/2.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/3.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/4.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/5.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/6.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/7.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/8.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/9.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/10.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/11.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/12.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/13.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/14.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/15.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/16.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/17.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/18.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/19.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/20.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/21.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/22.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/23.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/24.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/25.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/26.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/27.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/28.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/29.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                        <div class="gallery-item carousel-item" onclick="openModal(this)"><img src="imagenes/30.jpg" alt="Momento" loading="lazy"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+                    </div>
+                    <button class="carousel-btn next" onclick="moveCarousel(1)"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="music-section" id="cancion" style="scroll-margin-top: 87px;">
+        <div class="container">
+            <h2 class="section-title">Tu Canción</h2>
+            
+            <div class="music-card">
+                <img src="imagenes/portada.png" alt="Carátula de nuestra canción" class="music-cover" loading="lazy">
+                
+                <div class="music-info">
+                    <h3>Porque Tú</h3>
+                    <p>"Te convertiste en mi lugar en el mundo"</p>
+                    
+                    <audio id="audioPlayer" controls>
+                        <source src="Musica/Porque Tú.m4a" type="audio/mp4">
+                        Tu navegador no soporta audio HTML5
+                    </audio>
+
+                    <button type="button" class="letra-btn" onclick="abrirLetra()">Leer nuestra historia <span>♥</span></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="message-section" id="carta" style="scroll-margin-top: 87px;">
+        <div class="container">
+            <h2 class="section-title">Tu Carta</h2>
+            
+            <div class="love-message">
+                <h2>Amor...</h2>
+                <p>Sabes que no soy un hombre de muchas palabras, pero quise demostrarte mi amor con esta sorpresa. He puesto todo mi corazón, esfuerzo y cariño en este pequeño rincón, hecho solo para ti...</p>
+                <p class="signature">Gracias Por Caminar Esta Vida Contigo...<i class="fa-regular fa-heart"></i></p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>Porque Tú <i class="fa-regular fa-heart"></i></p>
+    </footer>
+
+    <div id="photoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="">
+        </div>
+    </div>
+
+    <div id="modalLetraUnico">
+        <div class="modal-contenido-letra">
+            <span class="cerrar-modal-letra" onclick="cerrarLetra()">&times;</span>
+            <div class="letra-texto">
+                <strong>[INTRO]</strong>
+                <p>Esta es nuestra historia...</p>
+                <p>Escucha...</p>
+                <br>
+                <strong>[VERSO 1]</strong>
+                <p>Te vi por primera vez en dos mil trece,</p>
+                <p>sin saber lo que iba a pasar,</p>
+                <p>yo era un hombre lleno de silencios,</p>
+                <p>y tú un sueño difícil de alcanzar.</p>
+                <p>Pasó el tiempo, cambiaron los caminos,</p>
+                <p>pero la vida nos volvió a juntar,</p>
+                <p>y entre sonrisas y conversaciones</p>
+                <p>nuestro destino empezó a cambiar.</p>
+                <br>
+                <strong>[PRE-CORO]</strong>
+                <p>Recuerdo aquel doce de octubre...</p>
+                <p>como si fuera ayer...</p>
+                <p>cuando vencí todos mis miedos...</p>
+                <p>y te besé por primera vez.</p>
+                <br>
+                <strong>[CORO]</strong>
+                <p>Porque tú...</p>
+                <p>te convertiste en mi lugar en el mundo,</p>
+                <p>en la calma cuando todo era confuso,</p>
+                <p>en la mano que jamás me soltó.</p>
+                <p>Porque tú...</p>
+                <p>viste algo bueno entre mis defectos,</p>
+                <p>te quedaste en mis peores momentos,</p>
+                <p>y sacaste lo mejor de mí.</p>
+                <p>Y si volviera a empezar...</p>
+                <p>volvería a elegirte a ti.</p>
+                <br>
+                <strong>[VERSO 2]</strong>
+                <p>No fui perfecto, eso tú lo sabes,</p>
+                <p>más de una vez me viste caer,</p>
+                <p>pero siempre encontraste el camino</p>
+                <p>para ayudarme a volver a creer.</p>
+                <p>Cuando yo veía tormentas,</p>
+                <p>tú encontrabas un nuevo amanecer,</p>
+                <p>y sin darte cuenta, poco a poco,</p>
+                <p>me enseñaste a renacer.</p>
+                <br>
+                <strong>[PRE-PUENTE]</strong>
+                <p>Y pasaron los años...</p>
+                <p>y el amor siguió creciendo...</p>
+                <p>hasta cambiar nuestras vidas...</p>
+                <p>para siempre.</p>
+                <br>
+                <strong>[PUENTE]</strong>
+                <p>Lo que empezó con una mirada</p>
+                <p>un día aprendió a respirar,</p>
+                <p>y en unos pequeños ojos</p>
+                <p>descubrimos una nueva forma de amar.</p>
+                <p>Entre desvelos y aprendizajes,</p>
+                <p>entre risas y alguna preocupación,</p>
+                <p>con Julián fuimos escribiendo</p>
+                <p>la historia más bonita de los dos.</p>
+                <p>Y aquel sueño que parecía lejano,</p>
+                <p>hoy lo podemos abrazar,</p>
+                <p>porque juntos construimos un hogar</p>
+                <p>donde siempre quiero regresar.</p>
+                <br>
+                <strong>[CORO FINAL]</strong>
+                <p>Porque tú...</p>
+                <p>te convertiste en mi lugar en el mundo,</p>
+                <p>en la calma cuando todo era confuso,</p>
+                <p>en la mano que jamás me soltó.</p>
+                <p>Porque tú...</p>
+                <p>viste algo bueno entre mis defectos,</p>
+                <p>te quedaste en mis peores momentos,</p>
+                <p>y sacaste lo mejor de mí.</p>
+                <p>Y si volviera a empezar...</p>
+                <p>volvería a elegirte a ti.</p>
+                <br>
+                <p>Porque tú...</p>
+                <p>Porque tú...</p>
+                <p>Porque tú...</p>
+                <br>
+                <strong>[OUTRO]</strong>
+                <p>Melissa...</p>
+                <p>Gracias por caminar esta vida conmigo...</p>
+                  
