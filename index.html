@@ -335,5 +335,28 @@
             }
         }
 
+                function cerrarLetra() {
+            const modal = document.getElementById("modalLetraUnico");
+            if (modal) {
+                modal.classList.remove("mostrar");
+                setTimeout(function() { modal.style.display = "none"; }, 400);
+            }
+        }
+
+        window.onclick = function(event) {
+            const photoModal = document.getElementById("photoModal");
+            const modalLetra = document.getElementById("modalLetraUnico");
+            if (event.target == photoModal) {
+                photoModal.style.display = "none";
+            }
+            if (event.target == modalLetra) {
+                modalLetra.classList.remove("mostrar");
+                setTimeout(function() { modalLetra.style.display = "none"; }, 400);
+            }
+        }
+    </script>
+</body>
+</html>
+
         function cerrarLetra() {
        
