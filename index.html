@@ -174,6 +174,9 @@
                         <source src="Musica/Porque Tú.m4a" type="audio/mp4">
                         Tu navegador no soporta audio HTML5
                     </audio>
+
+                    <!-- BOTÓN PARA ABRIR LA LETRA -->
+                    <button id="btnAbrirLetra" class="letra-btn">Leer nuestra historia <span>♥</span></button>
                 </div>
             </div>
         </div>
@@ -204,6 +207,120 @@
             <img id="modalImage" src="" alt="">
         </div>
     </div>
+
+    <!-- VENTANA FLOTANTE DE LA LETRA (MODAL) -->
+    <div id="modalLetra" class="modal-letra">
+        <div class="modal-contenido">
+            <span class="cerrar-modal-letra">&times;</span>
+            <div class="letra-texto">
+                <strong>[INTRO]</strong>
+                <p>Esta es nuestra historia...</p>
+                <p>Escucha...</p>
+                <br>
+                <strong>[VERSO 1]</strong>
+                <p>Te vi por primera vez en dos mil trece,</p>
+                <p>sin saber lo que iba a pasar,</p>
+                <p>yo era un hombre lleno de silencios,</p>
+                <p>y tú un sueño difícil de alcanzar.</p>
+                <p>Pasó el tiempo, cambiaron los caminos,</p>
+                <p>pero la vida nos volvió a juntar,</p>
+                <p>y entre sonrisas y conversaciones</p>
+                <p>nuestro destino empezó a cambiar.</p>
+                <br>
+                <strong>[PRE-CORO]</strong>
+                <p>Recuerdo aquel doce de octubre...</p>
+                <p>como si fuera ayer...</p>
+                <p>cuando vencí todos mis miedos...</p>
+                <p>y te besé por primera vez.</p>
+                <br>
+                <strong>[CORO]</strong>
+                <p>Porque tú...</p>
+                <p>te convertiste en mi lugar en el mundo,</p>
+                <p>en la calma cuando todo era confuso,</p>
+                <p>en la mano que jamás me soltó.</p>
+                <p>Porque tú...</p>
+                <p>viste algo bueno entre mis defectos,</p>
+                <p>te quedaste en mis peores momentos,</p>
+                <p>y sacaste lo mejor de mí.</p>
+                <p>Y si volviera a empezar...</p>
+                <p>volvería a elegirte a ti.</p>
+                <br>
+                <strong>[VERSO 2]</strong>
+                <p>No fui perfecto, eso tú lo sabes,</p>
+                <p>más de una vez me viste caer,</p>
+                <p>pero siempre encontraste el camino</p>
+                <p>para ayudarme a volver a creer.</p>
+                <p>Cuando yo veía tormentas,</p>
+                <p>tú encontrabas un nuevo amanecer,</p>
+                <p>y sin darte cuenta, poco a poco,</p>
+                <p>me enseñaste a renacer.</p>
+                <br>
+                <strong>[PRE-PUENTE]</strong>
+                <p>Y pasaron los años...</p>
+                <p>y el amor siguió creciendo...</p>
+                <p>hasta cambiar nuestras vidas...</p>
+                <p>para siempre.</p>
+                <br>
+                <strong>[PUENTE]</strong>
+                <p>Lo que empezó con una mirada</p>
+                <p>un día aprendió a respirar,</p>
+                <p>y en unos pequeños ojos</p>
+                <p>descubrimos una nueva forma de amar.</p>
+                <p>Entre desvelos y aprendizajes,</p>
+                <p>entre risas y alguna preocupación,</p>
+                <p>con Julián fuimos escribiendo</p>
+                <p>la historia más bonita de los dos.</p>
+                <p>Y aquel sueño que parecía lejano,</p>
+                <p>hoy lo podemos abrazar,</p>
+                <p>porque juntos construimos un hogar</p>
+                <p>donde siempre quiero regresar.</p>
+                <br>
+                <strong>[CORO FINAL]</strong>
+                <p>Porque tú...</p>
+                <p>te convertiste en mi lugar en el mundo,</p>
+                <p>en la calma cuando todo era confuso,</p>
+                <p>en la mano que jamás me soltó.</p>
+                <p>Porque tú...</p>
+                <p>viste algo bueno entre mis defectos,</p>
+                <p>te quedaste en mis peores momentos,</p>
+                <p>y sacaste lo mejor de mí.</p>
+                <p>Y si volviera a empezar...</p>
+                <p>volvería a elegirte a ti.</p>
+                <br>
+                <p>Porque tú...</p>
+                <p>Porque tú...</p>
+                <p>Porque tú...</p>
+                <br>
+                <strong>[OUTRO]</strong>
+                <p>Melissa...</p>
+                <p>Gracias por caminar esta vida conmigo...</p>
+                <p>Te amo.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script para que el modal de la letra funcione sin tocar script.js -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const modalLetra = document.getElementById("modalLetra");
+            const btnAbrirLetra = document.getElementById("btnAbrirLetra");
+            const spanCerrarModal = document.querySelector(".cerrar-modal-letra");
+
+            if(btnAbrirLetra && modalLetra && spanCerrarModal) {
+                btnAbrirLetra.onclick = function() {
+                    modalLetra.classList.add("mostrar");
+                }
+                spanCerrarModal.onclick = function() {
+                    modalLetra.classList.remove("mostrar");
+                }
+                window.addEventListener("click", function(event) {
+                    if (event.target == modalLetra) {
+                        modalLetra.classList.remove("mostrar");
+                    }
+                });
+            }
+        });
+    </script>
 
     <script src="script.js"></script>
 </body>
