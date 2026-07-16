@@ -750,7 +750,7 @@ body {
 
 @media (max-width: 480px) {
     /* === MARGEN PARA CELULARES (AJUSTADO A 87px) === */
-    section, header { scroll-margin-top: 80px !important; } 
+    section, header { scroll-margin-top: 90px !important; } 
 
     .main-title { 
         font-size: 4.5em; 
