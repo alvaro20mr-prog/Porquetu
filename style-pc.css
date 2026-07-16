@@ -1,5 +1,5 @@
 /* =====================================================
-   ESTILOS PRINCIPALES DE PRUEBA (PC Y MÓVIL UNIFICADOS)
+   ESTILOS PRINCIPALES DE PRUEBA (ESTILO REVISTA TOTAL)
    ===================================================== */
 
 * {
@@ -38,12 +38,35 @@ body {
     padding: 0 20px;
 }
 
-/* ===== HERO (PORTADA UNIFICADA PARA PC Y MÓVIL) ===== */
+/* === MENÚ BASE === */
+.menu {
+    position: fixed;
+    top: 0; left: 0; width: 100%;
+    padding: 22px 8%;
+    display: flex; justify-content: space-between; align-items: center;
+    z-index: 1000;
+    background: rgba(0,0,0,.15);
+    backdrop-filter: blur(12px);
+    transition: all 0.3s ease-out; 
+}
+
+.menu.scrolled {
+    background: rgba(0, 0, 0, 0.85); 
+    padding: 15px 8%; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3); 
+}
+
+.menu ul { display: flex; gap: 35px; list-style: none; }
+.menu a { color: white; text-decoration: none; font-size: 15px; letter-spacing: 1px; transition: .3s; }
+.menu a:hover { color: #f8d8b8; }
+.logo { font-family: 'Great Vibes', cursive; font-size: 34px; color: white; }
+
+
+/* ===== HERO (PORTADA) ===== */
 .hero {
     min-height: 100vh;
-    /* Usamos 40vw de padding superior para empujar el texto debajo de la imagen en PC */
-    padding: 40vw 20px 60px; 
-    background: url("imagenes/Fondo_inicio.png") center top no-repeat;
+    padding: 40vw 20px 100px; /* 40vw empuja el texto para que no tape la imagen */
+    background: url("imagenes/Fondo_inicio.png") top center no-repeat;
     background-size: 100% auto;
     background-color: var(--background-color);
     display: flex;
@@ -53,10 +76,7 @@ body {
     position: relative;
 }
 
-/* Quitamos la sombra oscura para que quede claro como en el celular */
-.hero-overlay {
-    display: none; 
-}
+.hero-overlay { display: none; }
 
 .hero-content {
     position: relative;
@@ -66,7 +86,6 @@ body {
     padding: 20px;
 }
 
-/* Textos en color vino y sin sombras pesadas */
 .main-title {
     font-family: 'Great Vibes', cursive;
     font-size: 130px;
@@ -95,11 +114,7 @@ body {
     text-decoration: none;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-.hero-btn:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 15px 35px rgba(128, 0, 32, 0.3);
-}
+.hero-btn:hover { transform: translateY(-4px); box-shadow: 0 15px 35px rgba(128, 0, 32, 0.3); }
 
 .scroll-down {
     position: relative; 
@@ -111,44 +126,30 @@ body {
     cursor: pointer;
     z-index: 20;
 }
+@keyframes subeBaja { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(10px); } }
 
-@keyframes subeBaja {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(10px); }
+/* ===== SECCIONES GENERALES (ESTILO REVISTA PARA TODAS) ===== */
+.story-section, .gallery-section, .music-section, .message-section {
+    min-height: 100vh; /* Esto asegura que ocupen toda la pantalla y parezcan páginas individuales */
+    background-color: var(--background-color);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 100% auto; /* Imagen al 100% del ancho, altura automática */
+    padding: 40vw 20px 120px; /* 40vw de espacio arriba para la foto, 120px de espacio blanco abajo */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
-/* === MENÚ BASE === */
-.menu {
-    position: fixed;
-    top: 0; left: 0; width: 100%;
-    padding: 22px 8%;
-    display: flex; justify-content: space-between; align-items: center;
-    z-index: 1000;
-    background: rgba(0,0,0,.15);
-    backdrop-filter: blur(12px);
-    transition: all 0.3s ease-out; 
-}
-
-.menu.scrolled {
-    background: rgba(0, 0, 0, 0.85); 
-    padding: 15px 8%; 
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3); 
-}
-
-.menu ul { display: flex; gap: 35px; list-style: none; }
-.menu a { color: white; text-decoration: none; font-size: 15px; letter-spacing: 1px; transition: .3s; }
-.menu a:hover { color: #f8d8b8; }
-.logo { font-family: 'Great Vibes', cursive; font-size: 34px; color: white; }
-
-/* ===== SECCIONES GENERALES ===== */
-.story-section { padding: 90px 20px; background: url("imagenes/fondo2.jpg") center top fixed no-repeat; background-size: cover; }
-.gallery-section { padding: 80px 20px; background: url("imagenes/fondo4.jpg") center center fixed no-repeat; background-size: cover; }
-.music-section { padding: 100px 20px; background: url("imagenes/Fondo_musica.jpg") center center fixed no-repeat; background-size: cover; text-align: center; }
-.message-section { padding: 100px 20px; background: url("imagenes/fondo3.jpg") center center fixed no-repeat; background-size: cover; }
+/* Asignamos la imagen correspondiente a cada sección */
+.story-section { background-image: url("imagenes/fondo2.jpg"); }
+.gallery-section { background-image: url("imagenes/fondo4.jpg"); }
+.music-section { background-image: url("imagenes/Fondo_musica.jpg"); }
+.message-section { background-image: url("imagenes/fondo3.jpg"); }
 
 .section-title {
     font-family: 'Great Vibes', cursive; font-size: 74px; text-align: center; margin-bottom: 70px;
-    color: var(--primary-color); text-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
+    color: var(--primary-color); text-shadow: none;
 }
 .section-title::after {
     content: ''; display: block; width: 60px; height: 3px;
@@ -157,7 +158,7 @@ body {
 }
 
 /* ===== HISTORIA ===== */
-.timeline { display: grid; grid-template-columns: 1fr; gap: 40px; position: relative; padding: 40px 0; }
+.timeline { display: grid; grid-template-columns: 1fr; gap: 40px; position: relative; padding: 40px 0; margin-bottom: 50px; }
 .timeline::before {
     content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 3px;
     background: linear-gradient(to bottom, rgba(128,0,32,0), var(--primary-color), rgba(128,0,32,0)); transform: translateX(-50%);
@@ -176,15 +177,14 @@ body {
 .timeline-content p { font-family: 'Cormorant Garamond', serif; font-size: 24px; line-height: 1.9; font-style: italic; color: #555; }
 
 /* ===== POLAROIDS Y CARRUSEL ===== */
-.polaroid-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 35px; margin-bottom: 80px; max-width: 950px; margin: 0 auto 80px; }
+.polaroid-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 35px; max-width: 950px; margin: 0 auto 80px; }
 .polaroid-card { background: white; padding: 15px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); transform: rotate(-3deg); cursor: pointer; transition: transform 0.3s; }
 .polaroid-card:nth-child(2n) { transform: rotate(3deg); }
 .polaroid-card img { width: 100%; height: 300px; object-fit: cover; margin-bottom: 15px; display: block; }
 .polaroid-text { text-align: center; color: var(--primary-color); font-size: 0.95em; font-style: italic; font-weight: bold; }
 
-/* === BLINDAJE DEL CARRUSEL === */
-.full-gallery { margin-top: 60px; }
-.full-gallery h3 { font-family: 'Great Vibes', cursive; font-size: 60px; text-align: center; margin-bottom: 40px; color: #800020; text-shadow: 0 0 15px rgba(255, 255, 255, 0.9); }
+.full-gallery { margin-top: 60px; margin-bottom: 50px; }
+.full-gallery h3 { font-family: 'Great Vibes', cursive; font-size: 60px; text-align: center; margin-bottom: 40px; color: #800020; }
 .carousel-wrapper { position: relative; display: flex; align-items: center; max-width: 100%; margin: 0 auto; }
 .carousel-track { display: flex !important; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; padding: 20px 0; width: 100% !important; -ms-overflow-style: none; scrollbar-width: none; }
 .carousel-track::-webkit-scrollbar { display: none; }
@@ -195,7 +195,7 @@ body {
 .carousel-btn.next { right: -15px; }
 
 /* ===== MÚSICA Y CARTA ===== */
-.music-card { display: flex; max-width: 800px; margin: 0 auto; background: rgba(255, 255, 255, 0.95); border-radius: 15px; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); overflow: hidden; text-align: left; }
+.music-card { display: flex; max-width: 800px; margin: 0 auto 50px; background: rgba(255, 255, 255, 0.95); border-radius: 15px; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); overflow: hidden; text-align: left; }
 .music-cover { width: 300px; object-fit: cover; }
 .music-info { padding: 40px; flex: 1; display: flex; flex-direction: column; justify-content: center; }
 .music-info h3 { color: var(--primary-color); font-family: 'Great Vibes', cursive; font-size: 3.5em; margin-bottom: 15px; font-weight: 400; }
@@ -232,7 +232,7 @@ body {
 .letra-texto::-webkit-scrollbar { width: 6px; }
 .letra-texto::-webkit-scrollbar-thumb { background: rgba(128, 0, 32, 0.4); border-radius: 10px; }
 
-/* ===== RESPONSIVE DESIGN ===== */
+/* ===== RESPONSIVE DESIGN (AJUSTES PARA CELULAR) ===== */
 @media (max-width: 900px) {
     .menu { flex-direction: column; padding: 15px; }
     .menu ul { flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 10px; }
@@ -256,17 +256,15 @@ body {
     .menu ul { flex-wrap: nowrap; gap: 8px; justify-content: space-around; width: 100%; margin-top: 0; }
     .menu a { font-size: 12px; }
     
-    /* El padding aquí es ligeramente diferente al de PC para ajustarse al celular */
-    .hero { min-height: 100vh; padding: 310px 20px 60px; background: url("imagenes/Fondo_inicio.png") center 75px no-repeat; background-size: 100% auto; justify-content: flex-start; }
+    /* En celular la imagen baja un poco por el menú, así que aumentamos el espacio para que no choque el texto */
+    .hero, .story-section, .gallery-section, .music-section, .message-section { 
+        padding-top: 60vw; 
+    }
     
     .hero-content { margin-top: 0; }
     .main-title { font-size: 4.5em; }
     .subtitle { font-size: 1.2em; }
-    .story-section { background: url("imagenes/fondo2.jpg") top center no-repeat; background-size: 100% auto; background-color: var(--background-color); }
-    .gallery-section { background: url("imagenes/fondo4.jpg") top center no-repeat; background-size: 100% auto; background-color: var(--background-color); }
-    .music-section { background: url("imagenes/Fondo_musica.jpg") top center no-repeat; background-size: 100% auto; background-color: var(--background-color); }
-    .message-section { background: url("imagenes/fondo3.jpg") top center no-repeat; background-size: 100% auto; background-color: var(--background-color); }
     .polaroid-gallery { grid-template-columns: repeat(2, 1fr); gap: 15px; }
     .polaroid-card img { height: 180px; }
     .gallery-item.carousel-item { flex: 0 0 80% !important; min-width: 80% !important; height: 200px !important; }
-}
+               }
