@@ -1,5 +1,5 @@
 /* =====================================================
-   ESTILOS PRINCIPALES - REVISTA (INICIO EXACTO AL ORIGINAL)
+   ESTILOS PRINCIPALES - REVISTA (ADAPTABLE A CUALQUIER PANTALLA)
    ===================================================== */
 
 * {
@@ -26,19 +26,18 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* === MENÚ BASE (Arreglo de la nube blanca, ahora es negro) === */
+/* === MENÚ BASE (Negro sólido y elegante) === */
 .menu { 
     position: fixed; 
     top: 0; left: 0; width: 100%; 
     padding: 22px 8%; 
     display: flex; justify-content: space-between; align-items: center; 
     z-index: 1000; 
-    /* Cambiamos el fondo a un negro más sólido pero elegante */
-    background: rgba(20, 20, 20, 0.85); 
+    background: rgba(20, 20, 20, 0.95); 
     backdrop-filter: blur(10px); 
     transition: all 0.3s ease-out; 
 }
-.menu.scrolled { background: rgba(0, 0, 0, 0.95); padding: 15px 8%; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+.menu.scrolled { background: rgba(0, 0, 0, 1); padding: 15px 8%; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
 .menu ul { display: flex; gap: 35px; list-style: none; }
 .menu a { color: white; text-decoration: none; font-size: 15px; letter-spacing: 1px; transition: .3s; }
 .menu a:hover { color: #f8d8b8; }
@@ -46,7 +45,7 @@ body {
 
 
 /* =====================================================
-   ESTRUCTURA GENERAL (FOTO ARRIBA, TEXTO BLANCO ABAJO)
+   LA MAGIA RESPONSIVA (FOTOS INTACTAS EN PC Y MÓVIL)
    ===================================================== */
 .hero, .story-section, .gallery-section, .music-section, .message-section {
     min-height: 100vh;
@@ -59,13 +58,17 @@ body {
 }
 .hero-overlay { display: none; } 
 
-/* EL TRUCO PARA QUE LA FOTO NO SE CORTE */
+/* CONTENEDOR DE LA FOTO (Inteligente) */
 .hero::before, .story-section::before, .gallery-section::before, .music-section::before, .message-section::before {
     content: '';
     position: absolute;
-    top: 80px; /* Empieza exactamente debajo del menú oscuro */
-    left: 0; width: 100%;
-    height: 60vw; /* Altura adaptable en móvil */
+    top: 80px; 
+    left: 0; right: 0;
+    margin: 0 auto; /* Centra la foto en pantallas gigantes */
+    width: 100%;
+    /* AQUÍ ESTÁ EL TRUCO: La foto nunca será más ancha que 1000px */
+    max-width: 1000px; 
+    height: 65vw; /* Altura proporcional para el celular */
     background-size: 100% auto; 
     background-position: top center;
     background-repeat: no-repeat;
@@ -78,7 +81,7 @@ body {
 .music-section::before { background-image: url("imagenes/Fondo_musica.jpg"); }
 .message-section::before { background-image: url("imagenes/fondo3.jpg"); }
 
-/* EMPUJAMOS EL CONTENIDO BLANCO */
+/* EMPUJAMOS EL CONTENIDO BLANCO DEBAJO DE LA FOTO */
 .hero-content, .container {
     position: relative;
     z-index: 2;
@@ -86,13 +89,31 @@ body {
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 20px;
-    /* En celular empujamos debajo de la foto */
-    padding-top: calc(60vw + 120px); 
+    /* En celular empujamos el texto dinámicamente */
+    padding-top: calc(65vw + 100px); 
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 }
+
+/* =====================================================
+   AJUSTES EXCLUSIVOS PARA NOTEBOOK / PC
+   ===================================================== */
+@media (min-width: 768px) {
+    .hero::before, .story-section::before, .gallery-section::before, .music-section::before, .message-section::before {
+        top: 85px; 
+        /* Como el ancho se detuvo en 1000px, detenemos la altura en 600px para que no se corte NUNCA */
+        height: 600px; 
+    }
+    
+    .hero-content, .container {
+        /* Empujamos el texto blanco para que empiece exactamente debajo de los 600px de foto + 85px de menú */
+        padding-top: 680px; 
+        margin-top: 0;
+    }
+}
+
 
 /* =====================================================
    TÍTULOS (FINOS COMO EL ORIGINAL)
@@ -101,7 +122,7 @@ body {
     font-family: 'Great Vibes', cursive;
     color: var(--primary-color);
     text-shadow: none; 
-    font-weight: 400; /* Devuelve el grosor original fino */
+    font-weight: 400; 
     margin: 0;
 }
 .main-title { font-size: clamp(60px, 12vw, 90px); margin-bottom: 25px; }
@@ -137,32 +158,7 @@ body {
 
 
 /* =====================================================
-   AJUSTES EXCLUSIVOS PARA COMPUTADORA (PC)
-   ===================================================== */
-@media (min-width: 768px) {
-    /* Mantenemos la foto en una proporción agradable en PC */
-    .hero::before, .story-section::before, .gallery-section::before, .music-section::before, .message-section::before {
-        top: 85px; 
-        height: 35vw; /* La foto ocupará un 35% del ancho, manteniendo un buen bloque de imagen */
-        max-height: 480px; /* Límite para pantallas muy grandes */
-        background-size: cover; 
-        background-position: center;
-    }
-    
-    /* El truco de PC: El contenido blanco empieza mucho más abajo */
-    .hero-content, .container {
-        /* Usamos margin-top fuerte para llenar el fondo y bajar las letras de la madera */
-        margin-top: 45vw; 
-        padding-top: 60px; /* Separación blanca extra para que "Porque Tú" baje */
-    }
-}
-@media (min-width: 1400px) {
-    .hero-content, .container { margin-top: 580px; } /* Límite en monitores gigantes */
-}
-
-
-/* =====================================================
-   RESTO DE SECCIONES (MANTENEMOS ESTRUCTURA)
+   RESTO DE SECCIONES
    ===================================================== */
 
 /* HISTORIA */
@@ -240,7 +236,7 @@ body {
 }
 
 @media (max-width: 480px) {
-    .menu { padding: 10px 5px; background: rgba(20, 20, 20, 0.9) !important; }
+    .menu { padding: 10px 5px; }
     .menu ul { flex-wrap: nowrap; gap: 8px; justify-content: space-around; width: 100%; margin-top: 0; }
     .menu a { font-size: 12px; }
     
