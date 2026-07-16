@@ -1,5 +1,5 @@
 /* =====================================================
-   ESTILOS PRINCIPALES - REVISTA (PASO 1: ARREGLO INICIO)
+   ESTILOS PRINCIPALES - REVISTA (INICIO PERFECCIONADO)
    ===================================================== */
 
 * {
@@ -26,8 +26,17 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* === MENÚ BASE === */
-.menu { position: fixed; top: 0; left: 0; width: 100%; padding: 22px 8%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: rgba(0,0,0,.15); backdrop-filter: blur(12px); transition: all 0.3s ease-out; }
+/* === MENÚ BASE (Flotando SOBRE la página) === */
+.menu { 
+    position: fixed; 
+    top: 0; left: 0; width: 100%; 
+    padding: 22px 8%; 
+    display: flex; justify-content: space-between; align-items: center; 
+    z-index: 1000; 
+    background: rgba(0,0,0,.15); 
+    backdrop-filter: blur(12px); 
+    transition: all 0.3s ease-out; 
+}
 .menu.scrolled { background: rgba(0, 0, 0, 0.85); padding: 15px 8%; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
 .menu ul { display: flex; gap: 35px; list-style: none; }
 .menu a { color: white; text-decoration: none; font-size: 15px; letter-spacing: 1px; transition: .3s; }
@@ -36,87 +45,60 @@ body {
 
 
 /* =====================================================
-   ESTRUCTURA GENERAL (FOTO ARRIBA, TEXTO BLANCO ABAJO)
+   PORTADA PRINCIPAL (HERO) - CÁLCULO EXACTO
    ===================================================== */
-.hero, .story-section, .gallery-section, .music-section, .message-section {
+.hero {
     min-height: 100vh;
     background-color: var(--background-color);
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center; /* ESTO CENTRA LA FLECHA Y TODO EL TEXTO */
+    align-items: center;
     padding: 0;
+    /* La foto de fondo de la portada */
+    background-image: url("imagenes/Fondo_inicio.png");
+    background-position: top center;
+    background-repeat: no-repeat;
+    /* En móvil, la foto ocupará el 100% del ancho y su alto natural */
+    background-size: 100% auto; 
 }
 .hero-overlay { display: none; } /* Fuera filtros oscuros */
 
-/* EL TRUCO PARA QUE LA FOTO SE VEA COMPLETA SIN CORTARSE */
-.hero::before, .story-section::before, .gallery-section::before, .music-section::before, .message-section::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; width: 100%;
-    /* 60vw es la proporción perfecta para que tu foto se vea entera en celular */
-    height: 60vw; 
-    background-size: 100% auto; /* 100% de ancho, alto natural */
-    background-position: top center;
-    background-repeat: no-repeat;
-    z-index: 1;
-}
-
-.hero::before { background-image: url("imagenes/Fondo_inicio.png"); }
-.story-section::before { background-image: url("imagenes/fondo2.jpg"); }
-.gallery-section::before { background-image: url("imagenes/fondo4.jpg"); }
-.music-section::before { background-image: url("imagenes/Fondo_musica.jpg"); }
-.message-section::before { background-image: url("imagenes/fondo3.jpg"); }
-
-/* EMPUJAMOS EL CONTENIDO BLANCO JUSTO DEBAJO DE LA FOTO */
-.hero-content, .container {
+.hero-content {
     position: relative;
     z-index: 2;
     width: 100%;
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 20px;
-    /* 65vw da un pequeño margen blanco extra debajo de la foto */
-    padding-top: 65vw; 
+    /* Empuja el texto blanco debajo de la foto. 
+       55vw es el aproximado del alto de tu foto en celular */
+    padding-top: calc(55vw + 40px); 
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 }
 
-/* AJUSTES EXCLUSIVOS PARA COMPUTADORA (PC) */
-@media (min-width: 768px) {
-    .hero::before, .story-section::before, .gallery-section::before, .music-section::before, .message-section::before {
-        height: 380px; /* Tamaño fijo para que no se haga gigante en la PC */
-        background-size: cover; /* En PC sí usamos cover porque la pantalla es ancha */
-        background-position: center 30%;
-    }
-    .hero-content, .container {
-        padding-top: 420px; /* Empuja el texto debajo de la foto en PC */
-    }
-}
-
-
-/* =====================================================
-   TÍTULOS Y PORTADA (EN LA ZONA BLANCA)
-   ===================================================== */
-.main-title, .section-title {
+/* Títulos y Botón de Inicio */
+.main-title {
     font-family: 'Great Vibes', cursive;
     color: var(--primary-color);
-    text-shadow: none; /* Quitamos las sombras blancas */
-    margin: 0;
+    /* Letra más fina y elegante como la original */
+    font-weight: 300; 
+    font-size: clamp(80px, 15vw, 130px); 
+    margin-bottom: 20px;
+    text-shadow: none; 
 }
-.main-title { font-size: clamp(60px, 12vw, 90px); margin-bottom: 15px; }
-.section-title { font-size: clamp(45px, 9vw, 70px); margin-bottom: 40px; }
-.section-title::after { display: none; }
 
 .subtitle {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(20px, 4vw, 26px);
     font-style: italic;
     color: var(--text-color);
-    margin-bottom: 35px;
+    margin-bottom: 40px;
 }
+
 .hero-btn { 
     display: inline-block; padding: 15px 45px; 
     background: var(--primary-color); color: white; 
@@ -125,11 +107,11 @@ body {
 }
 .hero-btn:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(128, 0, 32, 0.3); }
 
-/* ARREGLO DE LA FLECHA (Centrado Absoluto) */
+/* Flecha centrada */
 .scroll-down { 
     display: flex; 
     justify-content: center; 
-    margin-top: 40px; 
+    margin-top: 50px; 
     font-size: 34px; 
     color: var(--primary-color); 
     text-decoration: none; 
@@ -140,8 +122,57 @@ body {
 
 
 /* =====================================================
-   SECCIONES DE CONTENIDO (MANTENEMOS ESTRUCTURA)
+   AJUSTES EXCLUSIVOS PARA PC EN LA PORTADA
    ===================================================== */
+@media (min-width: 768px) {
+    .hero {
+        /* En PC, la foto tiene un tope para no hacerse gigante */
+        background-size: 100% 450px; 
+        background-position: top center;
+    }
+    .hero-content {
+        padding-top: 500px; /* Empuja el texto debajo de la foto en PC */
+    }
+}
+
+
+/* =====================================================
+   RESTO DE SECCIONES (AÚN POR REFINAR)
+   ===================================================== */
+.story-section, .gallery-section, .music-section, .message-section {
+    min-height: 100vh;
+    background-color: var(--background-color);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+}
+
+.story-section::before, .gallery-section::before, .music-section::before, .message-section::before {
+    content: ''; position: absolute; top: 0; left: 0; width: 100%;
+    height: 60vw; background-size: 100% auto; background-position: top center; background-repeat: no-repeat; z-index: 1;
+}
+
+.story-section::before { background-image: url("imagenes/fondo2.jpg"); }
+.gallery-section::before { background-image: url("imagenes/fondo4.jpg"); }
+.music-section::before { background-image: url("imagenes/Fondo_musica.jpg"); }
+.message-section::before { background-image: url("imagenes/fondo3.jpg"); }
+
+.container {
+    position: relative; z-index: 2; width: 100%; max-width: 1000px; margin: 0 auto; padding: 0 20px;
+    padding-top: 65vw; display: flex; flex-direction: column; align-items: center; text-align: center;
+}
+
+@media (min-width: 768px) {
+    .story-section::before, .gallery-section::before, .music-section::before, .message-section::before {
+        height: 380px; background-size: cover; background-position: center 30%;
+    }
+    .container { padding-top: 420px; }
+}
+
+.section-title { font-family: 'Great Vibes', cursive; color: var(--primary-color); text-shadow: none; margin: 0; font-size: clamp(45px, 9vw, 70px); margin-bottom: 40px; font-weight: 300; }
+.section-title::after { display: none; }
 
 /* HISTORIA */
 .timeline { border-left: 2px solid var(--primary-color); margin-left: 30px; padding-left: 25px; position: relative; margin-bottom: 30px; width: 100%; text-align: left; }
@@ -185,7 +216,7 @@ body {
 .love-message p { font-family: 'Cormorant Garamond', serif; font-size: 1.5em; color: #333; margin: 25px 0; line-height: 1.8; font-style: italic; }
 .signature { margin-top: 40px; font-size: 1.3em !important; font-style: normal !important; color: var(--primary-color); font-weight: bold; }
 
-/* MODALES */
+/* MODALES Y FOOTER */
 .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); z-index: 1000; }
 .modal-content { position: relative; max-width: 90%; max-height: 90vh; margin: auto; top: 50%; transform: translateY(-50%); text-align: center; }
 .modal-content img { max-width: 100%; max-height: 80vh; border-radius: 10px; }
@@ -199,8 +230,6 @@ body {
 .cerrar-modal-letra { color: var(--primary-color); position: absolute; top: 10px; right: 20px; font-size: 35px; font-weight: bold; cursor: pointer; z-index: 10; }
 .letra-texto { padding: 30px 20px 40px; overflow-y: auto; font-family: 'Cormorant Garamond', serif; font-size: 1.2em; color: #444; line-height: 1.6; text-align: center; }
 .letra-texto strong { color: var(--primary-color); font-size: 0.9em; display: block; margin-top: 15px; }
-
-/* FOOTER */
 .footer { background: #333; color: white; text-align: center; padding: 30px 20px; font-size: 1.1em; }
 
 
@@ -227,5 +256,5 @@ body {
     .polaroid-gallery { grid-template-columns: repeat(2, 1fr); gap: 15px; }
     .polaroid-card img { height: 180px; }
     .gallery-item.carousel-item { flex: 0 0 80% !important; min-width: 80% !important; height: 200px !important; }
-   }
+                                                                                                                     }
 
