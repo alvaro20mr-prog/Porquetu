@@ -13,8 +13,8 @@
     --secondary-color: #C41E3A;
     --background-color: #FAF4F5;
     --text-color: #333;
-    /* ESTA VARIABLE CONTROLA EL ALTO DE LA FOTO (45% de la pantalla) */
-    --header-height: 45vh; 
+    /* ESTA VARIABLE DEFINE QUÉ PORCENTAJE DE LA PANTALLA OCUPA LA FOTO */
+    --header-height: 50vh; 
 }
 
 html {
@@ -33,12 +33,6 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 50px 20px 0; /* Da un poco de aire entre la foto y el título */
-}
-
 /* === MENÚ BASE === */
 .menu {
     position: fixed; top: 0; left: 0; width: 100%;
@@ -55,59 +49,134 @@ body {
 .menu a:hover { color: #f8d8b8; }
 .logo { font-family: 'Great Vibes', cursive; font-size: 34px; color: white; }
 
-
 /* =====================================================
-   EL TRUCO MAESTRO: ESTRUCTURA REVISTA (PÁGINAS SEPARADAS)
+   ESTRUCTURA DE SECCIONES (FOTO ARRIBA, BLANCO ABAJO)
    ===================================================== */
 .hero, .story-section, .gallery-section, .music-section, .message-section {
-    min-height: 100vh; /* Cada sección ocupa al menos toda la pantalla */
-    padding-top: var(--header-height); /* El contenido empieza justo donde termina la foto */
-    padding-bottom: 120px; /* Mucho espacio abajo para que no se mezcle con la siguiente página */
-    
-    background-position: center center; /* Mantiene enfocados los artículos en la mesa */
-    background-repeat: no-repeat;
-    background-size: cover;
-    
-    display: block;
+    min-height: 100vh;
+    background-color: var(--background-color);
     position: relative;
+    padding: 0; /* Reseteamos los márgenes viejos */
 }
 
-/* Quitamos los filtros oscuros */
+/* QUITAMOS LOS FILTROS OSCUROS */
 .hero-overlay { display: none; }
 
 /* 
-   CORTAMOS EL FONDO: 
-   De arriba a abajo, el 45% (header-height) es transparente para mostrar la foto.
-   De ahí para abajo, el fondo se vuelve sólido (background-color).
+   ESTE TRUCO COLOCA LA FOTO PERFECTA ARRIBA SIN ESTIRARLA
+   Cubre exactamente el espacio de var(--header-height)
 */
-.hero { background-image: linear-gradient(to bottom, transparent var(--header-height), var(--background-color) var(--header-height)), url("imagenes/Fondo_inicio.png"); }
-.story-section { background-image: linear-gradient(to bottom, transparent var(--header-height), var(--background-color) var(--header-height)), url("imagenes/fondo2.jpg"); }
-.gallery-section { background-image: linear-gradient(to bottom, transparent var(--header-height), var(--background-color) var(--header-height)), url("imagenes/fondo4.jpg"); }
-.music-section { background-image: linear-gradient(to bottom, transparent var(--header-height), var(--background-color) var(--header-height)), url("imagenes/Fondo_musica.jpg"); }
-.message-section { background-image: linear-gradient(to bottom, transparent var(--header-height), var(--background-color) var(--header-height)), url("imagenes/fondo3.jpg"); }
-
-
-/* ===== CONTENIDO HERO (INICIO) ===== */
-.hero-content {
-    position: relative;
-    z-index: 5;
-    text-align: center;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 60px 20px 20px;
+.hero::before, .story-section::before, .gallery-section::before, .music-section::before, .message-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; 
+    height: var(--header-height);
+    background-size: cover;
+    background-position: center; /* Mantiene la proporción perfecta */
+    z-index: 1;
 }
-.main-title { font-family: 'Great Vibes', cursive; font-size: 130px; margin-bottom: 20px; color: var(--primary-color); text-shadow: none; }
-.subtitle { font-family: 'Cormorant Garamond', serif; font-size: 40px; font-style: italic; line-height: 1.5; margin-bottom: 45px; color: var(--text-color); text-shadow: none; }
-.hero-btn { display: inline-block; padding: 18px 48px; background: var(--primary-color); color: white; border-radius: 40px; font-weight: 600; text-decoration: none; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-.hero-btn:hover { transform: translateY(-4px); box-shadow: 0 15px 35px rgba(128, 0, 32, 0.3); }
 
-.scroll-down-container { text-align: center; width: 100%; margin-top: 50px; }
-.scroll-down { display: inline-block; font-size: 34px; color: var(--primary-color); text-decoration: none; animation: subeBaja 2s infinite; cursor: pointer; }
+/* ASIGNAMOS LAS IMÁGENES A CADA SECCIÓN */
+.hero::before { background-image: url("imagenes/Fondo_inicio.png"); }
+.story-section::before { background-image: url("imagenes/fondo2.jpg"); }
+.gallery-section::before { background-image: url("imagenes/fondo4.jpg"); }
+.music-section::before { background-image: url("imagenes/Fondo_musica.jpg"); }
+.message-section::before { background-image: url("imagenes/fondo3.jpg"); }
+
+/* CONTENEDOR DEL CONTENIDO BLANCO (CARTA, LÍNEA DE TIEMPO, ETC) */
+.container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    /* Empuja el contenido blanco justo debajo de la foto */
+    padding-top: calc(var(--header-height) + 60px); 
+    padding-bottom: 120px;
+    z-index: 2; 
+}
+
+
+/* =====================================================
+   TEXTOS Y TÍTULOS (CENTRADOS SOBRE LA FOTO)
+   ===================================================== */
+
+/* TÍTULOS DE SECCIÓN (Nuestra Historia, Tu Carta, etc.) */
+.section-title {
+    position: absolute;
+    top: 0; left: 0; width: 100%;
+    height: var(--header-height); /* Ocupa el mismo alto de la foto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    
+    font-family: 'Great Vibes', cursive;
+    font-size: 65px; /* Más pequeño */
+    font-weight: normal; /* Más fino */
+    white-space: nowrap; /* Una sola línea obligatoria */
+    
+    color: var(--primary-color);
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.9); /* Resplandor para que se lea sobre la foto */
+    z-index: 5;
+}
+.section-title::after { display: none; } /* Quitamos la línea decorativa de abajo */
+
+/* CONTENIDO DE LA PORTADA PRINCIPAL (PORQUE TÚ) */
+.hero-content {
+    position: absolute;
+    top: 0; left: 0; width: 100%;
+    height: var(--header-height);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    padding-top: 30px; 
+}
+.main-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 80px; /* Tamaño elegante, no gigante */
+    font-weight: normal; /* Letra fina */
+    white-space: nowrap; /* Una sola línea */
+    color: var(--primary-color);
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
+    margin-bottom: 10px;
+}
+.subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: bold;
+    font-style: italic;
+    color: var(--primary-color);
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
+    margin-bottom: 25px;
+}
+.hero-btn { 
+    display: inline-block; padding: 12px 40px; 
+    background: var(--primary-color); color: white; 
+    border-radius: 40px; font-weight: 600; text-decoration: none; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+.hero-btn:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(128, 0, 32, 0.3); }
+
+/* LA FLECHA QUE BAJA SE UBICA EN LA ZONA BLANCA */
+.scroll-down {
+    position: absolute;
+    top: calc(var(--header-height) + 40px);
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 34px;
+    color: var(--primary-color);
+    text-decoration: none;
+    animation: subeBaja 2s infinite;
+    z-index: 10;
+}
 @keyframes subeBaja { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(10px); } }
 
-/* ===== TÍTULOS DE SECCIONES ===== */
-.section-title { font-family: 'Great Vibes', cursive; font-size: 74px; text-align: center; margin-bottom: 70px; color: var(--primary-color); text-shadow: none; }
-.section-title::after { content: ''; display: block; width: 60px; height: 3px; background: linear-gradient(to right, transparent, var(--primary-color), transparent); margin: 20px auto 0; }
+
+/* =====================================================
+   RESTO DEL CONTENIDO (SECCIONES BLANCAS)
+   ===================================================== */
 
 /* ===== HISTORIA ===== */
 .timeline { display: grid; grid-template-columns: 1fr; gap: 40px; position: relative; padding: 40px 0; margin-bottom: 30px; }
@@ -128,7 +197,7 @@ body {
 .polaroid-card img { width: 100%; height: 300px; object-fit: cover; margin-bottom: 15px; display: block; }
 .polaroid-text { text-align: center; color: var(--primary-color); font-size: 0.95em; font-style: italic; font-weight: bold; }
 
-.full-gallery { margin-top: 60px; margin-bottom: 50px; }
+.full-gallery { margin-top: 20px; margin-bottom: 50px; }
 .full-gallery h3 { font-family: 'Great Vibes', cursive; font-size: 60px; text-align: center; margin-bottom: 40px; color: #800020; }
 .carousel-wrapper { position: relative; display: flex; align-items: center; max-width: 100%; margin: 0 auto; }
 .carousel-track { display: flex !important; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; padding: 20px 0; width: 100% !important; -ms-overflow-style: none; scrollbar-width: none; }
@@ -177,15 +246,16 @@ body {
 .letra-texto::-webkit-scrollbar { width: 6px; }
 .letra-texto::-webkit-scrollbar-thumb { background: rgba(128, 0, 32, 0.4); border-radius: 10px; }
 
-/* ===== RESPONSIVE DESIGN (MÓVILES) ===== */
+/* =====================================================
+   AJUSTES PARA CELULAR (ESCALANDO TODO PARA QUE QUEPA BIEN)
+   ===================================================== */
 @media (max-width: 900px) {
     .menu { flex-direction: column; padding: 15px; }
     .menu ul { flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 10px; }
 }
 
 @media (max-width: 768px) {
-    /* En celulares achicamos la foto al 35% de la pantalla para que el texto principal entre mejor */
-    :root { --header-height: 35vh; }
+    :root { --header-height: 40vh; } /* En tablets la foto es un poco más pequeña */
     
     .timeline-item, .timeline-item:nth-child(even) { grid-template-columns: 1fr !important; gap: 0; margin-left: 60px; }
     .timeline-item:nth-child(even) .timeline-date, .timeline-item:nth-child(even) .timeline-content { text-align: left; }
@@ -202,12 +272,17 @@ body {
 }
 
 @media (max-width: 480px) {
+    :root { --header-height: 35vh; } /* En celulares la foto ocupa el 35% de arriba */
+    
     .menu { padding: 10px 5px; background: rgba(0, 0, 0, 0.85) !important; }
     .menu ul { flex-wrap: nowrap; gap: 8px; justify-content: space-around; width: 100%; margin-top: 0; }
     .menu a { font-size: 12px; }
     
-    .main-title { font-size: 4.5em; }
-    .subtitle { font-size: 1.2em; }
+    /* Achicamos la letra para que quepa en una línea en el celular */
+    .main-title { font-size: 45px; margin-bottom: 5px; }
+    .subtitle { font-size: 18px; white-space: normal; } /* El subtítulo sí puede tener 2 líneas para que se lea bien */
+    .section-title { font-size: 38px; }
+    
     .polaroid-gallery { grid-template-columns: repeat(2, 1fr); gap: 15px; }
     .polaroid-card img { height: 180px; }
     .gallery-item.carousel-item { flex: 0 0 80% !important; min-width: 80% !important; height: 200px !important; }
