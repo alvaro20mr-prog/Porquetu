@@ -29,7 +29,7 @@ body {
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     /* 2. EMPUJAMOS TODO EL CUERPO PARA QUE EL MENÚ NO TAPE NADA */
-    padding-top: 87px; 
+    padding-top: 86px; 
 }
 
 /* === MENÚ BASE (Negro sólido y elegante) === */
@@ -243,7 +243,7 @@ body {
 @media (max-width: 480px) {
     /* 4. EN MÓVIL EL MENÚ ES MÁS ALTO, ASÍ QUE AJUSTAMOS EL SANGRADO A 95px */
     body { padding-top: 95px; }
-    section, header { scroll-margin-top: 90px !important; }
+    section, header { scroll-margin-top: 98px !important; }
 
     .menu { padding: 10px 5px; background: rgba(20, 20, 20, 0.95) !important; }
     .menu ul { flex-wrap: nowrap; gap: 8px; justify-content: space-around; width: 100%; margin-top: 0; }
