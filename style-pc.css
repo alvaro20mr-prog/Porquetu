@@ -1,5 +1,5 @@
 /* =====================================================
-   ESTILOS PRINCIPALES - REVISTA (CORTE AL RAS PERFECTO)
+   ESTILOS PRINCIPALES - REVISTA (CORTE AL RAS PERFECTO CON ANIMACIONES)
    ===================================================== */
 
 * {
@@ -17,10 +17,8 @@
 
 html { scroll-behavior: smooth; }
 
-
-
 /* 1. SECCIONES SE DETIENEN EXACTAMENTE EN EL TAMAÑO DEL MENÚ */
-section, header { scroll-margin-top: 86px !important; }
+section, header { scroll-margin-top: 87px !important; }
 
 body {
     font-family: 'Georgia', 'Palatino', serif;
@@ -29,7 +27,7 @@ body {
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     /* 2. EMPUJAMOS TODO EL CUERPO PARA QUE EL MENÚ NO TAPE NADA */
-    padding-top: 86px; 
+    padding-top: 87px; 
 }
 
 /* === MENÚ BASE (Negro sólido y elegante) === */
@@ -68,7 +66,7 @@ body {
 .hero::before, .story-section::before, .gallery-section::before, .music-section::before, .message-section::before {
     content: '';
     position: absolute;
-    top: 0; /* ¡AQUÍ ESTÁ LA SOLUCIÓN DEL BLANCO! */
+    top: 0; 
     left: 0; right: 0;
     margin: 0 auto; 
     width: 100%;
@@ -94,7 +92,6 @@ body {
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 20px;
-    /* 65vw (alto foto) + 40px (espacio en blanco agradable) */
     padding-top: calc(65vw + 40px); 
     display: flex;
     flex-direction: column;
@@ -107,13 +104,11 @@ body {
    ===================================================== */
 @media (min-width: 768px) {
     .hero::before, .story-section::before, .gallery-section::before, .music-section::before, .message-section::before {
-        top: 0; /* Siempre al ras en PC también */
+        top: 0; 
         height: 600px; 
     }
     
     .hero-content, .container {
-        /* Empujamos el texto blanco más abajo para rellenar la PC */
-        /* 600px de la foto + 100px para centrar los textos y botones hermosamente */
         padding-top: 700px; 
         margin-top: 0;
     }
@@ -163,7 +158,7 @@ body {
 
 
 /* =====================================================
-   RESTO DE SECCIONES
+   RESTO DE SECCIONES (AQUÍ ESTÁN LAS ANIMACIONES RECUPERADAS)
    ===================================================== */
 
 /* HISTORIA */
@@ -172,16 +167,51 @@ body {
 .timeline-item { display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 40px; position: relative; }
 .timeline-date { font-family: 'Great Vibes', cursive; font-size: 40px; color: var(--primary-color); margin-bottom: 10px; }
 .timeline-date::before { content: ''; position: absolute; left: -36px; top: 15px; width: 18px; height: 18px; background: var(--background-color); border: 3px solid var(--primary-color); border-radius: 50%; }
-.timeline-content { background: white; padding: 25px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); width: 100%; text-align: left; }
+.timeline-content { 
+    background: white; 
+    padding: 25px; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+    width: 100%; 
+    text-align: left;
+    /* 4. ANIMACIÓN DE NUESTRA HISTORIA */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform, box-shadow;
+}
+
+/* Al pasar el mouse, suben ligeramente */
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
 .timeline-content h3 { font-family: 'Cormorant Garamond', serif; font-size: 30px; color: var(--primary-color); margin-bottom: 15px; }
 .timeline-content p { font-family: 'Cormorant Garamond', serif; font-size: 20px; line-height: 1.8; font-style: italic; color: #555; }
 
-/* GALERÍA */
+/* GALERÍA (POLAROIDS CON MOVIMIENTO) */
 .polaroid-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 950px; margin: 0 auto 60px; }
-.polaroid-card { background: white; padding: 15px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); transform: rotate(-3deg); cursor: pointer; transition: transform 0.3s; }
+.polaroid-card { 
+    background: white; 
+    padding: 15px; 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); 
+    transform: rotate(-3deg); 
+    cursor: pointer; 
+    /* 5. MOVIMIENTO DE POLAROIDS */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform, box-shadow;
+}
 .polaroid-card:nth-child(2n) { transform: rotate(3deg); }
+
+/* Al pasar el mouse, se ponen derechas y crecen */
+.polaroid-card:hover {
+    transform: rotate(0deg) scale(1.05);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
 .polaroid-card img { width: 100%; height: 300px; object-fit: cover; margin-bottom: 15px; display: block; }
 .polaroid-text { text-align: center; color: var(--primary-color); font-size: 0.95em; font-style: italic; font-weight: bold; }
+
+/* CARRUSEL Y RESTO */
 .full-gallery { margin-top: 20px; margin-bottom: 50px; width: 100%; text-align: center; }
 .full-gallery h3 { font-family: 'Great Vibes', cursive; font-size: clamp(35px, 6vw, 55px); color: #800020; margin-bottom: 30px; font-weight: 400; }
 .carousel-wrapper { position: relative; display: flex; align-items: center; max-width: 100%; margin: 0 auto; }
@@ -241,9 +271,8 @@ body {
 }
 
 @media (max-width: 480px) {
-    /* 4. EN MÓVIL EL MENÚ ES MÁS ALTO, ASÍ QUE AJUSTAMOS EL SANGRADO A 95px */
-    body { padding-top: 100px; }
-    section, header { scroll-margin-top: 100px !important; }
+    body { padding-top: 95px; }
+    section, header { scroll-margin-top: 95px !important; }
 
     .menu { padding: 10px 5px; background: rgba(20, 20, 20, 0.95) !important; }
     .menu ul { flex-wrap: nowrap; gap: 8px; justify-content: space-around; width: 100%; margin-top: 0; }
