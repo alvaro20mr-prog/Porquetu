@@ -243,7 +243,7 @@ body {
 @media (max-width: 480px) {
     /* 4. EN MÓVIL EL MENÚ ES MÁS ALTO, ASÍ QUE AJUSTAMOS EL SANGRADO A 95px */
     body { padding-top: 95px; }
-    section, header { scroll-margin-top: 98px !important; }
+    section, header { scroll-margin-top: 100px !important; }
 
     .menu { padding: 10px 5px; background: rgba(20, 20, 20, 0.95) !important; }
     .menu ul { flex-wrap: nowrap; gap: 8px; justify-content: space-around; width: 100%; margin-top: 0; }
