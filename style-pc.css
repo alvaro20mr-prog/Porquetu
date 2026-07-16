@@ -1,5 +1,5 @@
 /* =====================================================
-   ESTILOS PRINCIPALES - REVISTA (PC Y MÓVIL EXACTAMENTE IGUALES)
+   ESTILOS PRINCIPALES - REVISTA (PASO 1: ARREGLO INICIO)
    ===================================================== */
 
 * {
@@ -15,13 +15,8 @@
     --text-color: #333;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
-section, header {
-    scroll-margin-top: 87px !important; 
-}
+html { scroll-behavior: smooth; }
+section, header { scroll-margin-top: 87px !important; }
 
 body {
     font-family: 'Georgia', 'Palatino', serif;
@@ -32,184 +27,140 @@ body {
 }
 
 /* === MENÚ BASE === */
-.menu {
-    position: fixed; top: 0; left: 0; width: 100%;
-    padding: 22px 8%;
-    display: flex; justify-content: space-between; align-items: center;
-    z-index: 1000;
-    background: rgba(0,0,0,.15);
-    backdrop-filter: blur(12px);
-    transition: all 0.3s ease-out; 
-}
+.menu { position: fixed; top: 0; left: 0; width: 100%; padding: 22px 8%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: rgba(0,0,0,.15); backdrop-filter: blur(12px); transition: all 0.3s ease-out; }
 .menu.scrolled { background: rgba(0, 0, 0, 0.85); padding: 15px 8%; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
 .menu ul { display: flex; gap: 35px; list-style: none; }
 .menu a { color: white; text-decoration: none; font-size: 15px; letter-spacing: 1px; transition: .3s; }
 .menu a:hover { color: #f8d8b8; }
 .logo { font-family: 'Great Vibes', cursive; font-size: 34px; color: white; }
 
+
 /* =====================================================
-   EL SECRETO DEL ESTILO REVISTA (FONDOS INTACTOS)
+   ESTRUCTURA GENERAL (FOTO ARRIBA, TEXTO BLANCO ABAJO)
    ===================================================== */
 .hero, .story-section, .gallery-section, .music-section, .message-section {
     min-height: 100vh;
     background-color: var(--background-color);
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-size: 100% auto; /* La foto no se corta, se ajusta al ancho */
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* ESTO CENTRA LA FLECHA Y TODO EL TEXTO */
     padding: 0;
 }
 .hero-overlay { display: none; } /* Fuera filtros oscuros */
 
-/* Limitamos el tamaño en PC para que la foto no se vuelva gigante */
-@media (min-width: 1000px) {
-    .hero, .story-section, .gallery-section, .music-section, .message-section {
-        background-size: 1000px auto; 
+/* EL TRUCO PARA QUE LA FOTO SE VEA COMPLETA SIN CORTARSE */
+.hero::before, .story-section::before, .gallery-section::before, .music-section::before, .message-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%;
+    /* 60vw es la proporción perfecta para que tu foto se vea entera en celular */
+    height: 60vw; 
+    background-size: 100% auto; /* 100% de ancho, alto natural */
+    background-position: top center;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+.hero::before { background-image: url("imagenes/Fondo_inicio.png"); }
+.story-section::before { background-image: url("imagenes/fondo2.jpg"); }
+.gallery-section::before { background-image: url("imagenes/fondo4.jpg"); }
+.music-section::before { background-image: url("imagenes/Fondo_musica.jpg"); }
+.message-section::before { background-image: url("imagenes/fondo3.jpg"); }
+
+/* EMPUJAMOS EL CONTENIDO BLANCO JUSTO DEBAJO DE LA FOTO */
+.hero-content, .container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    /* 65vw da un pequeño margen blanco extra debajo de la foto */
+    padding-top: 65vw; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* AJUSTES EXCLUSIVOS PARA COMPUTADORA (PC) */
+@media (min-width: 768px) {
+    .hero::before, .story-section::before, .gallery-section::before, .music-section::before, .message-section::before {
+        height: 380px; /* Tamaño fijo para que no se haga gigante en la PC */
+        background-size: cover; /* En PC sí usamos cover porque la pantalla es ancha */
+        background-position: center 30%;
+    }
+    .hero-content, .container {
+        padding-top: 420px; /* Empuja el texto debajo de la foto en PC */
     }
 }
 
-.hero { background-image: url("imagenes/Fondo_inicio.png"); }
-.story-section { background-image: url("imagenes/fondo2.jpg"); }
-.gallery-section { background-image: url("imagenes/fondo4.jpg"); }
-.music-section { background-image: url("imagenes/Fondo_musica.jpg"); }
-.message-section { background-image: url("imagenes/fondo3.jpg"); }
-
-/* Contenedor que empuja todo el contenido hacia la zona blanca */
-.container {
-    position: relative;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px 100px;
-    padding-top: 70vw; /* Empuja a lo blanco en móvil */
-    z-index: 2; 
-}
-@media (min-width: 1000px) {
-    .container { padding-top: 700px; } /* Empuja a lo blanco en PC */
-}
 
 /* =====================================================
-   TÍTULOS SOBRE LAS IMÁGENES
+   TÍTULOS Y PORTADA (EN LA ZONA BLANCA)
    ===================================================== */
-.section-title {
-    position: absolute;
-    top: 20vw; /* Posiciona el título justo sobre la foto */
-    left: 0; width: 100%;
-    text-align: center;
+.main-title, .section-title {
     font-family: 'Great Vibes', cursive;
-    font-size: clamp(45px, 9vw, 75px); /* Letra fina y elegante que se adapta */
-    font-weight: normal; 
     color: var(--primary-color);
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
+    text-shadow: none; /* Quitamos las sombras blancas */
     margin: 0;
-    z-index: 5;
 }
-.section-title::after { display: none; } /* Sin línea extraña debajo */
-
-@media (min-width: 1000px) {
-    .section-title { top: 200px; } /* Posición en PC */
-}
-
-/* ===== PORTADA PRINCIPAL (PORQUE TÚ) ===== */
-.main-title {
-    position: absolute;
-    top: 25vw; /* Sobre la mesa */
-    left: 0; width: 100%;
-    text-align: center;
-    font-family: 'Great Vibes', cursive;
-    font-size: clamp(60px, 12vw, 100px);
-    font-weight: normal;
-    color: var(--primary-color);
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
-    margin: 0;
-    z-index: 5;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    padding-top: 75vw; /* Subtítulo y botón en lo blanco */
-}
-
-@media (min-width: 1000px) {
-    .main-title { top: 250px; }
-    .hero-content { padding-top: 750px; }
-}
+.main-title { font-size: clamp(60px, 12vw, 90px); margin-bottom: 15px; }
+.section-title { font-size: clamp(45px, 9vw, 70px); margin-bottom: 40px; }
+.section-title::after { display: none; }
 
 .subtitle {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(20px, 4vw, 30px);
+    font-size: clamp(20px, 4vw, 26px);
     font-style: italic;
     color: var(--text-color);
     margin-bottom: 35px;
 }
-.hero-btn { display: inline-block; padding: 15px 45px; background: var(--primary-color); color: white; border-radius: 40px; font-weight: 600; text-decoration: none; transition: transform 0.3s ease; }
+.hero-btn { 
+    display: inline-block; padding: 15px 45px; 
+    background: var(--primary-color); color: white; 
+    border-radius: 40px; font-weight: 600; text-decoration: none; 
+    transition: transform 0.3s ease; 
+}
 .hero-btn:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(128, 0, 32, 0.3); }
 
-.scroll-down { display: inline-block; font-size: 34px; color: var(--primary-color); text-decoration: none; animation: subeBaja 2s infinite; cursor: pointer; margin-top: 40px; }
+/* ARREGLO DE LA FLECHA (Centrado Absoluto) */
+.scroll-down { 
+    display: flex; 
+    justify-content: center; 
+    margin-top: 40px; 
+    font-size: 34px; 
+    color: var(--primary-color); 
+    text-decoration: none; 
+    animation: subeBaja 2s infinite; 
+    z-index: 10;
+}
 @keyframes subeBaja { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(10px); } }
 
+
 /* =====================================================
-   SECCIONES DE CONTENIDO
+   SECCIONES DE CONTENIDO (MANTENEMOS ESTRUCTURA)
    ===================================================== */
 
-/* ===== HISTORIA (ESTRUCTURA IDÉNTICA PC Y MÓVIL) ===== */
-.timeline { 
-    border-left: 2px solid var(--primary-color); 
-    margin-left: 30px; 
-    padding-left: 25px; 
-    position: relative; 
-    margin-bottom: 30px; 
-}
+/* HISTORIA */
+.timeline { border-left: 2px solid var(--primary-color); margin-left: 30px; padding-left: 25px; position: relative; margin-bottom: 30px; width: 100%; text-align: left; }
 .timeline::before { display: none; } 
-.timeline-item { 
-    display: flex; 
-    flex-direction: column; 
-    align-items: flex-start; 
-    margin-bottom: 40px; 
-    position: relative; 
-}
-.timeline-date { 
-    font-family: 'Great Vibes', cursive; 
-    font-size: 40px; 
-    color: var(--primary-color); 
-    margin-bottom: 10px; 
-}
-/* El círculo perfectamente alineado sobre la línea */
-.timeline-date::before { 
-    content: ''; 
-    position: absolute; 
-    left: -36px; 
-    top: 15px; 
-    width: 18px; 
-    height: 18px; 
-    background: var(--background-color); 
-    border: 3px solid var(--primary-color); 
-    border-radius: 50%; 
-}
+.timeline-item { display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 40px; position: relative; }
+.timeline-date { font-family: 'Great Vibes', cursive; font-size: 40px; color: var(--primary-color); margin-bottom: 10px; }
+.timeline-date::before { content: ''; position: absolute; left: -36px; top: 15px; width: 18px; height: 18px; background: var(--background-color); border: 3px solid var(--primary-color); border-radius: 50%; }
 .timeline-content { background: white; padding: 25px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); width: 100%; text-align: left; }
 .timeline-content h3 { font-family: 'Cormorant Garamond', serif; font-size: 30px; color: var(--primary-color); margin-bottom: 15px; }
 .timeline-content p { font-family: 'Cormorant Garamond', serif; font-size: 20px; line-height: 1.8; font-style: italic; color: #555; }
 
-/* ===== POLAROIDS Y CARRUSEL ===== */
+/* GALERÍA */
 .polaroid-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 950px; margin: 0 auto 60px; }
 .polaroid-card { background: white; padding: 15px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); transform: rotate(-3deg); cursor: pointer; transition: transform 0.3s; }
 .polaroid-card:nth-child(2n) { transform: rotate(3deg); }
 .polaroid-card img { width: 100%; height: 300px; object-fit: cover; margin-bottom: 15px; display: block; }
 .polaroid-text { text-align: center; color: var(--primary-color); font-size: 0.95em; font-style: italic; font-weight: bold; }
-
 .full-gallery { margin-top: 20px; margin-bottom: 50px; width: 100%; text-align: center; }
-
-/* Corrección "Más Momentos": Obligado a una línea y con letra fina */
-.full-gallery h3 { 
-    font-family: 'Great Vibes', cursive; 
-    font-size: clamp(30px, 6vw, 55px); 
-    color: #800020; 
-    margin-bottom: 30px;
-    white-space: nowrap; 
-    font-weight: normal;
-}
-
+.full-gallery h3 { font-family: 'Great Vibes', cursive; font-size: clamp(35px, 6vw, 55px); color: #800020; margin-bottom: 30px; font-weight: normal; }
 .carousel-wrapper { position: relative; display: flex; align-items: center; max-width: 100%; margin: 0 auto; }
 .carousel-track { display: flex !important; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; padding: 20px 0; width: 100% !important; -ms-overflow-style: none; scrollbar-width: none; }
 .carousel-track::-webkit-scrollbar { display: none; }
@@ -219,44 +170,26 @@ body {
 .carousel-btn.prev { left: -15px; }
 .carousel-btn.next { right: -15px; }
 
-/* ===== MÚSICA (IMAGEN GIGANTE Y HERMOSA EN PC Y MÓVIL) ===== */
-.music-card { 
-    display: flex; 
-    flex-direction: column; /* Apila imagen y texto en todo dispositivo */
-    max-width: 600px; /* Tarjeta ancha para lucir la foto */
-    margin: 0 auto; 
-    background: rgba(255, 255, 255, 0.95); 
-    border-radius: 15px; 
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
-    overflow: hidden; 
-}
-.music-cover { 
-    width: 100%; 
-    height: auto; 
-    object-fit: cover; 
-}
-.music-info { 
-    padding: 40px; 
-    text-align: center; /* Todo centrado */
-}
+/* MÚSICA */
+.music-card { display: flex; flex-direction: column; max-width: 600px; margin: 0 auto 50px; background: rgba(255, 255, 255, 0.95); border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); overflow: hidden; }
+.music-cover { width: 100%; height: auto; object-fit: cover; }
+.music-info { padding: 40px; text-align: center; }
 .music-info h3 { color: var(--primary-color); font-family: 'Great Vibes', cursive; font-size: 3.5em; margin-bottom: 15px; font-weight: normal; }
 .music-info p { font-family: 'Cormorant Garamond', serif; font-size: 1.5em; color: #555; font-style: italic; margin-bottom: 25px; }
 #audioPlayer { width: 100%; outline: none; margin-bottom: 15px; }
 
-/* ===== CARTA ===== */
+/* CARTA */
 .love-message { max-width: 800px; margin: 0 auto; background: linear-gradient(135deg, #FFF8F3 0%, #FDF6F0 100%); padding: 60px 40px; border-radius: 4px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(128, 0, 32, 0.2), inset 0 0 0 8px rgba(255, 255, 255, 0.6), inset 0 0 0 9px rgba(128, 0, 32, 0.15); text-align: center; position: relative; }
 .love-message::before { content: '❦'; font-size: 40px; color: var(--secondary-color); position: absolute; top: 18px; left: 50%; transform: translateX(-50%); opacity: 0.6; }
 .love-message h2 { font-family: 'Great Vibes', cursive; font-size: 3.5em; color: var(--primary-color); margin-top: 10px; margin-bottom: 20px; font-weight: normal; }
 .love-message p { font-family: 'Cormorant Garamond', serif; font-size: 1.5em; color: #333; margin: 25px 0; line-height: 1.8; font-style: italic; }
 .signature { margin-top: 40px; font-size: 1.3em !important; font-style: normal !important; color: var(--primary-color); font-weight: bold; }
 
-/* ===== MODALES ===== */
+/* MODALES */
 .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); z-index: 1000; }
 .modal-content { position: relative; max-width: 90%; max-height: 90vh; margin: auto; top: 50%; transform: translateY(-50%); text-align: center; }
 .modal-content img { max-width: 100%; max-height: 80vh; border-radius: 10px; }
 .close { position: absolute; top: -40px; right: 0; color: white; font-size: 35px; cursor: pointer; }
-
-/* BOTÓN Y MODAL LETRA */
 .letra-btn { display: block; background: transparent; color: var(--primary-color); border: 1px solid var(--primary-color); padding: 8px 25px; border-radius: 30px; font-family: 'Cormorant Garamond', serif; font-size: 1.2em; font-style: italic; font-weight: bold; cursor: pointer; transition: all 0.3s ease; margin: 15px auto 0; width: fit-content; }
 .letra-btn:hover { background: var(--primary-color); color: white; }
 #modalLetraUnico { display: none; position: fixed; z-index: 99999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); backdrop-filter: blur(5px); align-items: center; justify-content: center; opacity: 0; transition: opacity 0.4s ease; }
@@ -272,7 +205,7 @@ body {
 
 
 /* =====================================================
-   AJUSTES PARA CELULAR (ESCALANDO TODO PARA QUE QUEPA BIEN)
+   AJUSTES FINALES PARA CELULAR
    ===================================================== */
 @media (max-width: 900px) {
     .menu { flex-direction: column; padding: 15px; }
@@ -294,4 +227,5 @@ body {
     .polaroid-gallery { grid-template-columns: repeat(2, 1fr); gap: 15px; }
     .polaroid-card img { height: 180px; }
     .gallery-item.carousel-item { flex: 0 0 80% !important; min-width: 80% !important; height: 200px !important; }
-}
+   }
+
