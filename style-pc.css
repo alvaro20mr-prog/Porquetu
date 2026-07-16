@@ -1,5 +1,5 @@
 /* =====================================================
-   ESTILOS PRINCIPALES - REVISTA (ADAPTABLE A CUALQUIER PANTALLA)
+   ESTILOS PRINCIPALES - REVISTA (CORTE AL RAS PERFECTO)
    ===================================================== */
 
 * {
@@ -16,6 +16,8 @@
 }
 
 html { scroll-behavior: smooth; }
+
+/* 1. SECCIONES SE DETIENEN EXACTAMENTE EN EL TAMAÑO DEL MENÚ */
 section, header { scroll-margin-top: 87px !important; }
 
 body {
@@ -24,6 +26,8 @@ body {
     color: var(--text-color);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    /* 2. EMPUJAMOS TODO EL CUERPO PARA QUE EL MENÚ NO TAPE NADA */
+    padding-top: 87px; 
 }
 
 /* === MENÚ BASE (Negro sólido y elegante) === */
@@ -45,10 +49,10 @@ body {
 
 
 /* =====================================================
-   LA MAGIA RESPONSIVA (FOTOS INTACTAS EN PC Y MÓVIL)
+   LA MAGIA RESPONSIVA (FOTOS INTACTAS AL RAS)
    ===================================================== */
 .hero, .story-section, .gallery-section, .music-section, .message-section {
-    min-height: 100vh;
+    min-height: calc(100vh - 87px);
     background-color: var(--background-color);
     position: relative;
     display: flex;
@@ -58,17 +62,16 @@ body {
 }
 .hero-overlay { display: none; } 
 
-/* CONTENEDOR DE LA FOTO (Inteligente) */
+/* 3. LAS FOTOS NACEN EXACTAMENTE EN EL BORDE DE LA SECCIÓN (TOP: 0) */
 .hero::before, .story-section::before, .gallery-section::before, .music-section::before, .message-section::before {
     content: '';
     position: absolute;
-    top: 80px; 
+    top: 0; /* ¡AQUÍ ESTÁ LA SOLUCIÓN DEL BLANCO! */
     left: 0; right: 0;
-    margin: 0 auto; /* Centra la foto en pantallas gigantes */
+    margin: 0 auto; 
     width: 100%;
-    /* AQUÍ ESTÁ EL TRUCO: La foto nunca será más ancha que 1000px */
     max-width: 1000px; 
-    height: 65vw; /* Altura proporcional para el celular */
+    height: 65vw; 
     background-size: 100% auto; 
     background-position: top center;
     background-repeat: no-repeat;
@@ -89,8 +92,8 @@ body {
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 20px;
-    /* En celular empujamos el texto dinámicamente */
-    padding-top: calc(65vw + 100px); 
+    /* 65vw (alto foto) + 40px (espacio en blanco agradable) */
+    padding-top: calc(65vw + 40px); 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -102,14 +105,14 @@ body {
    ===================================================== */
 @media (min-width: 768px) {
     .hero::before, .story-section::before, .gallery-section::before, .music-section::before, .message-section::before {
-        top: 85px; 
-        /* Como el ancho se detuvo en 1000px, detenemos la altura en 600px para que no se corte NUNCA */
+        top: 0; /* Siempre al ras en PC también */
         height: 600px; 
     }
     
     .hero-content, .container {
-        /* Empujamos el texto blanco para que empiece exactamente debajo de los 600px de foto + 85px de menú */
-        padding-top: 680px; 
+        /* Empujamos el texto blanco más abajo para rellenar la PC */
+        /* 600px de la foto + 100px para centrar los textos y botones hermosamente */
+        padding-top: 700px; 
         margin-top: 0;
     }
 }
@@ -236,7 +239,11 @@ body {
 }
 
 @media (max-width: 480px) {
-    .menu { padding: 10px 5px; }
+    /* 4. EN MÓVIL EL MENÚ ES MÁS ALTO, ASÍ QUE AJUSTAMOS EL SANGRADO A 95px */
+    body { padding-top: 95px; }
+    section, header { scroll-margin-top: 95px !important; }
+
+    .menu { padding: 10px 5px; background: rgba(20, 20, 20, 0.95) !important; }
     .menu ul { flex-wrap: nowrap; gap: 8px; justify-content: space-around; width: 100%; margin-top: 0; }
     .menu a { font-size: 12px; }
     
