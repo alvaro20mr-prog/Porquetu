@@ -20,7 +20,7 @@ html { scroll-behavior: smooth; }
 
 
 /* 1. SECCIONES SE DETIENEN EXACTAMENTE EN EL TAMAÑO DEL MENÚ */
-section, header { scroll-margin-top: 87px !important; }
+section, header { scroll-margin-top: 86px !important; }
 
 body {
     font-family: 'Georgia', 'Palatino', serif;
@@ -242,7 +242,7 @@ body {
 
 @media (max-width: 480px) {
     /* 4. EN MÓVIL EL MENÚ ES MÁS ALTO, ASÍ QUE AJUSTAMOS EL SANGRADO A 95px */
-    body { padding-top: 95px; }
+    body { padding-top: 100px; }
     section, header { scroll-margin-top: 100px !important; }
 
     .menu { padding: 10px 5px; background: rgba(20, 20, 20, 0.95) !important; }
