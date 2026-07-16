@@ -1,5 +1,5 @@
 /* =====================================================
-   ESTILOS PRINCIPALES - REVISTA (INICIO EXACTO AL ORIGINAL)
+   ESTILOS PRINCIPALES - REVISTA (100% FIEL AL ORIGINAL)
    ===================================================== */
 
 * {
@@ -28,8 +28,7 @@ body {
 
 /* === MENÚ BASE === */
 .menu { 
-    position: fixed; 
-    top: 0; left: 0; width: 100%; 
+    position: fixed; top: 0; left: 0; width: 100%; 
     padding: 22px 8%; 
     display: flex; justify-content: space-between; align-items: center; 
     z-index: 1000; 
@@ -45,135 +44,166 @@ body {
 
 
 /* =====================================================
-   ESTRUCTURA GENERAL (FOTO ARRIBA, TEXTO BLANCO ABAJO)
+   ESTRUCTURA DE IMÁGENES (EL SECRETO DE TU IMAGEN 1)
    ===================================================== */
 .hero, .story-section, .gallery-section, .music-section, .message-section {
     min-height: 100vh;
     background-color: var(--background-color);
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    padding: 0;
-}
-.hero-overlay { display: none; } 
-
-/* EL TRUCO PARA QUE LA FOTO NO SE CORTE: LA BAJAMOS 75px */
-.hero::before, .story-section::before, .gallery-section::before, .music-section::before, .message-section::before {
-    content: '';
-    position: absolute;
-    top: 75px; /* Empieza exactamente debajo del menú negro */
-    left: 0; width: 100%;
-    height: 60vw; 
-    background-size: 100% auto; 
-    background-position: top center;
     background-repeat: no-repeat;
-    z-index: 1;
-}
-
-.hero::before { background-image: url("imagenes/Fondo_inicio.png"); }
-.story-section::before { background-image: url("imagenes/fondo2.jpg"); }
-.gallery-section::before { background-image: url("imagenes/fondo4.jpg"); }
-.music-section::before { background-image: url("imagenes/Fondo_musica.jpg"); }
-.message-section::before { background-image: url("imagenes/fondo3.jpg"); }
-
-/* EMPUJAMOS EL CONTENIDO BLANCO JUSTO DEBAJO DE LA FOTO Y EL MENÚ */
-.hero-content, .container {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px;
-    /* 60vw (foto) + 75px (menú) + 40px (espacio blanco) */
-    padding-top: calc(60vw + 115px); 
+    
+    /* ESTO ES LO QUE HACE QUE TU FOTO SE VEA COMPLETA */
+    background-position: center 75px; 
+    background-size: 100% auto; 
+    
+    /* ESTO EMPUJA EL TEXTO EXACTAMENTE DEBAJO DE LA FOTO */
+    padding-top: 310px; 
+    
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    position: relative;
 }
+.hero-overlay { display: none; } 
+
+.hero { background-image: url("imagenes/Fondo_inicio.png"); padding-bottom: 60px; }
+.story-section { background-image: url("imagenes/fondo2.jpg"); }
+.gallery-section { background-image: url("imagenes/fondo4.jpg"); }
+.music-section { background-image: url("imagenes/Fondo_musica.jpg"); }
+.message-section { background-image: url("imagenes/fondo3.jpg"); }
+
+
+/* AJUSTE ESCALONADO PARA PC (Para que no se haga gigante) */
+@media (min-width: 600px) {
+    .hero, .story-section, .gallery-section, .music-section, .message-section { padding-top: 50vw; }
+}
+@media (min-width: 1000px) {
+    .hero, .story-section, .gallery-section, .music-section, .message-section {
+        background-size: 1000px auto; /* Límite de ancho para PC */
+        background-position: center 87px; 
+        padding-top: 580px; 
+    }
+}
+
 
 /* =====================================================
-   TÍTULOS (FINOS COMO EL ORIGINAL)
+   TEXTOS Y TÍTULOS (CON EL GROSOR ORIGINAL, MÁS FINOS)
    ===================================================== */
-.main-title, .section-title {
-    font-family: 'Great Vibes', cursive;
-    color: var(--primary-color);
-    text-shadow: none; 
-    font-weight: 400; /* Devuelve el grosor original fino */
-    margin: 0;
-}
-.main-title { font-size: clamp(60px, 12vw, 90px); margin-bottom: 15px; }
-.section-title { font-size: clamp(45px, 9vw, 70px); margin-bottom: 40px; }
-.section-title::after { display: none; }
+.hero-content { margin-top: 0; text-align: center; z-index: 5; width: 100%; max-width: 900px; }
+.container { width: 100%; max-width: 1000px; margin: 0 auto; padding: 0 20px 80px; text-align: center; }
 
-.subtitle {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(20px, 4vw, 26px);
-    font-style: italic;
-    color: var(--text-color);
-    margin-bottom: 35px;
+.main-title { 
+    font-family: 'Great Vibes', cursive; 
+    font-size: 4.5em; 
+    font-weight: 400; /* Letra fina restaurada */
+    color: var(--primary-color); 
+    text-shadow: none; 
+    margin-bottom: 20px; 
+}
+.subtitle { 
+    font-family: 'Cormorant Garamond', serif; 
+    font-size: 1.2em; 
+    font-style: italic; 
+    color: var(--text-color); 
+    text-shadow: none; 
+    margin-bottom: 45px; 
 }
 .hero-btn { 
-    display: inline-block; padding: 15px 45px; 
+    display: inline-block; padding: 18px 48px; 
     background: var(--primary-color); color: white; 
     border-radius: 40px; font-weight: 600; text-decoration: none; 
-    transition: transform 0.3s ease; 
+    box-shadow: 0 5px 15px rgba(128, 0, 32, 0.3); 
+    transition: transform 0.3s ease;
 }
-.hero-btn:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(128, 0, 32, 0.3); }
+.hero-btn:hover { transform: translateY(-4px); }
 
-.scroll-down { 
-    display: flex; 
-    justify-content: center; 
-    margin-top: 40px; 
-    font-size: 34px; 
-    color: var(--primary-color); 
-    text-decoration: none; 
-    animation: subeBaja 2s infinite; 
-    z-index: 10;
-}
+.scroll-down { display: block; margin: 30px auto 0; font-size: 34px; color: var(--primary-color); text-decoration: none; animation: subeBaja 2s infinite; text-align: center; width: 100%; }
 @keyframes subeBaja { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(10px); } }
 
+.section-title { font-family: 'Great Vibes', cursive; font-size: 3.5em; text-align: center; margin-bottom: 50px; color: var(--primary-color); text-shadow: none; font-weight: 400; }
+.section-title::after { display: none; }
+
 
 /* =====================================================
-   AJUSTES EXCLUSIVOS PARA COMPUTADORA (PC)
+   HISTORIA (ORDENADA: FECHA PRIMERO, CÍRCULO ALINEADO)
    ===================================================== */
-@media (min-width: 768px) {
-    .hero::before, .story-section::before, .gallery-section::before, .music-section::before, .message-section::before {
-        top: 85px; /* El menú en PC es un poco más ancho */
-        height: 400px; 
-        background-size: cover; 
-        background-position: center;
-    }
-    .hero-content, .container {
-        /* 400px (foto) + 85px (menú) + 40px (espacio) */
-        padding-top: 525px; 
-    }
+.timeline { 
+    border-left: 2px solid var(--primary-color); 
+    margin-left: 20px; 
+    padding-left: 25px; 
+    position: relative; 
+    margin-bottom: 30px; 
+}
+.timeline::before { display: none; } /* Quitamos la línea del medio vieja */
+
+/* Forzamos a que TODOS los items (PC y Móvil) sean iguales */
+.timeline-item, .timeline-item:nth-child(even) { 
+    display: flex !important; 
+    flex-direction: column !important; 
+    align-items: flex-start !important; 
+    gap: 15px; 
+    margin-bottom: 40px; 
+    text-align: left !important;
 }
 
+/* 1. La fecha SIEMPRE arriba */
+.timeline-item .timeline-date, .timeline-item:nth-child(even) .timeline-date { 
+    order: 1 !important; 
+    font-family: 'Great Vibes', cursive; 
+    font-size: 2.5em; 
+    color: var(--primary-color); 
+    position: relative;
+    padding-left: 5px;
+}
 
-/* =====================================================
-   RESTO DE SECCIONES (MANTENEMOS ESTRUCTURA)
-   ===================================================== */
+/* El círculo perfectamente alineado a la línea */
+.timeline-item .timeline-date::before, .timeline-item:nth-child(even) .timeline-date::before { 
+    content: ''; 
+    position: absolute; 
+    left: -38px; /* Ajuste matemático exacto para la línea */
+    top: 50%; 
+    transform: translateY(-50%); 
+    width: 16px; 
+    height: 16px; 
+    background: white; 
+    border: 4px solid var(--primary-color); 
+    border-radius: 50%; 
+    box-shadow: none;
+}
 
-/* HISTORIA */
-.timeline { border-left: 2px solid var(--primary-color); margin-left: 30px; padding-left: 25px; position: relative; margin-bottom: 30px; width: 100%; text-align: left; }
-.timeline::before { display: none; } 
-.timeline-item { display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 40px; position: relative; }
-.timeline-date { font-family: 'Great Vibes', cursive; font-size: 40px; color: var(--primary-color); margin-bottom: 10px; }
-.timeline-date::before { content: ''; position: absolute; left: -36px; top: 15px; width: 18px; height: 18px; background: var(--background-color); border: 3px solid var(--primary-color); border-radius: 50%; }
-.timeline-content { background: white; padding: 25px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); width: 100%; text-align: left; }
+/* 2. El texto SIEMPRE abajo de la fecha */
+.timeline-item .timeline-content, .timeline-item:nth-child(even) .timeline-content { 
+    order: 2 !important; 
+    background: white; 
+    padding: 25px; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+    width: 100%; 
+}
 .timeline-content h3 { font-family: 'Cormorant Garamond', serif; font-size: 30px; color: var(--primary-color); margin-bottom: 15px; }
 .timeline-content p { font-family: 'Cormorant Garamond', serif; font-size: 20px; line-height: 1.8; font-style: italic; color: #555; }
 
-/* GALERÍA */
+
+/* =====================================================
+   MÁS MOMENTOS ESPECIALES (CARRUSEL)
+   ===================================================== */
 .polaroid-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 950px; margin: 0 auto 60px; }
 .polaroid-card { background: white; padding: 15px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); transform: rotate(-3deg); cursor: pointer; transition: transform 0.3s; }
 .polaroid-card:nth-child(2n) { transform: rotate(3deg); }
 .polaroid-card img { width: 100%; height: 300px; object-fit: cover; margin-bottom: 15px; display: block; }
 .polaroid-text { text-align: center; color: var(--primary-color); font-size: 0.95em; font-style: italic; font-weight: bold; }
-.full-gallery { margin-top: 20px; margin-bottom: 50px; width: 100%; text-align: center; }
-.full-gallery h3 { font-family: 'Great Vibes', cursive; font-size: clamp(35px, 6vw, 55px); color: #800020; margin-bottom: 30px; font-weight: 400; }
+
+.full-gallery { margin-top: 20px; margin-bottom: 50px; width: 100%; }
+
+/* OBLIGAMOS AL TÍTULO A QUEDAR EN 1 SOLA LÍNEA */
+.full-gallery h3 { 
+    font-family: 'Great Vibes', cursive; 
+    font-size: clamp(28px, 5vw, 55px); /* Se achica automáticamente si no cabe */
+    color: var(--primary-color); 
+    margin-bottom: 30px; 
+    font-weight: 400; 
+    white-space: nowrap; /* Prohíbe el salto de línea */
+}
+
 .carousel-wrapper { position: relative; display: flex; align-items: center; max-width: 100%; margin: 0 auto; }
 .carousel-track { display: flex !important; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; padding: 20px 0; width: 100% !important; -ms-overflow-style: none; scrollbar-width: none; }
 .carousel-track::-webkit-scrollbar { display: none; }
@@ -183,7 +213,10 @@ body {
 .carousel-btn.prev { left: -15px; }
 .carousel-btn.next { right: -15px; }
 
-/* MÚSICA */
+
+/* =====================================================
+   MÚSICA Y CARTA
+   ===================================================== */
 .music-card { display: flex; flex-direction: column; max-width: 600px; margin: 0 auto 50px; background: rgba(255, 255, 255, 0.95); border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); overflow: hidden; }
 .music-cover { width: 100%; height: auto; object-fit: cover; }
 .music-info { padding: 40px; text-align: center; }
@@ -191,14 +224,16 @@ body {
 .music-info p { font-family: 'Cormorant Garamond', serif; font-size: 1.5em; color: #555; font-style: italic; margin-bottom: 25px; }
 #audioPlayer { width: 100%; outline: none; margin-bottom: 15px; }
 
-/* CARTA */
 .love-message { max-width: 800px; margin: 0 auto; background: linear-gradient(135deg, #FFF8F3 0%, #FDF6F0 100%); padding: 60px 40px; border-radius: 4px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(128, 0, 32, 0.2), inset 0 0 0 8px rgba(255, 255, 255, 0.6), inset 0 0 0 9px rgba(128, 0, 32, 0.15); text-align: center; position: relative; }
 .love-message::before { content: '❦'; font-size: 40px; color: var(--secondary-color); position: absolute; top: 18px; left: 50%; transform: translateX(-50%); opacity: 0.6; }
 .love-message h2 { font-family: 'Great Vibes', cursive; font-size: 3.5em; color: var(--primary-color); margin-top: 10px; margin-bottom: 20px; font-weight: 400; }
 .love-message p { font-family: 'Cormorant Garamond', serif; font-size: 1.5em; color: #333; margin: 25px 0; line-height: 1.8; font-style: italic; }
 .signature { margin-top: 40px; font-size: 1.3em !important; font-style: normal !important; color: var(--primary-color); font-weight: bold; }
 
-/* MODALES Y FOOTER */
+
+/* =====================================================
+   MODALES Y FOOTER
+   ===================================================== */
 .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); z-index: 1000; }
 .modal-content { position: relative; max-width: 90%; max-height: 90vh; margin: auto; top: 50%; transform: translateY(-50%); text-align: center; }
 .modal-content img { max-width: 100%; max-height: 80vh; border-radius: 10px; }
@@ -238,5 +273,9 @@ body {
     .polaroid-gallery { grid-template-columns: repeat(2, 1fr); gap: 15px; }
     .polaroid-card img { height: 180px; }
     .gallery-item.carousel-item { flex: 0 0 80% !important; min-width: 80% !important; height: 200px !important; }
-}
+    
+    /* PC y Móvil comparten tamaño en los títulos generales, pero en móvil ajustamos el de PC si es muy grande */
+    .main-title { font-size: 4.5em; }
+   }
+
 
