@@ -1123,4 +1123,21 @@ body {
     .full-gallery h3 {
         white-space: nowrap !important;
     }
+
+    /* 5. Reparación de la Línea de Tiempo (Separar Fecha y Círculo en PC) */
+    .timeline-item:nth-child(odd) .timeline-date {
+        text-align: right !important;
+        padding-right: 50px !important; /* Separación entre el número y el centro */
+    }
+    .timeline-item:nth-child(odd) .timeline-date::before {
+        left: calc(100% + 20px) !important; /* Coloca el círculo en la línea central */
+    }
+
+    .timeline-item:nth-child(even) .timeline-date {
+        text-align: left !important;
+        padding-left: 50px !important; /* Separación entre el número y el centro */
+    }
+    .timeline-item:nth-child(even) .timeline-date::before {
+        left: -20px !important; /* Coloca el círculo en la línea central */
+    }
 }
