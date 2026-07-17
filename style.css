@@ -40,7 +40,6 @@ body {
 }
 
 /* ===== HERO (PORTADA) ===== */
-
 .hero {
     height: 100vh;
     background: url("imagenes/Fondo_inicio.png") center center no-repeat;
@@ -1026,4 +1025,119 @@ body {
 .letra-texto::-webkit-scrollbar-thumb {
     background: rgba(128, 0, 32, 0.4); 
     border-radius: 10px;
+}
+
+/* =====================================================
+   ESTILOS AÑADIDOS PARA VERSIÓN PC (ESTILO REVISTA)
+   ===================================================== */
+@media (min-width: 769px) {
+    /* Menú oscuro sólido en PC para asegurar contraste */
+    .menu {
+        background: rgba(20, 20, 20, 0.95) !important;
+    }
+
+    /* 1. Modificamos la portada (Hero) */
+    .hero {
+        height: auto !important;
+        min-height: 100vh;
+        background: url("imagenes/Fondo_inicio.png") center 87px no-repeat !important;
+        background-size: 1000px auto !important;
+        background-color: var(--background-color) !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 680px !important; /* Empuja los textos a la zona blanca */
+        padding-bottom: 80px;
+    }
+
+    .hero-overlay {
+        display: none !important;
+    }
+
+    .hero-content {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+
+    .main-title {
+        color: var(--primary-color) !important;
+        text-shadow: none !important;
+        font-size: 100px !important;
+    }
+
+    .subtitle {
+        color: var(--text-color) !important;
+        text-shadow: none !important;
+        font-size: 32px !important;
+    }
+
+    .hero-btn {
+        background: var(--primary-color) !important;
+        color: white !important;
+        box-shadow: 0 5px 15px rgba(128, 0, 32, 0.3) !important;
+    }
+
+    .scroll-down {
+        position: relative !important;
+        bottom: auto !important;
+        left: auto !important;
+        transform: none !important;
+        color: var(--primary-color) !important;
+        margin-top: 40px !important;
+        display: block !important;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* 2. Modificamos el resto de las secciones - CORRECCIÓN DEL MARGEN AQUÍ */
+    .story-section { background: url("imagenes/fondo2.jpg") center top no-repeat !important; }
+    .gallery-section { background: url("imagenes/fondo4.jpg") center top no-repeat !important; }
+    .music-section { background: url("imagenes/Fondo_musica.jpg") center top no-repeat !important; }
+    .message-section { background: url("imagenes/fondo3.jpg") center top no-repeat !important; }
+
+    .story-section, .gallery-section, .music-section, .message-section {
+        background-size: 1000px auto !important;
+        background-color: var(--background-color) !important;
+        padding-top: 680px !important;
+        min-height: 100vh;
+    }
+
+    /* 3. Ajustes de Títulos */
+    .section-title, .full-gallery h3, .timeline-date {
+        color: var(--primary-color) !important;
+        text-shadow: none !important;
+    }
+
+    /* 4. Mejoras en "Tu Canción" para PC */
+    .music-card {
+        max-width: 900px !important;
+    }
+    .music-cover {
+        width: 400px !important;
+    }
+    .music-info {
+        padding: 50px !important;
+    }
+
+    /* "Más Momentos" en una sola línea */
+    .full-gallery h3 {
+        white-space: nowrap !important;
+    }
+
+    /* 5. Reparación de la Línea de Tiempo (Separar Fecha y Círculo en PC) */
+    .timeline-item:nth-child(odd) .timeline-date {
+        text-align: right !important;
+        padding-right: 50px !important; /* Separación entre el número y el centro */
+    }
+    .timeline-item:nth-child(odd) .timeline-date::before {
+        left: calc(100% + 20px) !important; /* Coloca el círculo en la línea central */
+    }
+
+    .timeline-item:nth-child(even) .timeline-date {
+        text-align: left !important;
+        padding-left: 50px !important; /* Separación entre el número y el centro */
+    }
+    .timeline-item:nth-child(even) .timeline-date::before {
+        left: -20px !important; /* Coloca el círculo en la línea central */
+    }
 }
