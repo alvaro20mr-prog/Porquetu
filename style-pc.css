@@ -40,7 +40,6 @@ body {
 }
 
 /* ===== HERO (PORTADA) ===== */
-
 .hero {
     height: 100vh;
     background: url("imagenes/Fondo_inicio.png") center center no-repeat;
@@ -1090,11 +1089,11 @@ body {
         text-align: center;
     }
 
-    /* 2. Modificamos el resto de las secciones */
-    .story-section { background: url("imagenes/fondo2.jpg") center 87px no-repeat !important; }
-    .gallery-section { background: url("imagenes/fondo4.jpg") center 87px no-repeat !important; }
-    .music-section { background: url("imagenes/Fondo_musica.jpg") center 87px no-repeat !important; }
-    .message-section { background: url("imagenes/fondo3.jpg") center 87px no-repeat !important; }
+    /* 2. Modificamos el resto de las secciones - CORRECCIÓN DEL MARGEN AQUÍ */
+    .story-section { background: url("imagenes/fondo2.jpg") center top no-repeat !important; }
+    .gallery-section { background: url("imagenes/fondo4.jpg") center top no-repeat !important; }
+    .music-section { background: url("imagenes/Fondo_musica.jpg") center top no-repeat !important; }
+    .message-section { background: url("imagenes/fondo3.jpg") center top no-repeat !important; }
 
     .story-section, .gallery-section, .music-section, .message-section {
         background-size: 1000px auto !important;
